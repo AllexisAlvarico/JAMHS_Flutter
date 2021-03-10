@@ -8,10 +8,10 @@ void main() => runApp(MaterialApp(
 
 class _SplashScreen extends StatefulWidget {
   @override
-  _splashState createState() => _splashState();
+  _SplashState createState() => _SplashState();
 }
 
-class _splashState extends State<_SplashScreen> {
+class _SplashState extends State<_SplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -27,7 +27,7 @@ class _splashState extends State<_SplashScreen> {
   }
 
   @override
-  Widget build(BuildContext t_context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff243C6C),
       body: Center(
