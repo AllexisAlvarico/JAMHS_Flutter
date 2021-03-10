@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'article.dart';
 import 'collection.dart';
 import 'aboutus.dart';
@@ -55,6 +55,15 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  launchURLBrowser() async {
+    const url = 'https://www.paypal.com/uk/home/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   Widget gridItems(IconData icon, String image, String title, int state) {
     return GestureDetector(
         onTap: () {
@@ -72,11 +81,7 @@ class _HomePageState extends State<HomePage> {
               );
               break;
             case 2:
-              print(title);
-              WebView(
-                initialUrl: "https://www.paypal.com/uk/home",
-                javascriptMode: JavascriptMode.unrestricted,
-              );
+              launchURLBrowser();
               break;
             case 3:
               Navigator.push(
