@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'article.dart';
+import 'collection.dart';
+import 'aboutus.dart';
+import 'dart:async';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,13 +38,13 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 10.0,
                   children: <Widget>[
                     gridItems(Icons.article, "assets/images/homelogo.png",
-                        "Articles"),
+                        "Articles", 0),
                     gridItems(Icons.collections, "assets/images/homelogo.png",
-                        "Collections"),
+                        "Collections", 1),
                     gridItems(Icons.credit_card, "assets/images/homelogo.png",
-                        "Donate"),
+                        "Donate", 2),
                     gridItems(Icons.question_answer,
-                        "assets/images/homelogo.png", "About Us!"),
+                        "assets/images/homelogo.png", "About Us!", 3),
                   ],
                 ),
               ),
@@ -50,10 +55,36 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget gridItems(IconData icon, String image, String title) {
+  Widget gridItems(IconData icon, String image, String title, int state) {
     return GestureDetector(
         onTap: () {
-          print(title);
+          switch (state) {
+            case 0:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ArticlePage()),
+              );
+              break;
+            case 1:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CollectionPage()),
+              );
+              break;
+            case 2:
+              print(title);
+              WebView(
+                initialUrl: "https://www.paypal.com/uk/home",
+                javascriptMode: JavascriptMode.unrestricted,
+              );
+              break;
+            case 3:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutUsPage()),
+              );
+              break;
+          }
         },
         child: Container(
           height: 20,
