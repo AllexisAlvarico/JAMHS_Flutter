@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,10 +32,14 @@ class _HomePageState extends State<HomePage> {
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
                   children: <Widget>[
-                    gridItems("Very nice Titles", "assets/images/homelogo.png"),
-                    gridItems("Very nice Grid", "assets/images/homelogo.png"),
-                    gridItems("Very nice Grid", "assets/images/homelogo.png"),
-                    gridItems("Very nice Grid", "assets/images/homelogo.png"),
+                    gridItems(Icons.article, "assets/images/homelogo.png",
+                        "Articles"),
+                    gridItems(Icons.collections, "assets/images/homelogo.png",
+                        "Collections"),
+                    gridItems(Icons.credit_card, "assets/images/homelogo.png",
+                        "Donate"),
+                    gridItems(Icons.question_answer,
+                        "assets/images/homelogo.png", "About Us!"),
                   ],
                 ),
               ),
@@ -47,66 +50,54 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget gridItems(String name, String image) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24.0),
-      ),
-      child: Stack(children: [
-        Opacity(
-          opacity: 1.0,
-          child: Container(
-            decoration: new BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.contain,
-              ),
-            ),
+  Widget gridItems(IconData icon, String image, String title) {
+    return GestureDetector(
+        onTap: () {
+          print(title);
+        },
+        child: Container(
+          height: 20,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24.0),
+            color: Colors.white,
           ),
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                      child: Text(
-                    "Jobs",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  )),
-                  SizedBox(width: 10.0),
-                  Container(
-                      child: Icon(
-                    FontAwesomeIcons.compass,
-                    color: Colors.white,
-                  )),
-                  SizedBox(width: 10.0),
-                  Container(
-                    child: Text(
-                      "Guide",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  )
-                ],
+          child: Stack(children: [
+            Align(
+                alignment: Alignment.center,
+                child: Icon(
+                  icon,
+                  color: Color(0xff243C6C),
+                  size: 120.0,
+                )),
+            Opacity(
+              opacity: 1.0,
+              child: Container(
+                decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
               ),
             ),
-            SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Text(
-                name,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                          child: Text(
+                        title,
+                        style: TextStyle(
+                            color: Color(0xff243C6C),
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold),
+                      )),
+                    ],
+                  ),
+                ),
+              ],
             )
-          ],
-        )
-      ]),
-    );
+          ]),
+        ));
   }
 }
