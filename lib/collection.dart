@@ -10,13 +10,25 @@ class _CollectionPageState extends State<CollectionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xff243C6C),
-        body: Align(
-          alignment: Alignment.center,
-          child: Text(
-            "Collections Page",
-            style: TextStyle(
-                color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),
-          ),
+        body: Column(
+          children: [
+            Text(
+              "Collections Page",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
+            Card(
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/images/homelogo.png",
+                  )
+                ],
+              ),
+            ),
+          ],
         ));
   }
 }
