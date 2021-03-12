@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ArtifactCard.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _CollectionPageState extends State<CollectionPage> {
     return Scaffold(
         backgroundColor: Color(0xff243C6C),
         appBar: AppBar(
+          backgroundColor: Color(0xff243C6C),
           title: Text("Collections"),
         ),
         body: Column(
@@ -27,23 +29,10 @@ class _CollectionPageState extends State<CollectionPage> {
               padding: const EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 220,
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      clipBehavior: Clip.antiAlias,
-                      elevation: 5,
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            "assets/images/m1911.png",
-                          ),
-                          Text("M1911 Pistol\nDigital Model"),
-                        ],
-                      ),
-                    ),
-                  ),
+                  ArtifactCard(
+                    imagePath: "assets/images/m1911.png",
+                    description: "M1911 Pistol\nDigital Model",
+                  )
                 ],
               ),
             ),
