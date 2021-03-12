@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'article.dart';
 import 'collection.dart';
 import 'aboutus.dart';
-import 'dart:async';
 
 class HomePage extends StatefulWidget {
   @override
