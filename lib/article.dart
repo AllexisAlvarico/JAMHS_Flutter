@@ -2,12 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-  'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-  'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+  'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/levitow.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
+  'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/jacobs.jpg/:/rs=w:1280',
+  'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/tibor1.jpg/:/rs=w:1280',
+  'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/kravitz.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
+  'https://img1.wsimg.com/isteam/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/battle-of-the-alamo.webp/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
+  'https://img1.wsimg.com/isteam/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/Mendes%20Cohen.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280'
 ];
 
 class ArticlePage extends StatefulWidget {
@@ -20,7 +20,21 @@ class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: carousel(),
+      child: Scaffold(
+        backgroundColor: Color(0xff243C6C),
+        appBar: AppBar(
+          backgroundColor: Color(0xff2d4b87),
+          title: Text(
+            'Articles',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        body: Container(child: carousel()),
+      ),
     );
   }
 
@@ -32,7 +46,11 @@ class _ArticlePageState extends State<ArticlePage> {
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   child: Stack(
                     children: <Widget>[
-                      Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                      Image.network(
+                        item,
+                        fit: BoxFit.cover,
+                        width: 1000.0,
+                      ),
                       Positioned(
                         bottom: 0.0,
                         left: 0.0,
@@ -100,7 +118,23 @@ class _ArticlePageState extends State<ArticlePage> {
             );
           }).toList(),
         ),
+        cardView()
       ]),
     ));
+  }
+
+  Widget cardView() {
+    return Center(
+        child: Card(
+            child: InkWell(
+                splashColor: Colors.blue.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ))));
   }
 }
