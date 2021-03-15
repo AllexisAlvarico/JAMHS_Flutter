@@ -31,7 +31,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     MediaQuery.of(context).size.width / 30.0,
                   ),
                   child: Container(
-                      height: MediaQuery.of(context).size.height * 1.75,
+                      height: MediaQuery.of(context).size.height * 1.5,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.white,
@@ -82,7 +82,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 "assets/images/instagram.png",
                                 "assets/images/twitter.png",
                                 EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
-                            createText("Sophie", 8.0, 32.0, FontWeight.bold),
                           ])),
                 )
               ],
