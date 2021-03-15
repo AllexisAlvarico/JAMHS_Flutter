@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsPage extends StatefulWidget {
   @override
@@ -53,12 +56,16 @@ class _AboutUsPageState extends State<AboutUsPage> {
                             createImage(
                                 "assets/images/exbibit.png",
                                 25.0, // border's radius
-                                EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0)),
+                                EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0),
+                                null),
                             createText("Partners", 8.0, 32.0, FontWeight.bold),
                             createTriple(
                                 'assets/images/calguard.png',
                                 'assets/images/vshp.png',
                                 'assets/images/siteline.png',
+                                launchCalguard,
+                                launchVSHP,
+                                launchSiteline,
                                 EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
                             createText(
                                 "We've partnered with the California State Military Museum, " +
@@ -73,14 +80,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 0.0,
                                 16.0,
                                 FontWeight.bold),
-                            createImage("assets/images/paypal.png", 0.0,
-                                EdgeInsets.fromLTRB(50, 10, 50, 5)),
+                            createImage(
+                                "assets/images/paypal.png",
+                                0.0,
+                                EdgeInsets.fromLTRB(50, 10, 50, 5),
+                                launchPaypal),
                             createText(
                                 "Social Media", 8.0, 32.0, FontWeight.bold),
                             createTriple(
                                 "assets/images/facebook.png",
                                 "assets/images/instagram.png",
                                 "assets/images/twitter.png",
+                                launchFacebook,
+                                launchInsta,
+                                launchTwitter,
                                 EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
                           ])),
                 )
@@ -101,7 +114,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
   }
 
   // Creates an image with an optional circular borderRadius
-  createImage(path, borderRadius, padding) {
+  createImage(path, borderRadius, padding, function) {
+    if (null != function) {
+      return Padding(
+          padding: padding,
+          // Using ClipRRect allows us to have Images with Rounded edges.
+          child: GestureDetector(
+              onTap: function,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(borderRadius),
+                child: Image.asset(path, fit: BoxFit.cover),
+              )));
+    }
+
+    // if the function is null, return a regular image instead
     return Padding(
         padding: padding,
         // Using ClipRRect allows us to have Images with Rounded edges.
@@ -111,22 +137,97 @@ class _AboutUsPageState extends State<AboutUsPage> {
         ));
   }
 
-  createTriple(pathOne, pathTwo, pathThree, padding) {
+  createExpanded(path, function) {
+    // if the function exists, return a gesture detector with it
+    if (null != function) {
+      return Expanded(
+          child: GestureDetector(
+        onTap: function,
+        child: Image.asset(path),
+      ));
+    }
+
+// otherwise return a normal image
+    return Expanded(child: Image.asset(path));
+  }
+
+  createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
+      functionThree, padding) {
     return Container(
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Expanded(
-              child: Image.asset(
-                pathOne,
-              ),
-            ),
+            createExpanded(pathOne, functionOne),
             Container(width: 30, color: Colors.transparent),
-            Expanded(child: Image.asset(pathTwo)),
+            createExpanded(pathTwo, functionTwo),
             Container(width: 30, color: Colors.transparent),
-            Expanded(child: Image.asset(pathThree))
+            createExpanded(pathThree, functionThree),
           ],
         ));
+  }
+
+  void launchCalguard() async {
+    const url = 'https://calguard.ca.gov/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchVSHP() async {
+    const url =
+        'https://www.facebook.com/Virtual-Society-for-Historical-Preservation-104715344669153';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchSiteline() async {
+    const url = 'https://sitelineproductions.com/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchPaypal() async {
+    const url = 'https://www.paypal.com/uk/home/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchFacebook() async {
+    const url = 'https://www.facebook.com/jewishmilitary';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchInsta() async {
+    const url = 'https://www.instagram.com/jewish_american_military_H.S/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchTwitter() async {
+    const url = 'https://twitter.com/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
