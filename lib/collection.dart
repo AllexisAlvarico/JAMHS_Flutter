@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ArtifactCard.dart';
+import 'modelView.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -7,19 +8,23 @@ class CollectionPage extends StatefulWidget {
 }
 
 class _CollectionPageState extends State<CollectionPage> {
-  List<ArtifactData> modelData = [
-    ArtifactData("assets/images/m1911.png", "M1911 Pistol\nDigital Model")
+  List<ModelData> modelData = [
+    ModelData("assets/images/m1911.png", "M1911 Pistol digital model",
+        "assets/models/m1911.glb")
   ];
 
   List<ArtifactData> artifactData = [
-    ArtifactData("assets/images/hewbrew_artifact.jpg", "test"),
-    ArtifactData("assets/images/moh_book.jpg", "test")
+    ArtifactData("assets/images/hewbrew_artifact.jpg",
+        "1930s-1940s Jewish Soldiers prayer books"),
+    ArtifactData("assets/images/moh_book.jpg",
+        "T. Rubin' Programme, MoH Recipent Ceremony")
   ];
 
   List<ArtifactData> rubinData = [
-    ArtifactData("assets/images/tibur_uniform.jpg", "test"),
-    ArtifactData("assets/images/tibur_hat.jpg", "test"),
-    ArtifactData("assets/images/tibur_pin.jpg", "test")
+    ArtifactData(
+        "assets/images/tibur_uniform.jpg", "Post War Khaki 1st cav. Shirt"),
+    ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson"),
+    ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin")
   ];
 
   @override
@@ -28,7 +33,15 @@ class _CollectionPageState extends State<CollectionPage> {
         backgroundColor: Color(0xff243C6C),
         appBar: AppBar(
           backgroundColor: Color(0xff243C6C),
-          title: Text("Collections"),
+          title: Text(
+            "Collections",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                fontFamily: "Futura"),
+          ),
+          centerTitle: true,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -42,8 +55,9 @@ class _CollectionPageState extends State<CollectionPage> {
                   "3D Artifacts",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
                 ),
               ),
               Padding(
@@ -52,11 +66,18 @@ class _CollectionPageState extends State<CollectionPage> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: modelData.map((data) {
                       return ArtifactCard(
                         imagePath: data.imagePath,
                         title: data.title,
-                        action: () {},
+                        action: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ModelView(src: data.modelPath)));
+                        },
                       );
                     }).toList(),
                   ),
@@ -69,8 +90,9 @@ class _CollectionPageState extends State<CollectionPage> {
                   "Artifacts",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
                 ),
               ),
               Padding(
@@ -79,6 +101,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: artifactData.map((data) {
                       return ArtifactCard(
                         imagePath: data.imagePath,
@@ -96,8 +119,9 @@ class _CollectionPageState extends State<CollectionPage> {
                   "Tibor Rubin Grouping",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
                 ),
               ),
               Padding(
@@ -106,6 +130,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: rubinData.map((data) {
                       return ArtifactCard(
                         imagePath: data.imagePath,

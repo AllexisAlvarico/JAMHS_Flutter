@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// spcilised card widget to displays an artifact image and a title
+// specilised card widget to displays an artifact image and a title
 class ArtifactCard extends StatelessWidget {
   final String imagePath;
   final String title;
@@ -37,10 +37,11 @@ class ArtifactCard extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Text(
                   title,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
                 ),
               ),
             ],
