@@ -8,7 +8,7 @@ class CollectionPage extends StatefulWidget {
 
 class _CollectionPageState extends State<CollectionPage> {
   List<ArtifactData> data = [
-    ArtifactData("assets/images/m1911.png", "M1911 Pistol\nDigital Model")
+    ArtifactData("assets/images/m1911.png", "M1911 Pistol\nDigital Model", "")
   ];
 
   @override

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class ArtifactCard extends StatelessWidget {
   final String imagePath;
+  final String title;
   final String description;
   final Function action;
 
-  const ArtifactCard({Key key, this.imagePath, this.description, this.action})
+  const ArtifactCard(
+      {Key key, this.imagePath, this.title, this.description, this.action})
       : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class ArtifactCard extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Text(
-                  description,
+                  title,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -54,7 +56,8 @@ class ArtifactCard extends StatelessWidget {
 // and another for the dsecription of the artifact
 class ArtifactData {
   String imagePath;
+  String title;
   String desc;
 
-  ArtifactData(this.imagePath, this.desc);
+  ArtifactData(this.imagePath, this.title, this.desc);
 }
