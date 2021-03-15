@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'size_config.dart';
 
+// specilised card widget to displays an artifact image and a title
 class ArtifactCard extends StatelessWidget {
   final String imagePath;
-  final String description;
+  final String title;
   final Function action;
 
-  const ArtifactCard({Key key, this.imagePath, this.description, this.action})
+  const ArtifactCard({Key key, this.imagePath, this.title, this.action})
       : super(key: key);
 
   @override
@@ -37,11 +38,12 @@ class ArtifactCard extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Text(
-                  description,
+                  title,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
                 ),
               ),
             ],
@@ -56,7 +58,17 @@ class ArtifactCard extends StatelessWidget {
 // and another for the dsecription of the artifact
 class ArtifactData {
   String imagePath;
-  String desc;
+  String title;
+  String name;
+  String category;
 
-  ArtifactData(this.imagePath, this.desc);
+  ArtifactData(this.imagePath, this.title, this.name, this.category);
+}
+
+class ModelData extends ArtifactData {
+  String modelPath;
+
+  ModelData(String imagePath, String title, String name, String category,
+      this.modelPath)
+      : super(imagePath, title, name, category);
 }
