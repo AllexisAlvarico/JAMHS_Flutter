@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  dogma:
+    dependency: transitive
+    description:
+      name: dogma
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -62,6 +69,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_android:
+    dependency: transitive
+    description:
+      name: flutter_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -100,6 +114,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0"
+  model_viewer:
+    dependency: "direct main"
+    description:
+      name: model_viewer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.1"
   path:
     dependency: transitive
     description:
