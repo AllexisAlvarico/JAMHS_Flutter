@@ -33,7 +33,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   child: Container(
                       height: MediaQuery.of(context).size.height * 1.5,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(15),
                         color: Colors.white,
                       ),
                       child: ListView(
@@ -54,29 +54,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 25.0, // border's radius
                                 EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0)),
                             createText("Partners", 8.0, 32.0),
-                            Container(
-                                padding: EdgeInsets.fromLTRB(50.0, 0, 50.0, 0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Expanded(
-                                      child: Image.asset(
-                                        'assets/images/calguard.png',
-                                      ),
-                                    ),
-                                    Container(
-                                        width: 30, color: Colors.transparent),
-                                    Expanded(
-                                        child: Image.asset(
-                                            'assets/images/vshp.png')),
-                                    Container(
-                                        width: 30, color: Colors.transparent),
-                                    Expanded(
-                                        child: Image.asset(
-                                            'assets/images/siteline.png'))
-                                  ],
-                                )),
+                            createTriple(
+                                'assets/images/calguard.png',
+                                'assets/images/vshp.png',
+                                'assets/images/siteline.png',
+                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
                             createText(
                                 "We've partnered with the California State Military Museum, " +
                                     "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
@@ -89,6 +71,12 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 16.0),
                             createImage("assets/images/paypal.png", 0.0,
                                 EdgeInsets.fromLTRB(50, 10, 50, 5)),
+                            createText("Social Media", 8.0, 32.0),
+                            createTriple(
+                                "assets/images/facebook.png",
+                                "assets/images/instagram.png",
+                                "assets/images/twitter.png",
+                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0))
                           ])),
                 )
               ],
@@ -117,6 +105,25 @@ class _AboutUsPageState extends State<AboutUsPage> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(borderRadius),
           child: Image.asset(path, fit: BoxFit.cover),
+        ));
+  }
+
+  createTriple(pathOne, pathTwo, pathThree, padding) {
+    return Container(
+        padding: padding,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(
+              child: Image.asset(
+                pathOne,
+              ),
+            ),
+            Container(width: 30, color: Colors.transparent),
+            Expanded(child: Image.asset(pathTwo)),
+            Container(width: 30, color: Colors.transparent),
+            Expanded(child: Image.asset(pathThree))
+          ],
         ));
   }
 }
