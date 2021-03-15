@@ -31,7 +31,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     MediaQuery.of(context).size.width / 30.0,
                   ),
                   child: Container(
-                      height: MediaQuery.of(context).size.height * 1.5,
+                      height: MediaQuery.of(context).size.height * 1.75,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.white,
@@ -39,7 +39,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       child: ListView(
                           physics: NeverScrollableScrollPhysics(),
                           children: [
-                            createText("About Us", 10.0, 32.0),
+                            createText("About Us", 10.0, 32.0, FontWeight.bold),
                             createText(
                                 "The purpose of the Jewish American Military " +
                                     "Historical Society is to preserve Jewish " +
@@ -48,12 +48,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                     "service, and educating the public to these " +
                                     "contributions.",
                                 5.0,
-                                18.0),
+                                18.0,
+                                FontWeight.bold),
                             createImage(
                                 "assets/images/exbibit.png",
                                 25.0, // border's radius
                                 EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0)),
-                            createText("Partners", 8.0, 32.0),
+                            createText("Partners", 8.0, 32.0, FontWeight.bold),
                             createTriple(
                                 'assets/images/calguard.png',
                                 'assets/images/vshp.png',
@@ -63,20 +64,25 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 "We've partnered with the California State Military Museum, " +
                                     "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
                                 8.0,
-                                16.0),
-                            createText("Donate Now!", 8.0, 32.0),
+                                16.0,
+                                FontWeight.bold),
+                            createText(
+                                "Donate Now!", 8.0, 32.0, FontWeight.bold),
                             createText(
                                 "to the Jewish American Military Historical Society!",
                                 0.0,
-                                16.0),
+                                16.0,
+                                FontWeight.bold),
                             createImage("assets/images/paypal.png", 0.0,
                                 EdgeInsets.fromLTRB(50, 10, 50, 5)),
-                            createText("Social Media", 8.0, 32.0),
+                            createText(
+                                "Social Media", 8.0, 32.0, FontWeight.bold),
                             createTriple(
                                 "assets/images/facebook.png",
                                 "assets/images/instagram.png",
                                 "assets/images/twitter.png",
-                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0))
+                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
+                            createText("Sophie", 8.0, 32.0, FontWeight.bold),
                           ])),
                 )
               ],
@@ -84,15 +90,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
   }
 
   // Creates a text element with padding
-  createText(text, padding, fontSize) {
+  createText(text, padding, fontSize, fontWeight) {
     return Padding(
         padding: EdgeInsets.all(padding),
         child: Text(
           text,
           style: TextStyle(
-              color: Colors.black,
-              fontSize: fontSize,
-              fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: fontSize, fontWeight: fontWeight),
           textAlign: TextAlign.center,
         ));
   }
