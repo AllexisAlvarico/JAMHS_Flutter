@@ -49,16 +49,10 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                     "contributions.",
                                 5.0,
                                 18.0),
-                            Padding(
-                                padding:
-                                    EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0),
-                                // Using ClipRRect allows us to have Images with Rounded edges.
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  child: Image.asset(
-                                      "assets/images/exbibit.png",
-                                      fit: BoxFit.cover),
-                                )),
+                            createImage(
+                                "assets/images/exbibit.png",
+                                25.0, // border's radius
+                                EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0)),
                             createText("Partners", 8.0, 32.0),
                             Container(
                                 padding: EdgeInsets.fromLTRB(50.0, 0, 50.0, 0),
@@ -93,14 +87,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 "to the Jewish American Military Historical Society!",
                                 0.0,
                                 16.0),
-                            Padding(
-                                padding:
-                                    EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
-                                // Using ClipRRect allows us to have Images with Rounded edges.
-                                child: ClipRRect(
-                                  child: Image.asset("assets/images/paypal.png",
-                                      fit: BoxFit.cover),
-                                )),
+                            createImage("assets/images/paypal.png", 0.0,
+                                EdgeInsets.fromLTRB(50, 10, 50, 5)),
                           ])),
                 )
               ],
@@ -118,6 +106,17 @@ class _AboutUsPageState extends State<AboutUsPage> {
               fontSize: fontSize,
               fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
+        ));
+  }
+
+  // Creates an image with an optional circular borderRadius
+  createImage(path, borderRadius, padding) {
+    return Padding(
+        padding: padding,
+        // Using ClipRRect allows us to have Images with Rounded edges.
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(borderRadius),
+          child: Image.asset(path, fit: BoxFit.cover),
         ));
   }
 }
