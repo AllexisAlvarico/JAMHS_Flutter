@@ -11,7 +11,7 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 220,
+      width: 200,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         clipBehavior: Clip.antiAlias,
@@ -25,7 +25,7 @@ class ArtifactCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 160,
+                height: 180,
                 width: 220,
                 child: Image.asset(
                   imagePath,

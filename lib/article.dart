@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'ArtifactCard.dart';
 
 final List<String> imgList = [
   'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/levitow.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
@@ -8,6 +9,16 @@ final List<String> imgList = [
   'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/kravitz.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
   'https://img1.wsimg.com/isteam/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/battle-of-the-alamo.webp/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
   'https://img1.wsimg.com/isteam/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/Mendes%20Cohen.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280'
+];
+List<ArtifactData> data = [
+  ArtifactData("assets/images/isadore.jpg",
+      "Isadore S.Jachman\nMedal of Honor Recipient"),
+  ArtifactData(
+      "assets/images/jack.jpg", "Jack H.Jacobs\nMedal of Honor Recipient"),
+  ArtifactData(
+      "assets/images/john.png", "John Levitow\nMedal of Honor Recipient"),
+  ArtifactData(
+      "assets/images/raymond.png", "Raymond Zussman\nMedal of Honor Recipient"),
 ];
 
 class ArticlePage extends StatefulWidget {
@@ -86,55 +97,52 @@ class _ArticlePageState extends State<ArticlePage> {
 
   Widget carousel() {
     return Container(
-        child: Scaffold(
-      backgroundColor: Color(0xff243C6C),
-      body: Column(children: [
-        CarouselSlider(
-          items: imageSliders,
-          options: CarouselOptions(
-              autoPlay: true,
-              enlargeCenterPage: true,
-              aspectRatio: 2.0,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _current = index;
-                });
-              }),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: imgList.map((url) {
-            int index = imgList.indexOf(url);
-            return Container(
-              width: 8.0,
-              height: 8.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? Color.fromRGBO(0, 0, 0, 0.9)
-                    : Color.fromRGBO(0, 0, 0, 0.4),
-              ),
-            );
-          }).toList(),
-        ),
-        cardView()
-      ]),
-    ));
+      child: Scaffold(
+          backgroundColor: Color(0xff243C6C),
+          body: Column(children: [
+            CarouselSlider(
+              items: imageSliders,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  aspectRatio: 2.0,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _current = index;
+                    });
+                  }),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: imgList.map((url) {
+                int index = imgList.indexOf(url);
+                return Container(
+                  width: 8.0,
+                  height: 8.0,
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _current == index
+                        ? Color.fromRGBO(0, 0, 0, 0.9)
+                        : Color.fromRGBO(0, 0, 0, 0.4),
+                  ),
+                );
+              }).toList(),
+            ),
+            cardView(),
+          ])),
+    );
   }
 
+  //this wraps the cards
   Widget cardView() {
-    return Center(
-        child: Card(
-            child: InkWell(
-                splashColor: Colors.blue.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ))));
+    return Wrap(
+      children: data.map((data) {
+        return ArtifactCard(
+          imagePath: data.imagePath,
+          description: data.desc,
+        );
+      }).toList(),
+    );
   }
 }
