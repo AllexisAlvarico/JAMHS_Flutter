@@ -31,7 +31,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     MediaQuery.of(context).size.width / 30.0,
                   ),
                   child: Container(
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height * 1.5,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
@@ -39,31 +39,16 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       child: ListView(
                           physics: NeverScrollableScrollPhysics(),
                           children: [
-                            Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child: Text(
-                                  "About Us",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                )),
-                            Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child: Text(
-                                  "The purpose of the Jewish American Military " +
-                                      "Historical Society is to preserve Jewish " +
-                                      "American military history, interpret the " +
-                                      "impact of Jews to military and civil " +
-                                      "service, and educating the public to these " +
-                                      "contributions.",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                )),
+                            createText("About Us", 10.0, 32.0),
+                            createText(
+                                "The purpose of the Jewish American Military " +
+                                    "Historical Society is to preserve Jewish " +
+                                    "American military history, interpret the " +
+                                    "impact of Jews to military and civil " +
+                                    "service, and educating the public to these " +
+                                    "contributions.",
+                                5.0,
+                                18.0),
                             Padding(
                                 padding:
                                     EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0),
@@ -74,19 +59,65 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                       "assets/images/exbibit.png",
                                       fit: BoxFit.cover),
                                 )),
+                            createText("Partners", 8.0, 32.0),
+                            Container(
+                                padding: EdgeInsets.fromLTRB(50.0, 0, 50.0, 0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Expanded(
+                                      child: Image.asset(
+                                        'assets/images/calguard.png',
+                                      ),
+                                    ),
+                                    Container(
+                                        width: 30, color: Colors.transparent),
+                                    Expanded(
+                                        child: Image.asset(
+                                            'assets/images/vshp.png')),
+                                    Container(
+                                        width: 30, color: Colors.transparent),
+                                    Expanded(
+                                        child: Image.asset(
+                                            'assets/images/siteline.png'))
+                                  ],
+                                )),
+                            createText(
+                                "We've partnered with the California State Military Museum, " +
+                                    "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
+                                8.0,
+                                16.0),
+                            createText("Donate Now!", 8.0, 32.0),
+                            createText(
+                                "to the Jewish American Military Historical Society!",
+                                0.0,
+                                16.0),
                             Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child: Text(
-                                  "Partners",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
+                                padding:
+                                    EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
+                                // Using ClipRRect allows us to have Images with Rounded edges.
+                                child: ClipRRect(
+                                  child: Image.asset("assets/images/paypal.png",
+                                      fit: BoxFit.cover),
                                 )),
                           ])),
                 )
               ],
             )));
+  }
+
+  // Creates a text element with padding
+  createText(text, padding, fontSize) {
+    return Padding(
+        padding: EdgeInsets.all(padding),
+        child: Text(
+          text,
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ));
   }
 }
