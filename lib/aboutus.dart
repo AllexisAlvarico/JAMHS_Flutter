@@ -65,13 +65,25 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                   textAlign: TextAlign.center,
                                 )),
                             Padding(
-                                padding: EdgeInsets.all(25.0),
+                                padding:
+                                    EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0),
+                                // Using ClipRRect allows us to have Images with Rounded edges.
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(25.0),
                                   child: Image.asset(
                                       "assets/images/exbibit.png",
                                       fit: BoxFit.cover),
-                                ))
+                                )),
+                            Padding(
+                                padding: EdgeInsets.all(5.0),
+                                child: Text(
+                                  "Partners",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                )),
                           ])),
                 )
               ],
