@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ArtifactCard.dart';
 import 'modelView.dart';
+import 'artifactView.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -9,22 +10,30 @@ class CollectionPage extends StatefulWidget {
 
 class _CollectionPageState extends State<CollectionPage> {
   List<ModelData> modelData = [
-    ModelData("assets/images/m1911.png", "M1911 Pistol digital model",
-        "assets/models/m1911.glb")
+    ModelData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
+        "3D Model", "assets/models/m1911.glb")
   ];
 
   List<ArtifactData> artifactData = [
-    ArtifactData("assets/images/hewbrew_artifact.jpg",
-        "1930s-1940s Jewish Soldiers prayer books"),
-    ArtifactData("assets/images/moh_book.jpg",
-        "T. Rubin' Programme, MoH Recipent Ceremony")
+    ArtifactData(
+        "assets/images/hewbrew_artifact.jpg",
+        "1930s-1940s Jewish Soldiers prayer books",
+        "Hewbrew Bible",
+        "Artifacts"),
+    ArtifactData(
+        "assets/images/moh_book.jpg",
+        "T. Rubin' Programme, MoH Recipent Ceremony",
+        "Medal of Honour",
+        "Artifacts")
   ];
 
   List<ArtifactData> rubinData = [
-    ArtifactData(
-        "assets/images/tibur_uniform.jpg", "Post War Khaki 1st cav. Shirt"),
-    ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson"),
-    ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin")
+    ArtifactData("assets/images/tibur_uniform.jpg",
+        "Post War Khaki 1st cav. Shirt", "Uniform", "Tibor Collection"),
+    ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson",
+        "Hat", "Tibor Collection"),
+    ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin",
+        "Military Pin", "Tibor Collection")
   ];
 
   @override
@@ -75,8 +84,10 @@ class _CollectionPageState extends State<CollectionPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      ModelView(src: data.modelPath)));
+                                  builder: (context) => ModelView(
+                                        src: data.modelPath,
+                                        title: data.name,
+                                      )));
                         },
                       );
                     }).toList(),
@@ -106,7 +117,17 @@ class _CollectionPageState extends State<CollectionPage> {
                       return ArtifactCard(
                         imagePath: data.imagePath,
                         title: data.title,
-                        action: () {},
+                        action: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ArtifactView(
+                                        imagePath: data.imagePath,
+                                        title: data.name,
+                                        category: data.category,
+                                        desc: "insert text",
+                                      )));
+                        },
                       );
                     }).toList(),
                   ),
@@ -135,7 +156,17 @@ class _CollectionPageState extends State<CollectionPage> {
                       return ArtifactCard(
                         imagePath: data.imagePath,
                         title: data.title,
-                        action: () {},
+                        action: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ArtifactView(
+                                        imagePath: data.imagePath,
+                                        title: data.name,
+                                        category: data.category,
+                                        desc: "insert text",
+                                      )));
+                        },
                       );
                     }).toList(),
                   ),

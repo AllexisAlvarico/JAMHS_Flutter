@@ -57,13 +57,16 @@ class ArtifactCard extends StatelessWidget {
 class ArtifactData {
   String imagePath;
   String title;
+  String name;
+  String category;
 
-  ArtifactData(this.imagePath, this.title);
+  ArtifactData(this.imagePath, this.title, this.name, this.category);
 }
 
 class ModelData extends ArtifactData {
   String modelPath;
 
-  ModelData(String imagePath, String title, this.modelPath)
-      : super(imagePath, title);
+  ModelData(String imagePath, String title, String name, String category,
+      this.modelPath)
+      : super(imagePath, title, name, category);
 }
