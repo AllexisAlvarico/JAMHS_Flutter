@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'size_config.dart';
 
 class ArtifactCard extends StatelessWidget {
   final String imagePath;
@@ -10,8 +11,9 @@ class ArtifactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SizedBox(
-      width: 220,
+      width: SizeConfig.safeBlockVertical * 20,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         clipBehavior: Clip.antiAlias,
@@ -25,8 +27,8 @@ class ArtifactCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 160,
-                width: 220,
+                height: SizeConfig.safeBlockVertical * 15,
+                width: SizeConfig.safeBlockHorizontal * 40,
                 child: Image.asset(
                   imagePath,
                   fit: BoxFit.cover,

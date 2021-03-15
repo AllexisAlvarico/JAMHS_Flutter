@@ -3,7 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'article.dart';
 import 'collection.dart';
 import 'aboutus.dart';
-import 'dart:async';
+import 'size_config.dart';
+import 'dart:async'; // unused as of now ask if needed
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Color(0xff243C6C),
       body: SafeArea(
@@ -21,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: <Widget>[
               Container(
-                height: 250,
+                height: SizeConfig.safeBlockVertical * 35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
@@ -33,7 +35,8 @@ class _HomePageState extends State<HomePage> {
                 child: GridView.count(
                   crossAxisCount: 2,
                   padding: EdgeInsets.all(20.0),
-                  childAspectRatio: 0.9,
+                  childAspectRatio:
+                      SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
                   children: <Widget>[
@@ -92,9 +95,9 @@ class _HomePageState extends State<HomePage> {
           }
         },
         child: Container(
-          height: 20,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.circular(
+                24.0), // 15 works and collections looks tidier
             color: Colors.white,
           ),
           child: Stack(children: [
