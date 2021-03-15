@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'ArtifactCard.dart';
+import 'viewpage.dart';
 
 final List<String> imgList = [
   'https://isteam.wsimg.com/ip/340f64d4-61d4-4ba9-b784-ba4e64301bbf/levitow.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280',
@@ -139,9 +140,17 @@ class _ArticlePageState extends State<ArticlePage> {
     return Wrap(
       children: data.map((data) {
         return ArtifactCard(
-          imagePath: data.imagePath,
-          description: data.desc,
-        );
+            imagePath: data.imagePath,
+            description: data.desc,
+            action: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ViewPage(
+                            img: data.imagePath,
+                            title: data.desc,
+                          )));
+            });
       }).toList(),
     );
   }
