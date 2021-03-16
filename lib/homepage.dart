@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'article.dart';
 import 'collection.dart';
 import 'aboutus.dart';
+import 'virtualTourpage.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
@@ -41,8 +42,8 @@ class _HomePageState extends State<HomePage> {
                         "Articles", 0),
                     gridItems(Icons.collections, "assets/images/homelogo.png",
                         "Collections", 1),
-                    gridItems(Icons.credit_card, "assets/images/homelogo.png",
-                        "Donate", 2),
+                    gridItems(Icons.tour, "assets/images/homelogo.png",
+                        "Virtual Tours", 2),
                     gridItems(Icons.question_answer,
                         "assets/images/homelogo.png", "About Us!", 3),
                   ],
@@ -81,7 +82,10 @@ class _HomePageState extends State<HomePage> {
               );
               break;
             case 2:
-              launchURLBrowser();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VirutalToursPage()),
+              );
               break;
             case 3:
               Navigator.push(
