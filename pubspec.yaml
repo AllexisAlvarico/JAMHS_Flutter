@@ -38,7 +38,7 @@ dependencies:
   carousel_slider: ^3.0.0
   model_viewer: ^0.8.1
   advance_pdf_viewer: ^1.2.2
-  path_provider: ^1.6.24
+  path_provider: ^2.0.1
 
 dev_dependencies:
   flutter_test:
