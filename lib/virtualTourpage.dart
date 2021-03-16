@@ -16,7 +16,9 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         primarySwatch: Colors.blue,
       ),
       home: Panorama(
-        child: Image.asset('assets/images/Test.jpg'),
+        child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+        minLatitude: -20.0,
+        maxLatitude: 35.0,
       ),
     );
   }
