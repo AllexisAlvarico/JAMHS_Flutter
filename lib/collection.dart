@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'ArtifactCard.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
+import 'size_config.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -38,6 +39,7 @@ class _CollectionPageState extends State<CollectionPage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
         backgroundColor: Color(0xff243C6C),
         appBar: AppBar(
@@ -59,7 +61,8 @@ class _CollectionPageState extends State<CollectionPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0, vertical: 10.0),
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: Text(
                   "3D Artifacts",
                   style: TextStyle(
@@ -70,8 +73,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -96,7 +100,8 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0, vertical: 10.0),
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: Text(
                   "Artifacts",
                   style: TextStyle(
@@ -107,8 +112,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -135,7 +141,8 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0, vertical: 10.0),
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: Text(
                   "Tibor Rubin Grouping",
                   style: TextStyle(
@@ -146,8 +153,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.horizontalPosition,
+                    vertical: SizeConfig.verticalPosition),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

@@ -19,13 +19,13 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xff243C6C),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(SizeConfig.edgeInsets),
           child: Column(
             children: <Widget>[
               Container(
                 height: SizeConfig.safeBlockVertical * 35,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRadius),
                   image: DecorationImage(
                       image: AssetImage("assets/images/homelogo.png"),
                       fit: BoxFit.contain),
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(SizeConfig.edgeInsets),
                   childAspectRatio:
                       SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
                   crossAxisSpacing: 10.0,
@@ -96,8 +96,8 @@ class _HomePageState extends State<HomePage> {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(
-                24.0), // 15 works and collections looks tidier
+            borderRadius: BorderRadius.circular(SizeConfig
+                .borderRadius), // 15 works and collections looks tidier
             color: Colors.white,
           ),
           child: Stack(children: [
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
               opacity: 1.0,
               child: Container(
                 decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.circular(24.0),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRadius),
                 ),
               ),
             ),
