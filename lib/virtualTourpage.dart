@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ArticlePage extends StatefulWidget {
+class VirutalToursPage extends StatefulWidget {
   @override
-  _ArticlePageState createState() => _ArticlePageState();
+  _VirutalToursPageState createState() => _VirutalToursPageState();
 }
 
-class _ArticlePageState extends State<ArticlePage> {
+class _VirutalToursPageState extends State<VirutalToursPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +13,7 @@ class _ArticlePageState extends State<ArticlePage> {
         body: Align(
           alignment: Alignment.center,
           child: Text(
-            "Article Page",
+            "Virtual Page",
             style: TextStyle(
                 color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),
           ),
