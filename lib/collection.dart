@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'artifactCard.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
+import 'pdfView.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -178,6 +179,34 @@ class _CollectionPageState extends State<CollectionPage> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
+                child: Text(
+                  "Graphic Novel",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: ArtifactCard(
+                  imagePath: "assets/images/tibor_novel.PNG",
+                  title: "Tibor Rubin Graphic Novel",
+                  action: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PDFView(
+                                  path:
+                                      "assets/pdfs/tibor_rubin_graphic_novel.pdf",
+                                )));
+                  },
+                ),
+              )
             ],
           ),
         ));
