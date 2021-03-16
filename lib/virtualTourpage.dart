@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panorama/panorama.dart';
 
 class VirutalToursPage extends StatefulWidget {
   @override
@@ -8,15 +9,17 @@ class VirutalToursPage extends StatefulWidget {
 class _VirutalToursPageState extends State<VirutalToursPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Color(0xff243C6C),
-        body: Align(
-          alignment: Alignment.center,
-          child: Text(
-            "Virtual Page",
-            style: TextStyle(
-                color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),
-          ),
-        ));
+    return MaterialApp(
+      title: 'Panorama',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Panorama(
+        child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+        minLatitude: -20.0,
+        maxLatitude: 35.0,
+      ),
+    );
   }
 }
