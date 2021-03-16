@@ -14,18 +14,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Color(0xff243C6C),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(SizeConfig.edgeInsets),
+          padding: EdgeInsets.all(SizeConfig.edgeINSETS),
           child: Column(
             children: <Widget>[
               Container(
                 height: SizeConfig.safeBlockVertical * 35,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(SizeConfig.borderRadius),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                   image: DecorationImage(
                       image: AssetImage("assets/images/homelogo.png"),
                       fit: BoxFit.contain),
@@ -34,11 +33,11 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(SizeConfig.edgeInsets),
+                  padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                   childAspectRatio:
                       SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 20.0,
                   children: <Widget>[
                     gridItems(Icons.article, "assets/images/homelogo.png",
                         "Articles", 0),
@@ -100,7 +99,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(SizeConfig
-                .borderRadius), // 15 works and collections looks tidier
+                .borderRADIUS), // 15 works and collections looks tidier
             color: Colors.white,
           ),
           child: Stack(children: [
@@ -115,7 +114,7 @@ class _HomePageState extends State<HomePage> {
               opacity: 1.0,
               child: Container(
                 decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.circular(SizeConfig.borderRadius),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                 ),
               ),
             ),
@@ -131,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                         title,
                         style: TextStyle(
                             color: Color(0xff243C6C),
-                            fontSize: 26,
+                            fontSize: SizeConfig.fontHEADERSIZE,
                             fontWeight: FontWeight.bold),
                       )),
                     ],
