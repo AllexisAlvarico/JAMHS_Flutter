@@ -35,6 +35,8 @@ dependencies:
   webview_flutter: ^2.0.2
   carousel_slider: ^3.0.0
   model_viewer: ^0.8.1
+  advance_pdf_viewer: ^1.2.2
+  path_provider: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +58,7 @@ flutter:
     - assets/logo/
     - assets/images/
     - assets/models/
+    - assets/pdfs/
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

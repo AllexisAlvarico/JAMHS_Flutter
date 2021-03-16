@@ -41,7 +41,7 @@ class ArtifactCard extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
