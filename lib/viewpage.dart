@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ViewPage extends StatelessWidget {
-  final String img, title, desc;
-  const ViewPage({Key key, this.img, this.title, this.desc}) : super(key: key);
+  final String img, title, name, desc;
+  const ViewPage({Key key, this.img, this.title, this.name, this.desc})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +20,23 @@ class ViewPage extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.fromLTRB(15, 10, 0, 0),
                   child: Text(
-                    title,
+                    name,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(15, 10, 0, 0),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
