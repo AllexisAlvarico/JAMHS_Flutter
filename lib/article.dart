@@ -107,9 +107,11 @@ class _ArticlePageState extends State<ArticlePage> {
 
   Widget carousel() {
     return Container(
-      child: Scaffold(
-          backgroundColor: Color(0xff243C6C),
-          body: Column(children: [
+        child: Scaffold(
+      backgroundColor: Color(0xff243C6C),
+      body: Align(
+          alignment: Alignment.center,
+          child: ListView(children: <Widget>[
             CarouselSlider(
               items: imageSliders,
               options: CarouselOptions(
@@ -141,28 +143,31 @@ class _ArticlePageState extends State<ArticlePage> {
             ),
             cardView(),
           ])),
-    );
+    ));
   }
 
   //this wraps the cards
   Widget cardView() {
-    return Wrap(
-      children: data.map((data) {
-        return ArtifactCard(
-            imagePath: data.imagePath,
-            description: data.desc,
-            title: data.title,
-            action: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ViewPage(
-                            img: data.imagePath,
-                            title: data.title,
-                            desc: data.desc,
-                          )));
-            });
-      }).toList(),
+    return Container(
+      margin: EdgeInsets.fromLTRB(15, 5, 10, 5),
+      child: Wrap(
+        children: data.map((data) {
+          return ArtifactCard(
+              imagePath: data.imagePath,
+              description: data.desc,
+              title: data.title,
+              action: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ViewPage(
+                              img: data.imagePath,
+                              title: data.title,
+                              desc: data.desc,
+                            )));
+              });
+        }).toList(),
+      ),
     );
   }
 }
