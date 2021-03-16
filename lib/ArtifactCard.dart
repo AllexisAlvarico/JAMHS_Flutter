@@ -41,7 +41,7 @@ class ArtifactCard extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
@@ -61,14 +61,15 @@ class ArtifactData {
   String title;
   String name;
   String category;
+  String desc;
 
-  ArtifactData(this.imagePath, this.title, this.name, this.category);
+  ArtifactData(this.imagePath, this.title, this.name, this.category, this.desc);
 }
 
 class ModelData extends ArtifactData {
   String modelPath;
 
   ModelData(String imagePath, String title, String name, String category,
-      this.modelPath)
-      : super(imagePath, title, name, category);
+      String desc, this.modelPath)
+      : super(imagePath, title, name, category, desc);
 }

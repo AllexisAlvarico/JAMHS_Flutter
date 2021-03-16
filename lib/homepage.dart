@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'article.dart';
+import 'articlepage.dart';
 import 'collection.dart';
 import 'aboutus.dart';
 import 'size_config.dart';

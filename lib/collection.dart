@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ArtifactCard.dart';
+import 'artifactCard.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
 import 'size_config.dart';
@@ -12,7 +12,7 @@ class CollectionPage extends StatefulWidget {
 class _CollectionPageState extends State<CollectionPage> {
   List<ModelData> modelData = [
     ModelData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
-        "3D Model", "assets/models/m1911.glb")
+        "3D Model", "", "assets/models/m1911.glb")
   ];
 
   List<ArtifactData> artifactData = [
@@ -20,21 +20,27 @@ class _CollectionPageState extends State<CollectionPage> {
         "assets/images/hewbrew_artifact.jpg",
         "1930s-1940s Jewish Soldiers prayer books",
         "Hewbrew Bible",
-        "Artifacts"),
+        "Artifacts",
+        "insert text"),
     ArtifactData(
         "assets/images/moh_book.jpg",
         "T. Rubin' Programme, MoH Recipent Ceremony",
         "Medal of Honour",
-        "Artifacts")
+        "Artifacts",
+        "insert text")
   ];
 
   List<ArtifactData> rubinData = [
-    ArtifactData("assets/images/tibur_uniform.jpg",
-        "Post War Khaki 1st cav. Shirt", "Uniform", "Tibor Collection"),
+    ArtifactData(
+        "assets/images/tibur_uniform.jpg",
+        "Post War Khaki 1st cav. Shirt",
+        "Uniform",
+        "Tibor Collection",
+        "insert text"),
     ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson",
-        "Hat", "Tibor Collection"),
+        "Hat", "Tibor Collection", "insert text"),
     ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin",
-        "Military Pin", "Tibor Collection")
+        "Military Pin", "Tibor Collection", "insert text")
   ];
 
   @override
@@ -131,7 +137,7 @@ class _CollectionPageState extends State<CollectionPage> {
                                         imagePath: data.imagePath,
                                         title: data.name,
                                         category: data.category,
-                                        desc: "insert text",
+                                        desc: data.desc,
                                       )));
                         },
                       );
@@ -172,7 +178,7 @@ class _CollectionPageState extends State<CollectionPage> {
                                         imagePath: data.imagePath,
                                         title: data.name,
                                         category: data.category,
-                                        desc: "insert text",
+                                        desc: data.desc,
                                       )));
                         },
                       );
