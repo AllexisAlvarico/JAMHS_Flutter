@@ -3,10 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'article.dart';
 import 'collection.dart';
 import 'aboutus.dart';
-<<<<<<< HEAD
 import 'size_config.dart';
 import 'virtualTourpage.dart';
-import 'dart:async';
 
 class HomePage extends StatefulWidget {
   @override
