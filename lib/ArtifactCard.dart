@@ -12,7 +12,7 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 220,
+      width: 200,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         clipBehavior: Clip.antiAlias,
@@ -26,8 +26,8 @@ class ArtifactCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 160,
-                width: 220,
+                height: 220,
+                width: 200,
                 child: Image.asset(
                   imagePath,
                   fit: BoxFit.cover,
@@ -59,14 +59,15 @@ class ArtifactData {
   String title;
   String name;
   String category;
+  String desc;
 
-  ArtifactData(this.imagePath, this.title, this.name, this.category);
+  ArtifactData(this.imagePath, this.title, this.name, this.category, this.desc);
 }
 
 class ModelData extends ArtifactData {
   String modelPath;
 
   ModelData(String imagePath, String title, String name, String category,
-      this.modelPath)
-      : super(imagePath, title, name, category);
+      String desc, this.modelPath)
+      : super(imagePath, title, name, category, desc);
 }

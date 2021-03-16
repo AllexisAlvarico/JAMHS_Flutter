@@ -16,7 +16,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         primarySwatch: Colors.blue,
       ),
       home: Panorama(
-        child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+        child: Image.asset('assets/images/Test.jpg'),
       ),
     );
   }
