@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:model_viewer/model_viewer.dart';
+import 'size_config.dart';
 
 class ModelView extends StatefulWidget {
   final String src;
@@ -15,13 +16,13 @@ class _ModelViewState extends State<ModelView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: SizeConfig.backroundCOLOR,
       appBar: AppBar(
-        backgroundColor: Color(0xff243C6C),
+        backgroundColor: SizeConfig.backroundCOLOR,
         title: Text(widget.title,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 26,
+                fontSize: SizeConfig.fontHEADERSIZE,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura")),
         centerTitle: true,
@@ -30,7 +31,7 @@ class _ModelViewState extends State<ModelView> {
         src: widget.src,
         alt: widget.title,
         cameraControls: true,
-        backgroundColor: Colors.black,
+        backgroundColor: SizeConfig.backroundCOLOR,
       ),
     );
   }

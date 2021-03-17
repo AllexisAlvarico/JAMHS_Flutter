@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'articlepage.dart';
 import 'collection.dart';
 import 'aboutus.dart';
+import 'size_config.dart';
 import 'virtualTourpage.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,16 +15,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff243C6C),
+      backgroundColor: SizeConfig.backroundCOLOR,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(SizeConfig.edgeINSETS),
           child: Column(
             children: <Widget>[
               Container(
-                height: 250,
+                height: SizeConfig.safeBlockVertical * 35,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                   image: DecorationImage(
                       image: AssetImage("assets/images/homelogo.png"),
                       fit: BoxFit.contain),
@@ -32,10 +33,11 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(20.0),
-                  childAspectRatio: 0.9,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
+                  padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+                  childAspectRatio:
+                      SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
+                  crossAxisSpacing: SizeConfig.axisSPACING,
+                  mainAxisSpacing: SizeConfig.axisSPACING,
                   children: <Widget>[
                     gridItems(Icons.article, "assets/images/homelogo.png",
                         "Articles", 0),
@@ -95,9 +97,9 @@ class _HomePageState extends State<HomePage> {
           }
         },
         child: Container(
-          height: 20,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.circular(SizeConfig
+                .borderRADIUS), // 15 works and collections looks tidier
             color: Colors.white,
           ),
           child: Stack(children: [
@@ -105,14 +107,14 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.center,
                 child: Icon(
                   icon,
-                  color: Color(0xff243C6C),
-                  size: 120.0,
+                  color: SizeConfig.backroundCOLOR,
+                  size: SizeConfig.jamsLogoSize,
                 )),
             Opacity(
               opacity: 1.0,
               child: Container(
                 decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.circular(24.0),
+                  borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                 ),
               ),
             ),
@@ -127,8 +129,8 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                         title,
                         style: TextStyle(
-                            color: Color(0xff243C6C),
-                            fontSize: 26,
+                            color: SizeConfig.backroundCOLOR,
+                            fontSize: SizeConfig.fontHOMESIZE,
                             fontWeight: FontWeight.bold),
                       )),
                     ],

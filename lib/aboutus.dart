@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsPage extends StatefulWidget {
@@ -11,16 +11,16 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff243C6C),
+        backgroundColor: SizeConfig.backroundCOLOR,
         body: Align(
             alignment: Alignment.center,
             child: ListView(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                   child: Container(
-                    height: 200,
-                    width: 200,
+                    height: SizeConfig.safeBlockVertical * 35,
+                    width: SizeConfig.safeBlockHorizontal * 35,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/images/homelogo.png"),
@@ -30,18 +30,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(
-                    MediaQuery.of(context).size.width / 30.0,
+                    SizeConfig.edgeINSETS,
                   ),
                   child: Container(
-                      height: MediaQuery.of(context).size.height * 1.75,
+                      height: SizeConfig.blockSizeHorizontal * 325,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                            BorderRadius.circular(SizeConfig.borderRADIUS),
                         color: Colors.white,
                       ),
                       child: ListView(
                           physics: NeverScrollableScrollPhysics(),
                           children: [
-                            createText("About Us", 10.0, 32.0, FontWeight.bold),
+                            createText("About Us", SizeConfig.edgeINSETS,
+                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
                             createText(
                                 "The purpose of the Jewish American Military " +
                                     "Historical Society is to preserve Jewish " +
@@ -49,15 +51,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                     "impact of Jews to military and civil " +
                                     "service, and educating the public to these " +
                                     "contributions.",
-                                5.0,
-                                18.0,
+                                SizeConfig.edgeINSETS,
+                                SizeConfig.fontDISCRIPTIONSIZE,
                                 FontWeight.bold),
                             createImage(
                                 "assets/images/exbibit.png",
-                                25.0, // border's radius
-                                EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 5.0),
+                                SizeConfig.edgeINSETS, // border's radius
+                                EdgeInsets.fromLTRB(
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3,
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3),
                                 null),
-                            createText("Partners", 8.0, 32.0, FontWeight.bold),
+                            createText("Partners", SizeConfig.edgeINSETS,
+                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
                             createTriple(
                                 'assets/images/calguard.png',
                                 'assets/images/vshp.png',
@@ -65,27 +72,35 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 launchCalguard,
                                 launchVSHP,
                                 launchSiteline,
-                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
+                                EdgeInsets.fromLTRB(
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3,
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3)),
                             createText(
                                 "We've partnered with the California State Military Museum, " +
                                     "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
-                                8.0,
-                                16.0,
+                                SizeConfig.edgeINSETS,
+                                SizeConfig.fontDISCRIPTIONSIZE,
                                 FontWeight.bold),
-                            createText(
-                                "Donate Now!", 8.0, 32.0, FontWeight.bold),
+                            createText("Donate Now!", SizeConfig.edgeINSETS,
+                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
                             createText(
                                 "to the Jewish American Military Historical Society!",
-                                0.0,
-                                16.0,
+                                SizeConfig.edgeINSETS,
+                                SizeConfig.fontDISCRIPTIONSIZE,
                                 FontWeight.bold),
                             createImage(
                                 "assets/images/paypal.png",
-                                0.0,
-                                EdgeInsets.fromLTRB(50, 10, 50, 5),
+                                SizeConfig.borderRADIUS,
+                                EdgeInsets.fromLTRB(
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3,
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3),
                                 launchPaypal),
-                            createText(
-                                "Social Media", 8.0, 32.0, FontWeight.bold),
+                            createText("Social Media", SizeConfig.edgeINSETS,
+                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
                             createTriple(
                                 "assets/images/facebook.png",
                                 "assets/images/instagram.png",
@@ -93,7 +108,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 launchFacebook,
                                 launchInsta,
                                 launchTwitter,
-                                EdgeInsets.fromLTRB(50.0, 0, 50.0, 0)),
+                                EdgeInsets.fromLTRB(
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3,
+                                    SizeConfig.blockSizeHorizontal * 5,
+                                    SizeConfig.blockSizeHorizontal * 3)),
                           ])),
                 )
               ],
@@ -131,7 +150,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
         padding: padding,
         // Using ClipRRect allows us to have Images with Rounded edges.
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
           child: Image.asset(path, fit: BoxFit.cover),
         ));
   }
@@ -153,15 +172,19 @@ class _AboutUsPageState extends State<AboutUsPage> {
   createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
       functionThree, padding) {
     return Container(
-        height: 125,
+        height: SizeConfig.blockSizeVertical * 20,
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             createExpanded(pathOne, functionOne),
-            Container(width: 30, color: Colors.transparent),
+            Container(
+                width: SizeConfig.blockSizeHorizontal * 5,
+                color: Colors.transparent),
             createExpanded(pathTwo, functionTwo),
-            Container(width: 30, color: Colors.transparent),
+            Container(
+                width: SizeConfig.blockSizeHorizontal * 5,
+                color: Colors.transparent),
             createExpanded(pathThree, functionThree),
           ],
         ));

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'artifactCard.dart';
 import 'viewpage.dart';
+import 'size_config.dart';
 
 List<ArtifactData> data = [
   ArtifactData(
@@ -40,13 +41,13 @@ class _ArticlePageState extends State<ArticlePage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: Color(0xff243C6C),
+        backgroundColor: SizeConfig.backroundCOLOR,
         appBar: AppBar(
-          backgroundColor: Color(0xff2d4b87),
+          backgroundColor: SizeConfig.backroundCOLOR,
           title: Text(
             'Articles',
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: SizeConfig.fontHEADERSIZE,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -61,7 +62,11 @@ class _ArticlePageState extends State<ArticlePage> {
 
   Widget cardView() {
     return Container(
-      margin: EdgeInsets.fromLTRB(15, 5, 10, 5),
+      margin: EdgeInsets.fromLTRB(
+          SizeConfig.blockSizeHorizontal * 5,
+          SizeConfig.blockSizeHorizontal * 3,
+          SizeConfig.blockSizeHorizontal * 5,
+          SizeConfig.blockSizeHorizontal * 5),
       child: Wrap(
         children: data.map((data) {
           return ArtifactCard(
