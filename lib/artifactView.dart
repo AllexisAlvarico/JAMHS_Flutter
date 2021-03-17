@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'size_config.dart';
 
 class ArtifactView extends StatelessWidget {
   final String imagePath;
@@ -12,48 +13,53 @@ class ArtifactView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff243C6C),
+      backgroundColor: SizeConfig.backroundCOLOR, // maybe doing nothing
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                  margin: EdgeInsets.symmetric(vertical: 20),
+                  margin: EdgeInsets.symmetric(vertical: SizeConfig.edgeINSETS),
                   child: Image.asset(imagePath)),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.edgeINSETS),
                 child: Text(
                   title,
                   style: TextStyle(
-                      fontSize: 26,
+                      fontSize: SizeConfig.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.edgeINSETS,
+                    vertical: SizeConfig.edgeINSETS),
                 child: Text(
                   category,
                   style: TextStyle(
-                      fontSize: 22,
+                      fontSize: SizeConfig.fontHOMESIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: SizeConfig.edgeINSETS,
+                    vertical: SizeConfig.edgeINSETS),
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
                       desc,
-                      style: TextStyle(fontSize: 20, fontFamily: "Futura"),
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontFamily: "Futura"),
                     ),
                   ],
                 ),

@@ -66,9 +66,7 @@ class _CollectionPageState extends State<CollectionPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
                   "3D Artifacts",
                   style: TextStyle(
@@ -79,9 +77,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -105,9 +101,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
                   "Artifacts",
                   style: TextStyle(
@@ -118,9 +112,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -146,9 +138,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
                   "Tibor Rubin Grouping",
                   style: TextStyle(
@@ -159,9 +149,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -187,9 +175,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
                   "Graphic Novel",
                   style: TextStyle(
@@ -200,9 +186,7 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: SizeConfig.edgeINSETS,
-                    vertical: SizeConfig.edgeINSETS),
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: ArtifactCard(
                   imagePath: "assets/images/tibor_novel.PNG",
                   title: "Tibor Rubin Graphic Novel",

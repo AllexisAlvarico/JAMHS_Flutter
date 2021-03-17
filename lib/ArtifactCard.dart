@@ -14,13 +14,15 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return SizedBox(
-      width: SizeConfig.safeBlockVertical * 20,
+      width: SizeConfig.safeBlockVertical * 23,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
         clipBehavior: Clip.antiAlias,
         elevation: 5,
         child: InkWell(
-          splashColor: Colors.indigo[800].withOpacity(0.5),
+          splashColor:
+              Colors.indigo[800].withOpacity(0.5), // what are you doing
           onTap: () {
             action();
           },
@@ -28,15 +30,19 @@ class ArtifactCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: SizeConfig.safeBlockVertical * 15,
-                width: SizeConfig.safeBlockHorizontal * 40,
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.safeBlockHorizontal * 64,
                 child: Image.asset(
                   imagePath,
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                margin: EdgeInsets.fromLTRB(
+                    SizeConfig.blockSizeHorizontal * 2,
+                    SizeConfig.blockSizeHorizontal * 3,
+                    SizeConfig.blockSizeHorizontal * 2,
+                    SizeConfig.blockSizeHorizontal * 3),
                 child: Text(
                   title,
                   textAlign: TextAlign.center,

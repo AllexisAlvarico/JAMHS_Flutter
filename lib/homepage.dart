@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff243C6C),
+      backgroundColor: SizeConfig.backroundCOLOR,
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(SizeConfig.edgeINSETS),
@@ -36,8 +36,8 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                   childAspectRatio:
                       SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 20.0,
+                  crossAxisSpacing: SizeConfig.axisSPACING,
+                  mainAxisSpacing: SizeConfig.axisSPACING,
                   children: <Widget>[
                     gridItems(Icons.article, "assets/images/homelogo.png",
                         "Articles", 0),
@@ -107,8 +107,8 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.center,
                 child: Icon(
                   icon,
-                  color: Color(0xff243C6C),
-                  size: 120.0,
+                  color: SizeConfig.backroundCOLOR,
+                  size: SizeConfig.jamsLogoSize,
                 )),
             Opacity(
               opacity: 1.0,
@@ -129,8 +129,8 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                         title,
                         style: TextStyle(
-                            color: Color(0xff243C6C),
-                            fontSize: SizeConfig.fontHEADERSIZE,
+                            color: SizeConfig.backroundCOLOR,
+                            fontSize: SizeConfig.fontHOMESIZE,
                             fontWeight: FontWeight.bold),
                       )),
                     ],

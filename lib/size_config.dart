@@ -1,23 +1,41 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class SizeConfig {
-  static MediaQueryData _mediaQueryData;
+  //universal
+  static MediaQueryData
+      _mediaQueryData; // allows us to ask queries about the screen
   static double screenWidth;
   static double screenHeight;
-  static double blockSizeHorizontal;
-  static double blockSizeVertical;
+  static double blockSizeHorizontal; // The positional grid space horizontally
+  static double blockSizeVertical; // ^^ but vertical
 
-  static double _safeAreaHorizontal;
-  static double _safeAreaVertical;
-  static double safeBlockHorizontal;
+  static double _safeAreaHorizontal; // space without headers/footer
+  static double _safeAreaVertical; // ^^ i.e. our positional space
+  static double safeBlockHorizontal; // Our positions in that space
   static double safeBlockVertical;
-  static const double edgeINSETS = 10.0;
-  static const double borderRADIUS = 15.0;
-  static const double fontHEADERSIZE = 30;
-  static const double fontDISCRIPTIONSIZE = 18;
+
+  static const double edgeINSETS =
+      10.0; // uniform egde placement for the moment
+  static const double borderRADIUS =
+      15.0; // our incline on  our home page white container
+  static const double fontHEADERSIZE = 30; // Size for important text
+  static const double fontHOMESIZE = 25; // size for sub-important text
+  static const double fontDISCRIPTIONSIZE = 18; // Basic text size
+
+  static const Color backroundCOLOR =
+      Color(0xff243C6C); // blue in background colour
+
+  static const double axisSPACING = 20.0;
+
+  static const double jamsLogoSize = 120.0;
+  static const double insetsLEFT = 50.0;
+  static const double insetsTOP = 0.0;
+  static const double insetsRIGHT = 50.0;
+  static const double insetsBOTTOM = 0.0;
 
   void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
+    _mediaQueryData = MediaQuery.of(context); // Gets the size of our screen
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
     blockSizeHorizontal = screenWidth / 100;
