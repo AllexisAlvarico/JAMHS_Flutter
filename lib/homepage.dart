@@ -98,8 +98,7 @@ class _HomePageState extends State<HomePage> {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(SizeConfig
-                .borderRADIUS), // 15 works and collections looks tidier
+            borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
             color: Colors.white,
           ),
           child: Stack(children: [
