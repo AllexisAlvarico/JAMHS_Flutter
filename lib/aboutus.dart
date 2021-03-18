@@ -33,7 +33,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     SizeConfig.edgeINSETS,
                   ),
                   child: Container(
-                      height: SizeConfig.blockSizeHorizontal * 325,
+                      height: SizeConfig.safeBlockVertical *
+                          195, // 195 isbottom limit
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.circular(SizeConfig.borderRADIUS),
@@ -172,7 +173,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
   createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
       functionThree, padding) {
     return Container(
-        height: SizeConfig.blockSizeVertical * 20,
+        height: SizeConfig.blockSizeVertical * 15,
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

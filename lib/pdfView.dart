@@ -5,7 +5,6 @@ class PDFView extends StatefulWidget {
   final String path;
 
   PDFView({Key key, this.path}) : super(key: key);
-
   @override
   _PDFViewState createState() => _PDFViewState();
 }
@@ -90,7 +89,7 @@ class _PDFViewState extends State<PDFView> {
   loadDocument() async {
     document = await PDFDocument.fromAsset(widget.path);
     setState(() {
-      return isLoading = false;
+      isLoading = false;
     });
   }
 }
