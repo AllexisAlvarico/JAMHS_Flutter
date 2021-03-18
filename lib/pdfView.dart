@@ -4,7 +4,7 @@ import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 class PDFView extends StatefulWidget {
   final String path;
 
-  PDFView({Key key, this.path}) : super(key: key);
+  PDFView({Key? key, required this.path}) : super(key: key);
 
   @override
   _PDFViewState createState() => _PDFViewState();
@@ -12,7 +12,7 @@ class PDFView extends StatefulWidget {
 
 class _PDFViewState extends State<PDFView> {
   bool isLoading = true;
-  PDFDocument document;
+  late PDFDocument document;
 
   @override
   void initState() {
@@ -90,7 +90,7 @@ class _PDFViewState extends State<PDFView> {
   loadDocument() async {
     document = await PDFDocument.fromAsset(widget.path);
     setState(() {
-      return isLoading = false;
+      isLoading = false;
     });
   }
 }

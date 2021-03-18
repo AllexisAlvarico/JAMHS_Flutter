@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class ViewPage extends StatelessWidget {
   final String img, title, name, desc;
-  const ViewPage({Key key, this.img, this.title, this.name, this.desc})
+  const ViewPage(
+      {Key? key,
+      required this.img,
+      required this.title,
+      required this.name,
+      required this.desc})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

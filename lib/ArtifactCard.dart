@@ -6,7 +6,11 @@ class ArtifactCard extends StatelessWidget {
   final String title;
   final Function action;
 
-  const ArtifactCard({Key key, this.imagePath, this.title, this.action})
+  const ArtifactCard(
+      {required Key key,
+      required this.imagePath,
+      required this.title,
+      required this.action})
       : super(key: key);
 
   @override
@@ -18,7 +22,7 @@ class ArtifactCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         elevation: 5,
         child: InkWell(
-          splashColor: Colors.indigo[800].withOpacity(0.5),
+          splashColor: Colors.indigo[800]!.withOpacity(0.5),
           onTap: () {
             action();
           },
