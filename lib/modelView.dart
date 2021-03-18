@@ -6,7 +6,8 @@ class ModelView extends StatefulWidget {
   final String src;
   final String title;
 
-  const ModelView({Key key, this.src, this.title}) : super(key: key);
+  const ModelView({Key? key, required this.src, required this.title})
+      : super(key: key);
 
   @override
   _ModelViewState createState() => _ModelViewState();

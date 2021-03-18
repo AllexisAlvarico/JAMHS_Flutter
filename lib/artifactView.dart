@@ -7,7 +7,12 @@ class ArtifactView extends StatelessWidget {
   final String category;
   final String desc;
 
-  ArtifactView({Key key, this.imagePath, this.title, this.category, this.desc})
+  ArtifactView(
+      {Key? key,
+      required this.imagePath,
+      required this.title,
+      required this.category,
+      required this.desc})
       : super(key: key);
 
   @override
