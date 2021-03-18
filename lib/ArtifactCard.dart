@@ -60,14 +60,27 @@ class ArtifactData {
   String name;
   String category;
   String desc;
+  List<String> comments;
 
-  ArtifactData(this.imagePath, this.title, this.name, this.category, this.desc);
+  ArtifactData(
+      {this.imagePath,
+      this.title,
+      this.name,
+      this.category,
+      this.desc,
+      this.comments});
 }
 
 class ModelData extends ArtifactData {
   String modelPath;
 
-  ModelData(String imagePath, String title, String name, String category,
-      String desc, this.modelPath)
-      : super(imagePath, title, name, category, desc);
+  ModelData(
+      {String imagePath,
+      String title,
+      String name,
+      String category,
+      String desc,
+      List<String> comments,
+      this.modelPath})
+      : super();
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'artifactCard.dart';
+import 'package:jamhs_flutter/ArtifactCard.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
 import 'pdfView.dart';
@@ -11,36 +11,48 @@ class CollectionPage extends StatefulWidget {
 
 class _CollectionPageState extends State<CollectionPage> {
   List<ModelData> modelData = [
-    ModelData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
-        "3D Model", "", "assets/models/m1911.glb")
+    ModelData(
+        imagePath: "assets/images/m1911.png",
+        title: "M1911 Pistol digital model",
+        name: "M1911",
+        category: "3D Model",
+        modelPath: "assets/models/m1911.glb")
   ];
 
   List<ArtifactData> artifactData = [
     ArtifactData(
-        "assets/images/hewbrew_artifact.jpg",
-        "1930s-1940s Jewish Soldiers prayer books",
-        "Hewbrew Bible",
-        "Artifacts",
-        "insert text"),
+        imagePath: "assets/images/hewbrew_artifact.jpg",
+        title: "1930s-1940s Jewish Soldiers prayer books",
+        name: "Hewbrew Bible",
+        category: "Artifacts",
+        desc: "insert text"),
     ArtifactData(
-        "assets/images/moh_book.jpg",
-        "T. Rubin' Programme, MoH Recipent Ceremony",
-        "Medal of Honour",
-        "Artifacts",
-        "insert text")
+        imagePath: "assets/images/moh_book.jpg",
+        title: "T. Rubin' Programme, MoH Recipent Ceremony",
+        name: "Medal of Honour",
+        category: "Artifacts",
+        desc: "insert text")
   ];
 
   List<ArtifactData> rubinData = [
     ArtifactData(
-        "assets/images/tibur_uniform.jpg",
-        "Post War Khaki 1st cav. Shirt",
-        "Uniform",
-        "Tibor Collection",
-        "insert text"),
-    ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson",
-        "Hat", "Tibor Collection", "insert text"),
-    ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin",
-        "Military Pin", "Tibor Collection", "insert text")
+        imagePath: "assets/images/tibur_uniform.jpg",
+        title: "Post War Khaki 1st cav. Shirt",
+        name: "Uniform",
+        category: "Tibor Collection",
+        desc: "insert text"),
+    ArtifactData(
+        imagePath: "assets/images/tibur_hat.jpg",
+        title: "Post War Calvary Stetson",
+        name: "Hat",
+        category: "Tibor Collection",
+        desc: "insert text"),
+    ArtifactData(
+        imagePath: "assets/images/tibur_pin.jpg",
+        title: "Tibor Rubin's Challenge Coin",
+        name: "Military Pin",
+        category: "Tibor Collection",
+        desc: "insert text")
   ];
 
   @override
