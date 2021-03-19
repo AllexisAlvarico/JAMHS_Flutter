@@ -64,7 +64,13 @@ class CommentsListView extends StatelessWidget {
               child: Card(
                 color: color,
                 child: ListTile(
-                  title: Text(data[index]),
+                  title: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Text(
+                      data[index],
+                      style: TextStyle(fontFamily: "Futura"),
+                    ),
+                  ),
                 ),
               ),
             );
