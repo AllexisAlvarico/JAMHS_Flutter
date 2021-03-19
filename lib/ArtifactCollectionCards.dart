@@ -67,7 +67,7 @@ class ArtifactCollectionCard extends StatelessWidget {
     } else {
       return SizedBox(
         width: SizeConfig.safeBlockHorizontal * 30,
-        height: SizeConfig.safeBlockVertical * 50,
+        height: SizeConfig.safeBlockVertical * 60,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
