@@ -5,8 +5,10 @@ import 'size_config.dart';
 class VideoView extends StatefulWidget {
   final String src;
   final String title;
+  final String desc;
 
-  VideoView({Key? key, required this.src, required this.title})
+  VideoView(
+      {Key? key, required this.src, required this.title, required this.desc})
       : super(key: key);
 
   @override
@@ -16,8 +18,10 @@ class VideoView extends StatefulWidget {
 class _BumbleBeeRemoteVideo extends StatefulWidget {
   final String src;
   final String title;
+  final String desc;
 
-  _BumbleBeeRemoteVideo(Key? key, this.src, this.title) : super(key: key);
+  _BumbleBeeRemoteVideo(Key? key, this.src, this.title, this.desc)
+      : super(key: key);
 
   @override
   _BumbleBeeRemoteVideoState createState() => _BumbleBeeRemoteVideoState();
@@ -62,13 +66,28 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[
                   VideoPlayer(_controller),
-                  ClosedCaption(text: _controller.value.caption.text),
                   _ControlsOverlay(controller: _controller),
                   VideoProgressIndicator(_controller, allowScrubbing: true),
                 ],
               ),
             ),
           ),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(
+                    SizeConfig.blockSizeHorizontal * 3,
+                    SizeConfig.blockSizeVertical * 0,
+                    SizeConfig.blockSizeHorizontal * 3,
+                    SizeConfig.blockSizeVertical * 3),
+                child: Text(
+                  widget.desc,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontWeight: FontWeight.bold),
+                ),
+              ))
         ],
       ),
     );
@@ -164,7 +183,8 @@ class _VideoViewState extends State<VideoView> {
                 fontFamily: "Futura")),
         centerTitle: true,
       ),
-      body: _BumbleBeeRemoteVideo(widget.key, widget.src, widget.title),
+      body: _BumbleBeeRemoteVideo(
+          widget.key, widget.src, widget.title, widget.desc),
     );
   }
 }

@@ -153,6 +153,7 @@ class _CollectionPageState extends State<CollectionPage> {
                                   builder: (context) => VideoView(
                                         src: data.videoPath,
                                         title: data.name,
+                                        desc: data.desc,
                                       )));
                         },
                       );
