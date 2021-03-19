@@ -11,113 +11,242 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
-        body: Align(
-            alignment: Alignment.center,
-            child: ListView(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                  child: Container(
-                    height: SizeConfig.safeBlockVertical * 35,
-                    width: SizeConfig.safeBlockHorizontal * 35,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/homelogo.png"),
-                          fit: BoxFit.contain),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(
-                    SizeConfig.edgeINSETS,
-                  ),
-                  child: Container(
-                      height: SizeConfig.safeBlockVertical *
-                          195, // 195 isbottom limit
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(SizeConfig.borderRADIUS),
-                        color: Colors.white,
-                      ),
-                      child: ListView(
-                          physics: NeverScrollableScrollPhysics(),
-                          children: [
-                            createText("About Us", SizeConfig.edgeINSETS,
-                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                            createText(
-                                "The purpose of the Jewish American Military " +
-                                    "Historical Society is to preserve Jewish " +
-                                    "American military history, interpret the " +
-                                    "impact of Jews to military and civil " +
-                                    "service, and educating the public to these " +
-                                    "contributions.",
-                                SizeConfig.edgeINSETS,
-                                SizeConfig.fontDISCRIPTIONSIZE,
-                                FontWeight.bold),
-                            createImage(
-                                "assets/images/exbibit.png",
-                                SizeConfig.edgeINSETS, // border's radius
-                                EdgeInsets.fromLTRB(
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3,
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3),
-                                null),
-                            createText("Partners", SizeConfig.edgeINSETS,
-                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                            createTriple(
-                                'assets/images/calguard.png',
-                                'assets/images/vshp.png',
-                                'assets/images/siteline.png',
-                                launchCalguard,
-                                launchVSHP,
-                                launchSiteline,
-                                EdgeInsets.fromLTRB(
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3,
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3)),
-                            createText(
-                                "We've partnered with the California State Military Museum, " +
-                                    "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
-                                SizeConfig.edgeINSETS,
-                                SizeConfig.fontDISCRIPTIONSIZE,
-                                FontWeight.bold),
-                            createText("Donate Now!", SizeConfig.edgeINSETS,
-                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                            createText(
-                                "to the Jewish American Military Historical Society!",
-                                SizeConfig.edgeINSETS,
-                                SizeConfig.fontDISCRIPTIONSIZE,
-                                FontWeight.bold),
-                            createImage(
-                                "assets/images/paypal.png",
-                                SizeConfig.borderRADIUS,
-                                EdgeInsets.fromLTRB(
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3,
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3),
-                                launchPaypal),
-                            createText("Social Media", SizeConfig.edgeINSETS,
-                                SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                            createTriple(
-                                "assets/images/facebook.png",
-                                "assets/images/instagram.png",
-                                "assets/images/twitter.png",
-                                launchFacebook,
-                                launchInsta,
-                                launchTwitter,
-                                EdgeInsets.fromLTRB(
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3,
-                                    SizeConfig.blockSizeHorizontal * 5,
-                                    SizeConfig.blockSizeHorizontal * 3)),
-                          ])),
-                )
-              ],
-            )));
+      backgroundColor: SizeConfig.backroundCOLOR,
+      body: _layoutDetails(),
+    );
+  }
+
+  Widget _layoutDetails() {
+    Orientation orientation = MediaQuery.of(context).orientation;
+    if (orientation == Orientation.portrait) {
+      return Container(
+        child: _portrait(),
+      );
+    } else {
+      return Container(
+        child: _landscape(),
+      );
+    }
+  }
+
+  Widget _portrait() {
+    return Container(
+      alignment: Alignment.center,
+      child: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+            child: Container(
+              height: SizeConfig.safeBlockVertical * 35,
+              width: SizeConfig.safeBlockHorizontal * 35,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/homelogo.png"),
+                    fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(
+              SizeConfig.edgeINSETS,
+            ),
+            child: Container(
+              height: SizeConfig.safeBlockVertical * 195, // 195 isbottom limit
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
+                color: Colors.white,
+              ),
+              child: ListView(
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  createText("About Us", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createText(
+                      "The purpose of the Jewish American Military " +
+                          "Historical Society is to preserve Jewish " +
+                          "American military history, interpret the " +
+                          "impact of Jews to military and civil " +
+                          "service, and educating the public to these " +
+                          "contributions.",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createImage(
+                      "assets/images/exbibit.png",
+                      SizeConfig.edgeINSETS, // border's radius
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3),
+                      null),
+                  createText("Partners", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createTriple(
+                      'assets/images/calguard.png',
+                      'assets/images/vshp.png',
+                      'assets/images/siteline.png',
+                      launchCalguard,
+                      launchVSHP,
+                      launchSiteline,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3)),
+                  createText(
+                      "We've partnered with the California State Military Museum, " +
+                          "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createText("Donate Now!", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createText(
+                      "to the Jewish American Military Historical Society!",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createImage(
+                      "assets/images/paypal.png",
+                      SizeConfig.borderRADIUS,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3),
+                      launchPaypal),
+                  createText("Social Media", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createTriple(
+                      "assets/images/facebook.png",
+                      "assets/images/instagram.png",
+                      "assets/images/twitter.png",
+                      launchFacebook,
+                      launchInsta,
+                      launchTwitter,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3)),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _landscape() {
+    return Container(
+      alignment: Alignment.center,
+      child: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+            child: Container(
+              height: SizeConfig.safeBlockVertical * 50,
+              width: SizeConfig.safeBlockHorizontal * 35,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/homelogo.png"),
+                    fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(
+              SizeConfig.edgeINSETS,
+            ),
+            child: Container(
+              height: SizeConfig.safeBlockVertical * 430, // 195 isbottom limit
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
+                color: Colors.white,
+              ),
+              child: ListView(
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  createText("About Us", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createText(
+                      "The purpose of the Jewish American Military " +
+                          "Historical Society is to preserve Jewish " +
+                          "American military history, interpret the " +
+                          "impact of Jews to military and civil " +
+                          "service, and educating the public to these " +
+                          "contributions.",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createImage(
+                      "assets/images/exbibit.png",
+                      SizeConfig.edgeINSETS, // border's radius
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3),
+                      null),
+                  createText("Partners", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createTriple(
+                      'assets/images/calguard.png',
+                      'assets/images/vshp.png',
+                      'assets/images/siteline.png',
+                      launchCalguard,
+                      launchVSHP,
+                      launchSiteline,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3)),
+                  createText(
+                      "We've partnered with the California State Military Museum, " +
+                          "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createText("Donate Now!", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createText(
+                      "to the Jewish American Military Historical Society!",
+                      SizeConfig.edgeINSETS,
+                      SizeConfig.fontDISCRIPTIONSIZE,
+                      FontWeight.bold),
+                  createImage(
+                      "assets/images/paypal.png",
+                      SizeConfig.borderRADIUS,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3),
+                      launchPaypal),
+                  createText("Social Media", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createTriple(
+                      "assets/images/facebook.png",
+                      "assets/images/instagram.png",
+                      "assets/images/twitter.png",
+                      launchFacebook,
+                      launchInsta,
+                      launchTwitter,
+                      EdgeInsets.fromLTRB(
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3,
+                          SizeConfig.blockSizeHorizontal * 5,
+                          SizeConfig.blockSizeHorizontal * 3)),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   // Creates a text element with padding
@@ -173,7 +302,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
   createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
       functionThree, padding) {
     return Container(
-        height: SizeConfig.blockSizeVertical * 15,
+        height: SizeConfig.blockSizeVertical * 30,
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
