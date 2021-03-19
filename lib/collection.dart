@@ -17,8 +17,27 @@ class _CollectionPageState extends State<CollectionPage> {
   ];
 
   List<VideoData> videoData = [
-    VideoData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
-        "3D Model", "", "assets/models/m1911.glb")
+    VideoData(
+        "assets/videos/thumb1.png",
+        "Alpert Jewish Community Center Veterans Day Promo",
+        "Promo",
+        "Video",
+        "Join Us November 11th for a special veterans day program in partnership with the Alpert JCC of Long Beach, California.",
+        "assets/videos/video1.mp4"),
+    VideoData(
+        "assets/videos/thumb2.png",
+        "Gliding into The Netherlands, September 17th, 1944",
+        "Gliding into The Netherlands",
+        "Video",
+        "Preview segment of LTC (R) Sam Sachs of his experience during operation market garden",
+        "assets/videos/video2.mp4"),
+    VideoData(
+        "assets/videos/thumb3.png",
+        "Alpert Jewish Community Center Veterans Day Promo",
+        "Promo",
+        "Video",
+        "Throughout the month of June 2020, The Jewish American Military Historical Society in partnership with World War 2 Veteran Memories' Project, interviewed Lieutenant Colonel (Retired) Sam Sachs.",
+        "assets/videos/video3.mp4")
   ];
 
   List<ArtifactData> artifactData = [
@@ -97,6 +116,41 @@ class _CollectionPageState extends State<CollectionPage> {
                               MaterialPageRoute(
                                   builder: (context) => ModelView(
                                         src: data.modelPath,
+                                        title: data.name,
+                                      )));
+                        },
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+                child: Text(
+                  "3D Artifacts",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: videoData.map((data) {
+                      return ArtifactCard(
+                        imagePath: data.imagePath,
+                        title: data.title,
+                        action: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ModelView(
+                                        src: data.videoPath,
                                         title: data.name,
                                       )));
                         },
