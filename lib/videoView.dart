@@ -13,8 +13,39 @@ class VideoView extends StatefulWidget {
   _VideoViewState createState() => _VideoViewState();
 }
 
-class _VideoViewState extends State<VideoView> {
+class _BumbleBeeRemoteVideo extends StatefulWidget {
+  final String src;
+  final String title;
+
+  _BumbleBeeRemoteVideo(Key? key, this.src, this.title) : super(key: key);
+
+  @override
+  _BumbleBeeRemoteVideoState createState() => _BumbleBeeRemoteVideoState();
+}
+
+class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
   late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset(
+      widget.src,
+      videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
+    );
+
+    _controller.addListener(() {
+      setState(() {});
+    });
+    _controller.setLooping(false);
+    _controller.initialize();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +73,6 @@ class _VideoViewState extends State<VideoView> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 }
 
 class _ControlsOverlay extends StatelessWidget {
@@ -55,10 +80,12 @@ class _ControlsOverlay extends StatelessWidget {
       : super(key: key);
 
   static const _examplePlaybackRates = [
+    0.25,
     0.5,
     1.0,
     1.5,
     2.0,
+    3.0,
   ];
 
   final VideoPlayerController controller;
@@ -118,6 +145,26 @@ class _ControlsOverlay extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _VideoViewState extends State<VideoView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: SizeConfig.backroundCOLOR,
+      appBar: AppBar(
+        backgroundColor: SizeConfig.backroundCOLOR,
+        title: Text(widget.title,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: SizeConfig.fontHEADERSIZE,
+                fontWeight: FontWeight.bold,
+                fontFamily: "Futura")),
+        centerTitle: true,
+      ),
+      body: _BumbleBeeRemoteVideo(widget.key, widget.src, widget.title),
     );
   }
 }

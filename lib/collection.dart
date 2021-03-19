@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamhs_flutter/videoView.dart';
 import 'artifactCard.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
@@ -23,21 +24,21 @@ class _CollectionPageState extends State<CollectionPage> {
         "Promo",
         "Video",
         "Join Us November 11th for a special veterans day program in partnership with the Alpert JCC of Long Beach, California.",
-        "assets/videos/video1.mp4"),
+        "assets/videos/vid1.mp4"),
     VideoData(
         "assets/videos/thumb2.png",
         "Gliding into The Netherlands, September 17th, 1944",
         "Gliding into The Netherlands",
         "Video",
         "Preview segment of LTC (R) Sam Sachs of his experience during operation market garden",
-        "assets/videos/video2.mp4"),
+        "assets/videos/vid2.mp4"),
     VideoData(
         "assets/videos/thumb3.png",
-        "Alpert Jewish Community Center Veterans Day Promo",
-        "Promo",
+        "LTC (R) Sam Sachs Early Life Trailer",
+        "Sam Sachs Early Life",
         "Video",
         "Throughout the month of June 2020, The Jewish American Military Historical Society in partnership with World War 2 Veteran Memories' Project, interviewed Lieutenant Colonel (Retired) Sam Sachs.",
-        "assets/videos/video3.mp4")
+        "assets/videos/vid3.mp4")
   ];
 
   List<ArtifactData> artifactData = [
@@ -127,7 +128,7 @@ class _CollectionPageState extends State<CollectionPage> {
               Padding(
                 padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
-                  "3D Artifacts",
+                  "Video Artifacts",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: SizeConfig.fontHEADERSIZE,
@@ -149,7 +150,7 @@ class _CollectionPageState extends State<CollectionPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ModelView(
+                                  builder: (context) => VideoView(
                                         src: data.videoPath,
                                         title: data.name,
                                       )));
