@@ -5,14 +5,15 @@ import 'package:jamhs_flutter/size_config.dart';
 class PDFView extends StatefulWidget {
   final String path;
 
-  PDFView({Key key, this.path}) : super(key: key);
+  PDFView({Key? key, required this.path}) : super(key: key);
+
   @override
   _PDFViewState createState() => _PDFViewState();
 }
 
 class _PDFViewState extends State<PDFView> {
   bool isLoading = true;
-  PDFDocument document;
+  late PDFDocument document;
 
   @override
   void initState() {

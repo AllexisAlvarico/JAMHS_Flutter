@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 
 class SizeConfig {
   //universal
-  static MediaQueryData
+  static late MediaQueryData
       _mediaQueryData; // allows us to ask queries about the screen
-  static double screenWidth;
-  static double screenHeight;
-  static double blockSizeHorizontal; // The positional grid space horizontally
-  static double blockSizeVertical; // ^^ but vertical
+  static double screenWidth = 0.0;
+  static double screenHeight = 0.0;
+  static double blockSizeHorizontal =
+      0.0; // The positional grid space horizontally
+  static double blockSizeVertical = 0.0; // ^^ but vertical
 
-  static double _safeAreaHorizontal; // space without headers/footer
-  static double _safeAreaVertical; // ^^ i.e. our positional space
-  static double safeBlockHorizontal; // Our positions in that space
-  static double safeBlockVertical;
+  static double _safeAreaHorizontal = 0.0; // space without headers/footer
+  static double _safeAreaVertical = 0.0; // ^^ i.e. our positional space
+  static double safeBlockHorizontal = 0.0; // Our positions in that space
+  static double safeBlockVertical = 0.0;
 
   static const double edgeINSETS =
       10.0; // uniform egde placement for the moment

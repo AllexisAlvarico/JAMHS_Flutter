@@ -8,7 +8,10 @@ class ArtifactCollectionCard extends StatelessWidget {
   final Function action;
 
   const ArtifactCollectionCard(
-      {Key key, this.imagePath, this.title, this.action})
+      {Key? key,
+      required this.imagePath,
+      required this.title,
+      required this.action})
       : super(key: key);
 
   @override
@@ -26,7 +29,7 @@ class ArtifactCollectionCard extends StatelessWidget {
           elevation: 5,
           child: InkWell(
             splashColor:
-                Colors.indigo[800].withOpacity(0.5), // what are you doing
+                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
             onTap: () {
               action();
             },
@@ -64,7 +67,7 @@ class ArtifactCollectionCard extends StatelessWidget {
     } else {
       return SizedBox(
         width: SizeConfig.safeBlockHorizontal * 30,
-        height: SizeConfig.safeBlockVertical * 50,
+        height: SizeConfig.safeBlockVertical * 60,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -72,7 +75,7 @@ class ArtifactCollectionCard extends StatelessWidget {
           elevation: 5,
           child: InkWell(
             splashColor:
-                Colors.indigo[800].withOpacity(0.5), // what are you doing
+                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
             onTap: () {
               action();
             },
@@ -129,5 +132,13 @@ class ModelData extends ArtifactCollectionData {
 
   ModelData(String imagePath, String title, String name, String category,
       String desc, this.modelPath)
+      : super(imagePath, title, name, category, desc);
+}
+
+class VideoData extends ArtifactCollectionData {
+  String videoPath;
+
+  VideoData(String imagePath, String title, String name, String category,
+      String desc, this.videoPath)
       : super(imagePath, title, name, category, desc);
 }

@@ -7,7 +7,11 @@ class ArtifactArticlesCard extends StatelessWidget {
   final String title;
   final Function action;
 
-  const ArtifactArticlesCard({Key key, this.imagePath, this.title, this.action})
+  const ArtifactArticlesCard(
+      {Key? key,
+      required this.imagePath,
+      required this.title,
+      required this.action})
       : super(key: key);
 
   @override
@@ -25,7 +29,7 @@ class ArtifactArticlesCard extends StatelessWidget {
           elevation: 5,
           child: InkWell(
             splashColor:
-                Colors.indigo[800].withOpacity(0.5), // what are you doing
+                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
             onTap: () {
               action();
             },
@@ -71,7 +75,7 @@ class ArtifactArticlesCard extends StatelessWidget {
           elevation: 5,
           child: InkWell(
             splashColor:
-                Colors.indigo[800].withOpacity(0.5), // what are you doing
+                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
             onTap: () {
               action();
             },
@@ -129,5 +133,13 @@ class ModelData extends ArtifactArticlesData {
 
   ModelData(String imagePath, String title, String name, String category,
       String desc, this.modelPath)
+      : super(imagePath, title, name, category, desc);
+}
+
+class VideoData extends ArtifactArticlesData {
+  String videoPath;
+
+  VideoData(String imagePath, String title, String name, String category,
+      String desc, this.videoPath)
       : super(imagePath, title, name, category, desc);
 }
