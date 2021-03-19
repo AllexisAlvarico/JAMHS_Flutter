@@ -51,7 +51,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               SizeConfig.edgeINSETS,
             ),
             child: Container(
-              height: SizeConfig.safeBlockVertical * 195, // 195 isbottom limit
+              height: SizeConfig.safeBlockVertical * 230, // 195 isbottom limit
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                 color: Colors.white,

@@ -80,9 +80,9 @@ class _ArticlePageState extends State<ArticlePage> {
     return Container(
       margin: EdgeInsets.fromLTRB(
           SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeHorizontal * 3,
+          SizeConfig.blockSizeHorizontal * 1,
           SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeHorizontal * 5),
+          SizeConfig.blockSizeHorizontal * 1),
       child: Wrap(
         children: data.map((data) {
           return ArtifactArticlesCard(
@@ -105,29 +105,31 @@ class _ArticlePageState extends State<ArticlePage> {
   }
 
   Widget _cardLandscapeView() {
-    return Container(
-      margin: EdgeInsets.fromLTRB(
-          SizeConfig.blockSizeHorizontal * 10,
-          SizeConfig.blockSizeVertical * 10,
-          SizeConfig.blockSizeHorizontal * 10,
-          SizeConfig.blockSizeVertical * 10),
-      child: Wrap(
-        children: data.map((data) {
-          return ArtifactArticlesCard(
-              imagePath: data.imagePath,
-              title: data.title,
-              action: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ViewPage(
-                              img: data.imagePath,
-                              title: data.category,
-                              name: data.name,
-                              desc: data.desc,
-                            )));
-              });
-        }).toList(),
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.fromLTRB(
+            SizeConfig.blockSizeHorizontal * 5,
+            SizeConfig.blockSizeHorizontal * 1,
+            SizeConfig.blockSizeHorizontal * 5,
+            SizeConfig.blockSizeHorizontal * 1),
+        child: Wrap(
+          children: data.map((data) {
+            return ArtifactArticlesCard(
+                imagePath: data.imagePath,
+                title: data.title,
+                action: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewPage(
+                                img: data.imagePath,
+                                title: data.category,
+                                name: data.name,
+                                desc: data.desc,
+                              )));
+                });
+          }).toList(),
+        ),
       ),
     );
   }

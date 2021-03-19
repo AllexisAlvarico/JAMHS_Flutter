@@ -62,8 +62,8 @@ class ArtifactArticlesCard extends StatelessWidget {
       );
     } else {
       return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 20,
-        height: SizeConfig.safeBlockVertical * 68,
+        width: SizeConfig.blockSizeHorizontal * 25,
+        height: SizeConfig.blockSizeVertical * 80,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -79,8 +79,8 @@ class ArtifactArticlesCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: SizeConfig.blockSizeVertical * 30,
-                  width: SizeConfig.blockSizeHorizontal * 19,
+                  height: SizeConfig.blockSizeVertical * 50,
+                  width: SizeConfig.blockSizeHorizontal * 25,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -89,12 +89,13 @@ class ArtifactArticlesCard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.fromLTRB(
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3,
+                      SizeConfig.blockSizeVertical * 1,
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3),
+                      SizeConfig.blockSizeVertical * 1),
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
+                    softWrap: true,
                     style: TextStyle(
                         fontSize: SizeConfig.fontDISCRIPTIONSIZE,
                         fontWeight: FontWeight.bold,
