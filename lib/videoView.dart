@@ -76,10 +76,11 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
               alignment: Alignment.centerLeft,
               child: Container(
                 padding: EdgeInsets.fromLTRB(
-                    SizeConfig.blockSizeHorizontal * 3,
+                    SizeConfig.blockSizeHorizontal * 20,
                     SizeConfig.blockSizeVertical * 0,
-                    SizeConfig.blockSizeHorizontal * 3,
-                    SizeConfig.blockSizeVertical * 3),
+                    SizeConfig.blockSizeHorizontal * 20,
+                    SizeConfig.blockSizeVertical * 2),
+                color: Color.fromARGB(255, 255, 255, 255),
                 child: Text(
                   widget.desc,
                   style: TextStyle(

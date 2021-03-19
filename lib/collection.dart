@@ -128,7 +128,7 @@ class _CollectionPageState extends State<CollectionPage> {
               Padding(
                 padding: EdgeInsets.all(SizeConfig.edgeINSETS),
                 child: Text(
-                  "Video Artifacts",
+                  "Oral History",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: SizeConfig.fontHEADERSIZE,
