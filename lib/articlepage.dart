@@ -253,7 +253,7 @@ class _ArticlePageState extends State<ArticlePage> {
             ),
           ),
         ),
-        body: SingleChildScrollView(child: Container(child: cardView())),
+        body: _layoutDetails(),
       ),
     );
   }
@@ -274,29 +274,31 @@ class _ArticlePageState extends State<ArticlePage> {
   //this wraps the cards
 
   Widget _cardPorttraitView() {
-    return Container(
-      margin: EdgeInsets.fromLTRB(
-          SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeHorizontal * 1,
-          SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeHorizontal * 1),
-      child: Wrap(
-        children: data.map((data) {
-          return ArtifactArticlesCard(
-              imagePath: data.imagePath,
-              title: data.title,
-              action: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ViewPage(
-                              img: data.imagePath,
-                              title: data.category,
-                              name: data.name,
-                              desc: data.desc,
-                            )));
-              });
-        }).toList(),
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.fromLTRB(
+            SizeConfig.blockSizeHorizontal * 5,
+            SizeConfig.blockSizeHorizontal * 1,
+            SizeConfig.blockSizeHorizontal * 5,
+            SizeConfig.blockSizeHorizontal * 1),
+        child: Wrap(
+          children: data.map((data) {
+            return ArtifactArticlesCard(
+                imagePath: data.imagePath,
+                title: data.title,
+                action: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewPage(
+                                img: data.imagePath,
+                                title: data.category,
+                                name: data.name,
+                                desc: data.desc,
+                              )));
+                });
+          }).toList(),
+        ),
       ),
     );
   }
