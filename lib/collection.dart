@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/videoView.dart';
 import 'artifactCard.dart';
+import 'ArtifactCollectionCards.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
 import 'size_config.dart';
@@ -40,15 +41,14 @@ class _CollectionPageState extends State<CollectionPage> {
         "Throughout the month of June 2020, The Jewish American Military Historical Society in partnership with World War 2 Veteran Memories' Project, interviewed Lieutenant Colonel (Retired) Sam Sachs.",
         "assets/videos/vid3.mp4")
   ];
-
-  List<ArtifactData> artifactData = [
-    ArtifactData(
+  List<ArtifactCollectionData> artifactData = [
+    ArtifactCollectionData(
         "assets/images/hewbrew_artifact.jpg",
         "1930s-1940s Jewish Soldiers prayer books",
         "Hewbrew Bible",
         "Artifacts",
         "insert text"),
-    ArtifactData(
+    ArtifactCollectionData(
         "assets/images/moh_book.jpg",
         "T. Rubin' Programme, MoH Recipent Ceremony",
         "Medal of Honour",
@@ -56,17 +56,21 @@ class _CollectionPageState extends State<CollectionPage> {
         "insert text")
   ];
 
-  List<ArtifactData> rubinData = [
-    ArtifactData(
+  List<ArtifactCollectionData> rubinData = [
+    ArtifactCollectionData(
         "assets/images/tibur_uniform.jpg",
         "Post War Khaki 1st cav. Shirt",
         "Uniform",
         "Tibor Collection",
         "insert text"),
-    ArtifactData("assets/images/tibur_hat.jpg", "Post War Calvary Stetson",
-        "Hat", "Tibor Collection", "insert text"),
-    ArtifactData("assets/images/tibur_pin.jpg", "Tibor Rubin's Challenge Coin",
-        "Military Pin", "Tibor Collection", "insert text")
+    ArtifactCollectionData("assets/images/tibur_hat.jpg",
+        "Post War Calvary Stetson", "Hat", "Tibor Collection", "insert text"),
+    ArtifactCollectionData(
+        "assets/images/tibur_pin.jpg",
+        "Tibor Rubin's Challenge Coin",
+        "Military Pin",
+        "Tibor Collection",
+        "insert text")
   ];
 
   @override
@@ -108,7 +112,7 @@ class _CollectionPageState extends State<CollectionPage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: modelData.map((data) {
-                      return ArtifactCard(
+                      return ArtifactCollectionCard(
                         imagePath: data.imagePath,
                         title: data.title,
                         action: () {
@@ -179,7 +183,7 @@ class _CollectionPageState extends State<CollectionPage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: artifactData.map((data) {
-                      return ArtifactCard(
+                      return ArtifactCollectionCard(
                         imagePath: data.imagePath,
                         title: data.title,
                         action: () {
@@ -216,7 +220,7 @@ class _CollectionPageState extends State<CollectionPage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: rubinData.map((data) {
-                      return ArtifactCard(
+                      return ArtifactCollectionCard(
                         imagePath: data.imagePath,
                         title: data.title,
                         action: () {
@@ -248,7 +252,7 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: ArtifactCard(
+                child: ArtifactCollectionCard(
                   imagePath: "assets/images/tibor_novel.PNG",
                   title: "Tibor Rubin Graphic Novel",
                   action: () {
