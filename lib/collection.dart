@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/videoView.dart';
-import 'artifactCard.dart';
 import 'ArtifactCollectionCards.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
