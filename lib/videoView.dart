@@ -99,12 +99,10 @@ class _ControlsOverlay extends StatelessWidget {
       : super(key: key);
 
   static const _examplePlaybackRates = [
-    0.25,
     0.5,
     1.0,
     1.5,
     2.0,
-    3.0,
   ];
 
   final VideoPlayerController controller;
@@ -147,7 +145,11 @@ class _ControlsOverlay extends StatelessWidget {
                 for (final speed in _examplePlaybackRates)
                   PopupMenuItem(
                     value: speed,
-                    child: Text('${speed}x'),
+                    child: Text('${speed}x',
+                        style: TextStyle(
+                            fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold)),
                   )
               ];
             },
@@ -159,7 +161,11 @@ class _ControlsOverlay extends StatelessWidget {
                 vertical: 12,
                 horizontal: 16,
               ),
-              child: Text('${controller.value.playbackSpeed}x'),
+              child: Text('${controller.value.playbackSpeed}x',
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
             ),
           ),
         ),
