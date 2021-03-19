@@ -31,7 +31,7 @@ class _SplashState extends State<_SplashScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Color(0xff243C6C),
+      backgroundColor: SizeConfig.backroundCOLOR,
       body: Center(
         child: Image.asset('assets/logo/jamhs.jpg'),
       ),
