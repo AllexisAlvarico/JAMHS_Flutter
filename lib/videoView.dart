@@ -15,19 +15,18 @@ class VideoView extends StatefulWidget {
   _VideoViewState createState() => _VideoViewState();
 }
 
-class _BumbleBeeRemoteVideo extends StatefulWidget {
+class _RemoteVideo extends StatefulWidget {
   final String src;
   final String title;
   final String desc;
 
-  _BumbleBeeRemoteVideo(Key? key, this.src, this.title, this.desc)
-      : super(key: key);
+  _RemoteVideo(Key? key, this.src, this.title, this.desc) : super(key: key);
 
   @override
-  _BumbleBeeRemoteVideoState createState() => _BumbleBeeRemoteVideoState();
+  _RemoteVideoState createState() => _RemoteVideoState();
 }
 
-class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
+class _RemoteVideoState extends State<_RemoteVideo> {
   late VideoPlayerController _controller;
 
   @override
@@ -189,8 +188,7 @@ class _VideoViewState extends State<VideoView> {
                 fontFamily: "Futura")),
         centerTitle: true,
       ),
-      body: _BumbleBeeRemoteVideo(
-          widget.key, widget.src, widget.title, widget.desc),
+      body: _RemoteVideo(widget.key, widget.src, widget.title, widget.desc),
     );
   }
 }
