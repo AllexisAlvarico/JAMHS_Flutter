@@ -90,5 +90,11 @@ class ModelData extends ArtifactData {
       String desc,
       List<String> comments,
       this.modelPath})
-      : super();
+      : super(
+            imagePath: imagePath,
+            title: title,
+            name: name,
+            category: category,
+            desc: desc,
+            comments: comments);
 }

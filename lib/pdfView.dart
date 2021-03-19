@@ -90,7 +90,7 @@ class _PDFViewState extends State<PDFView> {
   loadDocument() async {
     document = await PDFDocument.fromAsset(widget.path);
     setState(() {
-      return isLoading = false;
+      isLoading = false;
     });
   }
 }

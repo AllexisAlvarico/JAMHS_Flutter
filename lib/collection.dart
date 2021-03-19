@@ -136,16 +136,19 @@ class _CollectionPageState extends State<CollectionPage> {
                       return ArtifactCard(
                         imagePath: data.imagePath,
                         title: data.title,
-                        action: () {
-                          Navigator.push(
+                        action: () async {
+                          final dynamic result = Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ArtifactView(
-                                        imagePath: data.imagePath,
-                                        title: data.name,
-                                        category: data.category,
-                                        desc: data.desc,
+                                        data: ArtifactData(
+                                          imagePath: data.imagePath,
+                                          title: data.name,
+                                          category: data.category,
+                                          desc: data.desc,
+                                        ),
                                       )));
+                          data.comments = result;
                         },
                       );
                     }).toList(),
@@ -175,16 +178,18 @@ class _CollectionPageState extends State<CollectionPage> {
                       return ArtifactCard(
                         imagePath: data.imagePath,
                         title: data.title,
-                        action: () {
-                          Navigator.push(
+                        action: () async {
+                          final dynamic result = Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ArtifactView(
+                                          data: ArtifactData(
                                         imagePath: data.imagePath,
                                         title: data.name,
                                         category: data.category,
                                         desc: data.desc,
-                                      )));
+                                      ))));
+                          data.comments = result;
                         },
                       );
                     }).toList(),
