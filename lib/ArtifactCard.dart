@@ -83,3 +83,11 @@ class ModelData extends ArtifactData {
       String desc, this.modelPath)
       : super(imagePath, title, name, category, desc);
 }
+
+class VideoData extends ArtifactData {
+  String videoPath;
+
+  VideoData(String imagePath, String title, String name, String category,
+      String desc, this.videoPath)
+      : super(imagePath, title, name, category, desc);
+}

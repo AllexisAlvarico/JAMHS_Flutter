@@ -16,6 +16,11 @@ class _CollectionPageState extends State<CollectionPage> {
         "3D Model", "", "assets/models/m1911.glb")
   ];
 
+  List<VideoData> videoData = [
+    VideoData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
+        "3D Model", "", "assets/models/m1911.glb")
+  ];
+
   List<ArtifactData> artifactData = [
     ArtifactData(
         "assets/images/hewbrew_artifact.jpg",
