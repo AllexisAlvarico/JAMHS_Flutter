@@ -126,3 +126,11 @@ class ArtifactCollectionData {
   ArtifactCollectionData(
       this.imagePath, this.title, this.name, this.category, this.desc);
 }
+
+class VideoData extends ArtifactCollectionData {
+  String videoPath;
+
+  VideoData(String imagePath, String title, String name, String category,
+      String desc, this.videoPath)
+      : super(imagePath, title, name, category, desc);
+}

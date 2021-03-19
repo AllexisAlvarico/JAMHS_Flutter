@@ -76,198 +76,199 @@ class _CollectionPageState extends State<CollectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff243C6C),
+      appBar: AppBar(
         backgroundColor: Color(0xff243C6C),
-        appBar: AppBar(
-          backgroundColor: Color(0xff243C6C),
-          title: Text(
-            "Collections",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: SizeConfig.fontHEADERSIZE,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Futura"),
-          ),
-          centerTitle: true,
+        title: Text(
+          "Collections",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: SizeConfig.fontHEADERSIZE,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Futura"),
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: Text(
-                  "3D Artifacts",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: Text(
+                "3D Artifacts",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.fontHEADERSIZE,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Futura"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: modelData.map((data) {
+                    return ArtifactCollectionCard(
+                      imagePath: data.imagePath,
+                      title: data.title,
+                      action: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ModelView(
+                                      src: data.modelPath,
+                                      title: data.name,
+                                    )));
+                      },
+                    );
+                  }).toList(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: modelData.map((data) {
-                      return ArtifactCollectionCard(
-                        imagePath: data.imagePath,
-                        title: data.title,
-                        action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ModelView(
-                                        src: data.modelPath,
-                                        title: data.name,
-                                      )));
-                        },
-                      );
-                    }).toList(),
-                  ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: Text(
+                "Oral History",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.fontHEADERSIZE,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Futura"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: videoData.map((data) {
+                    return ArtifactCollectionCard(
+                      imagePath: data.imagePath,
+                      title: data.title,
+                      action: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VideoView(
+                                      src: data.videoPath,
+                                      title: data.name,
+                                      desc: data.desc,
+                                    )));
+                      },
+                    );
+                  }).toList(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: Text(
-                  "Oral History",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: Text(
+                "Artifacts",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.fontHEADERSIZE,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Futura"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: artifactData.map((data) {
+                    return ArtifactCollectionCard(
+                      imagePath: data.imagePath,
+                      title: data.title,
+                      action: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ArtifactView(
+                                      imagePath: data.imagePath,
+                                      title: data.name,
+                                      category: data.category,
+                                      desc: data.desc,
+                                    )));
+                      },
+                    );
+                  }).toList(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: videoData.map((data) {
-                      return ArtifactCard(
-                        imagePath: data.imagePath,
-                        title: data.title,
-                        action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => VideoView(
-                                        src: data.videoPath,
-                                        title: data.name,
-                                        desc: data.desc,
-                                      )));
-                        },
-                      );
-                    }).toList(),
-                  ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: Text(
+                "Tibor Rubin Grouping",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.fontHEADERSIZE,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Futura"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: rubinData.map((data) {
+                    return ArtifactCollectionCard(
+                      imagePath: data.imagePath,
+                      title: data.title,
+                      action: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ArtifactView(
+                                      imagePath: data.imagePath,
+                                      title: data.name,
+                                      category: data.category,
+                                      desc: data.desc,
+                                    )));
+                      },
+                    );
+                  }).toList(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: Text(
-                  "Artifacts",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: Text(
+                "Graphic Novel",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.fontHEADERSIZE,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Futura"),
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: artifactData.map((data) {
-                      return ArtifactCollectionCard(
-                        imagePath: data.imagePath,
-                        title: data.title,
-                        action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ArtifactView(
-                                        imagePath: data.imagePath,
-                                        title: data.name,
-                                        category: data.category,
-                                        desc: data.desc,
-                                      )));
-                        },
-                      );
-                    }).toList(),
-                  ),
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+              child: ArtifactCollectionCard(
+                imagePath: "assets/images/tibor_novel.PNG",
+                title: "Tibor Rubin Graphic Novel",
+                action: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PDFView(
+                                path:
+                                    "assets/pdfs/tibor_rubin_graphic_novel.pdf",
+                              )));
+                },
               ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: Text(
-                  "Tibor Rubin Grouping",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: rubinData.map((data) {
-                      return ArtifactCollectionCard(
-                        imagePath: data.imagePath,
-                        title: data.title,
-                        action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ArtifactView(
-                                        imagePath: data.imagePath,
-                                        title: data.name,
-                                        category: data.category,
-                                        desc: data.desc,
-                                      )));
-                        },
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: Text(
-                  "Graphic Novel",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                child: ArtifactCollectionCard(
-                  imagePath: "assets/images/tibor_novel.PNG",
-                  title: "Tibor Rubin Graphic Novel",
-                  action: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PDFView(
-                                  path:
-                                      "assets/pdfs/tibor_rubin_graphic_novel.pdf",
-                                )));
-                  },
-                ),
-              )
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
