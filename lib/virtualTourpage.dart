@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:panorama/panorama.dart';
+import 'size_config.dart';
 
 class VirutalToursPage extends StatefulWidget {
   @override
@@ -10,7 +11,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
   double _lon = 0;
   double _lat = 0;
   double _tilt = 0;
-  int _panoId = 0;
+  int _displayId = 0;
+  bool _panoView = true;
 
   void onViewChanged(longitude, latitude, tilt) {
     setState(() {
@@ -62,7 +64,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
       home: Panorama(
         onViewChanged: onViewChanged,
         onTap: (longitude, latitude, tilt) =>
-            print('onTap: $longitude, $latitude, $tilt, $_panoId'),
+            print('onTap: $longitude, $latitude, $tilt, $_displayId'),
         child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
         minLatitude: -20.0,
         maxLatitude: 35.0,
@@ -76,7 +78,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Benjamin Display",
@@ -87,7 +89,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Isaac Simon Display",
@@ -98,7 +100,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "David Display",
@@ -109,7 +111,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Leopold Display",
@@ -120,7 +122,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Henry Display",
@@ -131,7 +133,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Sam Ben Display",
@@ -142,7 +144,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Sydney Display",
@@ -153,7 +155,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Bill Ben Display",
@@ -164,7 +166,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Ray Isadore Display",
@@ -175,7 +177,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Tibor Ruben Display",
@@ -186,7 +188,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "Jack Display",
@@ -197,7 +199,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
           Hotspot(
             name: "John Display",
@@ -208,7 +210,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             widget: hotspotButton(
                 text: "Expand",
                 icon: Icons.zoom_in,
-                onPressed: () => setState(() => _panoId++)),
+                onPressed: () => setState(() => _panoView = false)),
           ),
         ],
       ),
