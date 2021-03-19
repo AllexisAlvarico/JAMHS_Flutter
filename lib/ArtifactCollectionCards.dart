@@ -127,6 +127,14 @@ class ArtifactCollectionData {
       this.imagePath, this.title, this.name, this.category, this.desc);
 }
 
+class ModelData extends ArtifactCollectionData {
+  String modelPath;
+
+  ModelData(String imagePath, String title, String name, String category,
+      String desc, this.modelPath)
+      : super(imagePath, title, name, category, desc);
+}
+
 class VideoData extends ArtifactCollectionData {
   String videoPath;
 
