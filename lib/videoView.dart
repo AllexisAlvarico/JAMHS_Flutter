@@ -57,7 +57,6 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
       child: Column(
         children: <Widget>[
           Container(padding: const EdgeInsets.only(top: 20.0)),
-          const Text('Promo'),
           Container(
             padding: const EdgeInsets.all(20),
             child: AspectRatio(
@@ -77,7 +76,7 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                     SizeConfig.blockSizeHorizontal * 20,
-                    SizeConfig.blockSizeVertical * 0,
+                    SizeConfig.blockSizeVertical * 2,
                     SizeConfig.blockSizeHorizontal * 20,
                     SizeConfig.blockSizeVertical * 2),
                 color: Color.fromARGB(255, 255, 255, 255),
@@ -179,7 +178,7 @@ class _VideoViewState extends State<VideoView> {
         title: Text(widget.title,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: SizeConfig.fontHEADERSIZE,
+                fontSize: SizeConfig.fontHEADERSIZE / 1.2,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura")),
         centerTitle: true,
