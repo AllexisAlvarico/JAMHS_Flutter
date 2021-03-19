@@ -18,7 +18,7 @@ class ArtifactCollectionCard extends StatelessWidget {
     if (orientation == Orientation.portrait) {
       return SizedBox(
         width: SizeConfig.safeBlockHorizontal * 40,
-        height: SizeConfig.safeBlockVertical * 50,
+        height: SizeConfig.safeBlockVertical * 37,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -34,8 +34,8 @@ class ArtifactCollectionCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: SizeConfig.safeBlockVertical * 27,
-                  width: SizeConfig.safeBlockHorizontal * 64,
+                  height: SizeConfig.safeBlockVertical * 20,
+                  width: SizeConfig.safeBlockHorizontal * 38,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -44,9 +44,9 @@ class ArtifactCollectionCard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.fromLTRB(
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3,
+                      SizeConfig.blockSizeVertical * 1,
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3),
+                      SizeConfig.blockSizeVertical * 1),
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class ArtifactCollectionCard extends StatelessWidget {
     } else {
       return SizedBox(
         width: SizeConfig.safeBlockHorizontal * 30,
-        height: SizeConfig.safeBlockVertical * 60,
+        height: SizeConfig.safeBlockVertical * 50,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -81,7 +81,7 @@ class ArtifactCollectionCard extends StatelessWidget {
               children: [
                 Container(
                   height: SizeConfig.blockSizeVertical * 27,
-                  width: SizeConfig.blockSizeHorizontal * 64,
+                  width: SizeConfig.blockSizeHorizontal * 29,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -90,9 +90,9 @@ class ArtifactCollectionCard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.fromLTRB(
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3,
+                      SizeConfig.blockSizeVertical * 1,
                       SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 3),
+                      SizeConfig.blockSizeVertical * 1),
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
