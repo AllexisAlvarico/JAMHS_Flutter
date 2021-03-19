@@ -4,69 +4,40 @@ import 'articlepage.dart';
 import 'collection.dart';
 import 'aboutus.dart';
 import 'size_config.dart';
-import 'package:flutter/services.dart';
 import 'virtualTourpage.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  void initState() {
-    super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitDown,
-    ]);
-  }
-
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: SizeConfig.backroundCOLOR,
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: SizeConfig.safeBlockVertical * 35,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/homelogo.png"),
-                      fit: BoxFit.contain),
-                ),
-              ),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  padding: EdgeInsets.all(SizeConfig.edgeINSETS),
-                  childAspectRatio:
-                      SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
-                  crossAxisSpacing: SizeConfig.axisSPACING,
-                  mainAxisSpacing: SizeConfig.axisSPACING,
-                  children: <Widget>[
-                    gridItems(Icons.article, "assets/images/homelogo.png",
-                        "Articles", 0),
-                    gridItems(Icons.collections, "assets/images/homelogo.png",
-                        "Collections", 1),
-                    gridItems(Icons.tour, "assets/images/homelogo.png",
-                        "Virtual Tours", 2),
-                    gridItems(Icons.question_answer,
-                        "assets/images/homelogo.png", "About Us!", 3),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: _layoutDetails(),
     );
+  }
+
+  Widget _layoutDetails() {
+    Orientation orientation = MediaQuery.of(context).orientation;
+    if (orientation == Orientation.portrait) {
+      return SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _portraitSection(),
+          ],
+        ),
+      );
+    } else {
+      return Row(
+        children: <Widget>[
+          _landscapeLogoSection(),
+        ],
+      );
+    }
   }
 
   launchURLBrowser() async {
@@ -76,6 +47,92 @@ class _HomePageState extends State<HomePage> {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  Widget _portraitSection() {
+    return Container(
+      width: SizeConfig.screenWidth,
+      height: SizeConfig.screenHeight,
+      child: Container(
+        padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: SizeConfig.safeBlockVertical * 35,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
+                image: DecorationImage(
+                    image: AssetImage("assets/images/homelogo.png"),
+                    fit: BoxFit.contain),
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+                childAspectRatio:
+                    SizeConfig.screenWidth / SizeConfig.screenHeight / .55,
+                crossAxisSpacing: SizeConfig.axisSPACING,
+                mainAxisSpacing: SizeConfig.axisSPACING,
+                children: <Widget>[
+                  gridItems(Icons.article, "assets/images/homelogo.png",
+                      "Articles", 0),
+                  gridItems(Icons.collections, "assets/images/homelogo.png",
+                      "Collections", 1),
+                  gridItems(Icons.tour, "assets/images/homelogo.png",
+                      "Virtual Tours", 2),
+                  gridItems(Icons.question_answer, "assets/images/homelogo.png",
+                      "About Us!", 3),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _landscapeLogoSection() {
+    return Container(
+      width: SizeConfig.screenWidth,
+      height: SizeConfig.screenHeight,
+      child: Container(
+        padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: SizeConfig.blockSizeVertical * 40,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
+                image: DecorationImage(
+                    image: AssetImage("assets/images/homelogo.png"),
+                    fit: BoxFit.contain),
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                padding: EdgeInsets.all(SizeConfig.edgeINSETS),
+                childAspectRatio:
+                    SizeConfig.screenWidth / SizeConfig.screenHeight * 1.2,
+                crossAxisSpacing: SizeConfig.axisSPACING,
+                mainAxisSpacing: SizeConfig.axisSPACING,
+                children: <Widget>[
+                  gridItems(Icons.article, "assets/images/homelogo.png",
+                      "Articles", 0),
+                  gridItems(Icons.collections, "assets/images/homelogo.png",
+                      "Collections", 1),
+                  gridItems(Icons.tour, "assets/images/homelogo.png",
+                      "Virtual Tours", 2),
+                  gridItems(Icons.question_answer, "assets/images/homelogo.png",
+                      "About Us!", 3),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget gridItems(IconData icon, String image, String title, int state) {

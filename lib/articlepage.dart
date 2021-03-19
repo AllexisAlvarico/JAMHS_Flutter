@@ -39,6 +39,7 @@ class ArticlePage extends StatefulWidget {
 class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
       child: Scaffold(
         backgroundColor: SizeConfig.backroundCOLOR,
@@ -53,20 +54,62 @@ class _ArticlePageState extends State<ArticlePage> {
             ),
           ),
         ),
-        body: Container(child: cardView()),
+        /* body: Container(child: cardView()), */
+        body: _layoutDetails(),
       ),
     );
   }
 
+  Widget _layoutDetails() {
+    Orientation orientation = MediaQuery.of(context).orientation;
+    if (orientation == Orientation.portrait) {
+      return Container(
+        child: cardPorttraitView(),
+      );
+    } else {
+      return Container(
+        child: cardHorizontalView(),
+      );
+    }
+  }
+
   //this wraps the cards
 
-  Widget cardView() {
+  Widget cardPorttraitView() {
     return Container(
       margin: EdgeInsets.fromLTRB(
           SizeConfig.blockSizeHorizontal * 5,
           SizeConfig.blockSizeHorizontal * 3,
           SizeConfig.blockSizeHorizontal * 5,
           SizeConfig.blockSizeHorizontal * 5),
+      child: Wrap(
+        children: data.map((data) {
+          return ArtifactCard(
+              imagePath: data.imagePath,
+              title: data.title,
+              action: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ViewPage(
+                              img: data.imagePath,
+                              title: data.category,
+                              name: data.name,
+                              desc: data.desc,
+                            )));
+              });
+        }).toList(),
+      ),
+    );
+  }
+
+  Widget cardHorizontalView() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(
+          SizeConfig.blockSizeHorizontal * 5,
+          SizeConfig.blockSizeVertical * 3,
+          SizeConfig.blockSizeHorizontal * 5,
+          SizeConfig.blockSizeVertical * 5),
       child: Wrap(
         children: data.map((data) {
           return ArtifactCard(
