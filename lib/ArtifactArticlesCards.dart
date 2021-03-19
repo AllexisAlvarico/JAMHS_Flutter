@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 
 // specilised card widget to displays an artifact image and a title
-class ArtifactCard extends StatelessWidget {
+class ArtifactArticlesCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final Function action;
 
-  const ArtifactCard({Key key, this.imagePath, this.title, this.action})
+  const ArtifactArticlesCard({Key key, this.imagePath, this.title, this.action})
       : super(key: key);
 
   @override
@@ -16,8 +16,8 @@ class ArtifactCard extends StatelessWidget {
     Orientation orientation = MediaQuery.of(context).orientation;
     if (orientation == Orientation.portrait) {
       return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 40,
-        height: SizeConfig.safeBlockVertical * 50,
+        width: SizeConfig.safeBlockHorizontal * 38,
+        height: SizeConfig.safeBlockVertical * 40,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -33,8 +33,8 @@ class ArtifactCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: SizeConfig.safeBlockVertical * 27,
-                  width: SizeConfig.safeBlockHorizontal * 64,
+                  height: SizeConfig.safeBlockVertical * 20,
+                  width: SizeConfig.safeBlockHorizontal * 40,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -62,8 +62,8 @@ class ArtifactCard extends StatelessWidget {
       );
     } else {
       return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 30,
-        height: SizeConfig.safeBlockVertical * 60,
+        width: SizeConfig.safeBlockHorizontal * 20,
+        height: SizeConfig.safeBlockVertical * 68,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
@@ -79,8 +79,8 @@ class ArtifactCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: SizeConfig.blockSizeVertical * 27,
-                  width: SizeConfig.blockSizeHorizontal * 64,
+                  height: SizeConfig.blockSizeVertical * 30,
+                  width: SizeConfig.blockSizeHorizontal * 19,
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.cover,
@@ -112,17 +112,18 @@ class ArtifactCard extends StatelessWidget {
 
 // simple class that stores two strings, one for the path to the image
 // and another for the dsecription of the artifact
-class ArtifactData {
+class ArtifactArticlesData {
   String imagePath;
   String title;
   String name;
   String category;
   String desc;
 
-  ArtifactData(this.imagePath, this.title, this.name, this.category, this.desc);
+  ArtifactArticlesData(
+      this.imagePath, this.title, this.name, this.category, this.desc);
 }
 
-class ModelData extends ArtifactData {
+class ModelData extends ArtifactArticlesData {
   String modelPath;
 
   ModelData(String imagePath, String title, String name, String category,

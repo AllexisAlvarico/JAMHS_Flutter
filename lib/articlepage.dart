@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-import 'artifactCard.dart';
+import 'package:jamhs_flutter/ArtifactArticlesCards.dart';
+import 'ArtifactArticlesCards.dart';
 import 'viewpage.dart';
 import 'size_config.dart';
 
-List<ArtifactData> data = [
-  ArtifactData(
+List<ArtifactArticlesData> data = [
+  ArtifactArticlesData(
       "assets/images/isadore.jpg",
       "Isadore S.Jachman\nMedal of Honor Recipient",
       "Isadore S.Jachman",
       "Medal of Honor Recipient",
       "Rank & Service: Staff Sergeant, U.S. Army\n\nUnit: Company B, 513th Parachute Infantry Regiment, 17th Airborne Division\n\nPlace and date: At Grand-Pre, France, October 26, 1918.\n\nBorn: December 14, 1922, Berlin, Germany\n\nDied: January 4, 1945 (aged 22) Belgium\n\nInterment: Adahs Israel Congregation Cemetery Dundalk, Maryland\n\nCitation:\n\nSergeant Jachman, Company B, 513th Parachute Infantry Regiment and his company were pinned down by enemy artillery, mortar, small arms fire and two hostile tanks that attacked the unit, inflicting heavy casualties. Sergeant Jachman left his place of cover, dashed across open ground, through a hail of fire and grabbed a bazooka from a fallen comrade. He then advanced on the tanks, which concentrated their fire on him. Firing his weapon, he damaged one and forced both of them to retire.\n\nAwards:\n\nMedal of Honor\n\nDistinguished Service Cross\n\nBronze Star\n\nPurple Heart "),
-  ArtifactData(
+  ArtifactArticlesData(
       "assets/images/jack.jpg",
       "Jack H.Jacobs\nMedal of Honor Recipient",
       "Jack H.Jacobs",
       "Medal of Honor Recipient",
       "Rank & Service: LT, US Army\n\nUnit: 505th Infantry Regiment, 82nd Airborne Division\n\nBorn: August 2, 1945 (age 73) Brooklyn, New York\n\nCitation: \n\nFor conspicuous gallantry and intrepidity in action at the risk of his life above and beyond the call of duty. Capt. Jacobs (then 1st Lt.), Infantry, distinguished himself while serving as assistant battalion advisor, 2d Battalion, 16th Infantry, 9th Infantry Division, Army of the Republic of Vietnam. The 2d Battalion was advancing to contact when it came under intense heavy machine gun and mortar fire from a Viet Cong battalion positioned in well fortified bunkers.\n\nAs the 2d Battalion deployed into attack formation its advance was halted by devastating fire.Capt. Jacobs, with the command element of the lead company, called for and directed air strikes on the enemy positions to facilitate a renewed attack. Due to the intensity of the enemy fire and heavy casualties to the command group, including the company commander, the attack stopped and the friendly troops became disorganized. Although wounded by mortar fragments, Capt. Jacobs assumed command of the allied company, ordered a withdrawal from the exposed position and established a defensive perimeter.\n\nDespite profuse bleeding from head wounds which impaired his vision, Capt. Jacobs,with complete disregard for his safety, returned under intense fire to evacuate a seriously wounded advisor to the safety of a wooded area where he administered lifesaving first aid.\n\nHe then returned through heavy automatic weapons fire to evacuate the wounded company commander. Capt. Jacobs made repeated trips across the fire-swept open rice paddies evacuating wounded and their weapons. On 3 separate occasions, Capt. Jacobs contacted and drove off Viet Cong squads who were searching for allied wounded and weapons, single-handedly killing 3 and wounding several others.\n\nHis gallant actions and extraordinary heroism saved the lives of 1 U.S. advisor and 13 allied soldiers.Through his effort the allied company was restored to an effective fighting unit and prevented defeat of the friendly forces by a strong and determined enemy.\n\nCapt. Jacobs, by his gallantry and bravery in action in the highest traditions of the military service, has reflected great credit upon himself, his unit, and the U.S. Army.\n\nAwards:\n\nMedal of Honor\n\nSilver Star with oak leaf cluster\n\nLegion of Merit\n\nBronze Star Medal with  device and two oak leaf clusters\n\nPurple Heart with oak leaf cluster\n\nMeritorious Service Medal\n\nAir Medal\n\nArmy Commendation Medal\n\nNational Defense Service Medal\n\nVietnam Service Medal with four campaign stars\n\nArmy Service Ribbon\n\nOverseas Service RibbonVietnam Cross of Gallantry with palm\n\nVietnam Staff Service Medal\n\nRepublic of Vietnam Campaign Medal\n\n"),
-  ArtifactData(
+  ArtifactArticlesData(
       "assets/images/john.png",
       "John Levitow\nMedal of Honor Recipient",
       "John Levitow",
       "Medal of Honor Recipient",
       "Rank & Service: Sergeant, U.S. Air Force \n\nUnit: 3d Special Operations Squadron.\n\nplace and date: Long Binh Army post, Republic of Vietnam, 24 February 1969.\n\nEntered service at: New Haven, Conn. Born: 1 November 1945, Hartford, Conn.\n\nCitation:\n\nFor conspicuous gallantry and intrepidity in action at the risk of his life above and beyond the call of duty. Sgt. Levitow (then A1C), U.S. Air Force, distinguished himself by exceptional heroism while assigned as a loadmaster aboard an AC-47 aircraft flying a night mission in support of Long Binh Army post.Sgt. Levitow\'s aircraft was struck by a hostile mortar round. The resulting explosion ripped a hole 2 feet in diameter through the wing and fragments made over 3,500 holes in the fuselage.\n\nAll occupants of the cargo compartment were wounded and helplessly slammed against the floor and fuselage.The explosion tore an activated flare from the grasp of a crewmember who had been launching flares to provide illumination for Army ground troops engaged in combat. Sgt. Levitow, though stunned by the concussion of the blast and suffering from over 40 fragment wounds in the back and legs, staggered to his feet and turned to assist the man nearest to him who had been knocked down and was bleeding heavily.As he was moving his wounded comrade forward and away from the opened cargo compartment door, he saw the smoking flare ahead of him in the aisle. Realizing the danger involved and completely disregarding his own wounds, Sgt. Levitow started toward the burning flare.\n\nThe aircraft was partially out of control and the flare was rolling wildly from side to side.\n\nSgt. Levitow struggled forward despite the loss of blood from his many wounds and the partial loss of feeling in his right leg.Unable to grasp the rolling flare with his hands, he threw himself bodily upon the burning flare. Hugging the deadly device to his body, he dragged himself back to the rear of the aircraft and hurled the flare through the open cargo door.\n\nAt that instant the flare separated and ignited in the air, but clear of the aircraft. Sgt. Levitow, by his selfless and heroic actions, saved the aircraft and its entire crew from certain death and destruction. Sgt. Levitow\'s gallantry,his profound concern for his fellowmen, at the risk of his life above and beyond the call of duty are in keeping with the highest traditions of the U.S. Air Force and reflect great credit upon himself and the Armed Forces of his country.\n\nAwards:\n\nMedal of Honor\n\nPurple Heart\n\nAir Medal with silver and two bronze oak leaf clusters\n\nAir Force Presidential Unit Citation\n\nAir Force Outstanding Unit Award\n\nAir Force Good Conduct Medal\n\nNational Defense Service Medal\n\nVietnam Service Medal with two bronze service stars\n\nSmall Arms Expert Marksmanship Ribbon\n\nRepublic of Vietnam Gallantry Cross with palm\n\nVietnam Campaign Medal\n\nEnlisted Aircrew Badge"),
-  ArtifactData(
+  ArtifactArticlesData(
       "assets/images/raymond.png",
       "Raymond Zussman\nMedal of Honor Recipient",
       "Raymond Zussman",
@@ -64,18 +65,18 @@ class _ArticlePageState extends State<ArticlePage> {
     Orientation orientation = MediaQuery.of(context).orientation;
     if (orientation == Orientation.portrait) {
       return Container(
-        child: cardPorttraitView(),
+        child: _cardPorttraitView(),
       );
     } else {
       return Container(
-        child: cardHorizontalView(),
+        child: _cardLandscapeView(),
       );
     }
   }
 
   //this wraps the cards
 
-  Widget cardPorttraitView() {
+  Widget _cardPorttraitView() {
     return Container(
       margin: EdgeInsets.fromLTRB(
           SizeConfig.blockSizeHorizontal * 5,
@@ -84,7 +85,7 @@ class _ArticlePageState extends State<ArticlePage> {
           SizeConfig.blockSizeHorizontal * 5),
       child: Wrap(
         children: data.map((data) {
-          return ArtifactCard(
+          return ArtifactArticlesCard(
               imagePath: data.imagePath,
               title: data.title,
               action: () {
@@ -103,16 +104,16 @@ class _ArticlePageState extends State<ArticlePage> {
     );
   }
 
-  Widget cardHorizontalView() {
+  Widget _cardLandscapeView() {
     return Container(
       margin: EdgeInsets.fromLTRB(
-          SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeVertical * 3,
-          SizeConfig.blockSizeHorizontal * 5,
-          SizeConfig.blockSizeVertical * 5),
+          SizeConfig.blockSizeHorizontal * 10,
+          SizeConfig.blockSizeVertical * 10,
+          SizeConfig.blockSizeHorizontal * 10,
+          SizeConfig.blockSizeVertical * 10),
       child: Wrap(
         children: data.map((data) {
-          return ArtifactCard(
+          return ArtifactArticlesCard(
               imagePath: data.imagePath,
               title: data.title,
               action: () {
