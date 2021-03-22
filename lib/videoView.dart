@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamhs_flutter/fullscreenVid.dart';
 import 'package:video_player/video_player.dart';
 import 'size_config.dart';
 
@@ -66,6 +67,22 @@ class _RemoteVideoState extends State<_RemoteVideo> {
                   VideoPlayer(_controller),
                   _ControlsOverlay(controller: _controller),
                   VideoProgressIndicator(_controller, allowScrubbing: true),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  FullscreenVideo(controller: _controller)));
+                    },
+                    child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: Icon(
+                          Icons.fullscreen,
+                          color: SizeConfig.backroundCOLOR,
+                          size: SizeConfig.logoSize,
+                        )),
+                  )
                 ],
               ),
             ),
