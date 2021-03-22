@@ -89,9 +89,9 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/david_title.jpg",
-                              caseImgPath: "assets/images/david_b.jpg",
-                              caseImgZoomPath: "assets/images/david_c.jpg",
+                              displayImgPath: "assets/images/collection.jpg",
+                              caseImgPath: null,
+                              caseImgZoomPath: null,
                               title: "Introduction")));
                 }),
           ),
