@@ -20,8 +20,8 @@ class ArtifactArticlesCard extends StatelessWidget {
     Orientation orientation = MediaQuery.of(context).orientation;
     if (orientation == Orientation.portrait) {
       return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 45,
-        height: SizeConfig.safeBlockVertical * 45,
+        width: SizeConfig.safeBlockHorizontal * 38,
+        height: SizeConfig.safeBlockVertical * 44,
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),

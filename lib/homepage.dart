@@ -137,41 +137,42 @@ class _HomePageState extends State<HomePage> {
 
   Widget gridItems(IconData icon, String image, String title, int state) {
     return GestureDetector(
-        onTap: () {
-          switch (state) {
-            case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ArticlePage()),
-              );
-              break;
-            case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CollectionPage()),
-              );
-              break;
-            case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => VirutalToursPage()),
-              );
-              break;
-            case 3:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutUsPage()),
-              );
-              break;
-          }
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(SizeConfig
-                .borderRADIUS), // 15 works and collections looks tidier
-            color: Colors.white,
-          ),
-          child: Stack(children: [
+      onTap: () {
+        switch (state) {
+          case 0:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ArticlePage()),
+            );
+            break;
+          case 1:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CollectionPage()),
+            );
+            break;
+          case 2:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => VirutalToursPage()),
+            );
+            break;
+          case 3:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AboutUsPage()),
+            );
+            break;
+        }
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+              SizeConfig.borderRADIUS), // 15 works and collections looks tidier
+          color: Colors.white,
+        ),
+        child: Stack(
+          children: [
             Align(
                 alignment: Alignment.center,
                 child: Icon(
@@ -207,7 +208,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             )
-          ]),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }
