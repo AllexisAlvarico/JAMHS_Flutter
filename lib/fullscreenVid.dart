@@ -2,6 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'size_config.dart';
 
+class FullscreenVideo extends StatelessWidget {
+  late final VideoPlayerController controller;
+  FullscreenVideo({Key? key, required this.controller}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: Align(
+            alignment: Alignment.center,
+            child: SizedBox(
+              height: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? MediaQuery.of(context).size.height / 3
+                  : null,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
+                  VideoPlayer(controller),
+                  _ControlsOverlay(controller: controller),
+                  VideoProgressIndicator(controller, allowScrubbing: true),
+                ],
+              ),
+            )));
+  }
+}
+
 class _ControlsOverlay extends StatelessWidget {
   const _ControlsOverlay({Key? key, required this.controller})
       : super(key: key);
@@ -19,22 +45,6 @@ class _ControlsOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        AnimatedSwitcher(
-          duration: Duration(milliseconds: 50),
-          reverseDuration: Duration(milliseconds: 200),
-          child: controller.value.isPlaying
-              ? SizedBox.shrink()
-              : Container(
-                  color: Colors.black26,
-                  child: Center(
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 100.0,
-                    ),
-                  ),
-                ),
-        ),
         GestureDetector(
           onTap: () {
             controller.value.isPlaying ? controller.pause() : controller.play();
@@ -79,31 +89,5 @@ class _ControlsOverlay extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class FullscreenVideo extends StatelessWidget {
-  late final VideoPlayerController controller;
-  FullscreenVideo({Key? key, required this.controller}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.black,
-        body: Align(
-            alignment: Alignment.center,
-            child: SizedBox(
-              height: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? MediaQuery.of(context).size.height / 3
-                  : null,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  VideoPlayer(controller),
-                  _ControlsOverlay(controller: controller),
-                  VideoProgressIndicator(controller, allowScrubbing: true),
-                ],
-              ),
-            )));
   }
 }
