@@ -90,15 +90,19 @@ class FullscreenVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Align(
-      alignment: Alignment.center,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: <Widget>[
-          VideoPlayer(controller),
-          _ControlsOverlay(controller: controller),
-          VideoProgressIndicator(controller, allowScrubbing: true),
-        ],
-      ),
-    ));
+            alignment: Alignment.center,
+            child: SizedBox(
+              height: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? SizeConfig.screenHeight / 2.5
+                  : null,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
+                  VideoPlayer(controller),
+                  _ControlsOverlay(controller: controller),
+                  VideoProgressIndicator(controller, allowScrubbing: true),
+                ],
+              ),
+            )));
   }
 }
