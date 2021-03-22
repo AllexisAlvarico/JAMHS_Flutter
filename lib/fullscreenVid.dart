@@ -89,11 +89,12 @@ class FullscreenVideo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         body: Align(
             alignment: Alignment.center,
             child: SizedBox(
               height: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? SizeConfig.screenHeight / 2.5
+                  ? MediaQuery.of(context).size.height / 3
                   : null,
               child: Stack(
                 alignment: Alignment.bottomCenter,
