@@ -79,7 +79,7 @@ class _RemoteVideoState extends State<_RemoteVideo> {
                         alignment: Alignment.bottomRight,
                         child: Icon(
                           Icons.fullscreen,
-                          color: SizeConfig.backroundCOLOR,
+                          color: Colors.white,
                           size: SizeConfig.logoSize,
                         )),
                   )
