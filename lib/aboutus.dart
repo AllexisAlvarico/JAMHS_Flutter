@@ -49,6 +49,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   ),
                 ),
               ),
+<<<<<<< HEAD
               Padding(
                 padding: EdgeInsets.all(
                   sy(SizeConfig.edgeINSETS),
@@ -137,6 +138,15 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     ],
                   ),
                 ),
+                  createText("Visit our Website", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createImage(
+                      "assets/logo/jamhs.jpg",
+                      SizeConfig.edgeINSETS, // border's radius
+                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 30,
+                          0, SizeConfig.blockSizeHorizontal * 30, 0),
+                      launchJAHMS),
+                ],
               ),
             ],
           ),
@@ -307,9 +317,26 @@ createExpanded(path, function) {
     ));
   }
 
-// otherwise return a normal image
-  return Expanded(child: Image.asset(path));
-}
+  createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
+      functionThree, padding) {
+    return Container(
+        height: SizeConfig.blockSizeVertical * 20,
+        padding: padding,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            createExpanded(pathOne, functionOne),
+            Container(
+                width: SizeConfig.blockSizeHorizontal * 5,
+                color: Colors.transparent),
+            createExpanded(pathTwo, functionTwo),
+            Container(
+                width: SizeConfig.blockSizeHorizontal * 5,
+                color: Colors.transparent),
+            createExpanded(pathThree, functionThree),
+          ],
+        ));
+  }
 
 createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
     functionThree, padding) {
@@ -393,5 +420,14 @@ void launchTwitter() async {
     await launch(url);
   } else {
     throw 'Could not launch $url';
+  }
+
+  void launchJAHMS() async {
+    const url = 'https://jewishmilitary.com/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
