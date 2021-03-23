@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   font_awesome_flutter: '>= 5.15.1'
+  relative_scale: ^2.0.0
 
   flutter:
     sdk: flutter
@@ -39,6 +40,7 @@ dependencies:
   model_viewer: ^0.8.1
   advance_pdf_viewer: ^1.2.2
   path_provider: ^2.0.1
+  video_player: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +63,7 @@ flutter:
     - assets/images/
     - assets/models/
     - assets/pdfs/
+    - assets/videos/
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
