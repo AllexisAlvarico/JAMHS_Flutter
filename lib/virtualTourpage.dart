@@ -9,19 +9,86 @@ class VirutalToursPage extends StatefulWidget {
 }
 
 class _VirutalToursPageState extends State<VirutalToursPage> {
-  double _lon = 0;
-  double _lat = 0;
-  double _tilt = 0;
   int _displayId = 0;
-  bool _panoView = true;
 
-  void onViewChanged(longitude, latitude, tilt) {
-    setState(() {
-      _lon = longitude;
-      _lat = latitude;
-      _tilt = tilt;
-    });
-  }
+  List<DisplayData> displayData = [
+    DisplayData(
+        displayPath: "assets/images/collection.jpg",
+        title: "Introduction",
+        pos: CoordPos(latitude: 20, longitude: 16)),
+    DisplayData(
+        displayPath: "assets/images/benjamin_title.jpg",
+        casePath: "assets/images/benjamin_b.jpg",
+        artifactPath: "assets/images/benjamin_c.jpg",
+        title: "Benjamin",
+        pos: CoordPos(latitude: 20, longitude: 51)),
+    DisplayData(
+        displayPath: "assets/images/isaac_simon_title.jpg",
+        casePath: "assets/images/isaac_simon_b.jpg",
+        artifactPath: "assets/images/isaac_simon_c.jpg",
+        title: "Isaac & Simon",
+        pos: CoordPos(latitude: 20, longitude: 65)),
+    DisplayData(
+        displayPath: "assets/images/david_title.jpg",
+        casePath: "assets/images/david_b.jpg",
+        artifactPath: "assets/images/david_c.jpg",
+        title: "David",
+        pos: CoordPos(latitude: 20, longitude: 80)),
+    DisplayData(
+        displayPath: "assets/images/leopold_title.jpg",
+        casePath: "assets/images/leopold_b.jpg",
+        artifactPath: "assets/images/leopold_c.jpg",
+        title: "Leopold",
+        pos: CoordPos(latitude: 20, longitude: 110)),
+    DisplayData(
+        displayPath: "assets/images/henry_title.jpg",
+        casePath: "assets/images/henry_b.jpg",
+        artifactPath: "assets/images/henry_c.jpg",
+        title: "Henry",
+        pos: CoordPos(latitude: 20, longitude: 140)),
+    DisplayData(
+        displayPath: "assets/images/samuel_benjamin_title.jpg",
+        casePath: "assets/images/samuel_benjamin_b.jpg",
+        artifactPath: "assets/images/samuel_benjamin_c.jpg",
+        title: "Samuel & Benjamin",
+        pos: CoordPos(latitude: 30, longitude: 172)),
+    DisplayData(
+        displayPath: "assets/images/sydney_title.jpg",
+        casePath: "assets/images/sydney_b.jpg",
+        artifactPath: "assets/images/sydney_c.jpg",
+        title: "Sydney",
+        pos: CoordPos(latitude: 20, longitude: 219)),
+    DisplayData(
+        displayPath: "assets/images/william_ben_title.jpg",
+        casePath: "assets/images/william_ben_b.jpg",
+        artifactPath: "assets/images/william_ben_c.jpg",
+        title: "William & Ben",
+        pos: CoordPos(latitude: 20, longitude: 248)),
+    DisplayData(
+        displayPath: "assets/images/raymond_isadore_title.jpg",
+        casePath: "assets/images/raymond_isadore_b.jpg",
+        artifactPath: "assets/images/raymond_isadore_c.jpg",
+        title: "Ray & Isadore",
+        pos: CoordPos(latitude: 20, longitude: 276)),
+    DisplayData(
+        displayPath: "assets/images/rubin_title.jpg",
+        casePath: "assets/images/rubin_b.jpg",
+        artifactPath: "assets/images/rubin_c.jpg",
+        title: "Tibor Rubin",
+        pos: CoordPos(latitude: 20, longitude: 305)),
+    DisplayData(
+        displayPath: "assets/images/jack_title.jpg",
+        casePath: "assets/images/jack_b.jpg",
+        artifactPath: "assets/images/jack_c.jpg",
+        title: "Jack",
+        pos: CoordPos(latitude: 20, longitude: 327)),
+    DisplayData(
+        displayPath: "assets/images/john_title.jpg",
+        casePath: "assets/images/john_b.jpg",
+        artifactPath: "assets/images/john_c.jpg",
+        title: "John",
+        pos: CoordPos(latitude: 20, longitude: 340)),
+  ];
 
   Widget hotspotButton(
       {String? text, IconData? icon, VoidCallback? onPressed}) {
@@ -68,286 +135,36 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         primarySwatch: Colors.blue,
       ),
       home: Panorama(
-        onViewChanged: onViewChanged,
-        onTap: (longitude, latitude, tilt) =>
-            print('onTap: $longitude, $latitude, $tilt, $_displayId'),
-        child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
-        minLatitude: -20.0,
-        maxLatitude: 35.0,
-        hotspots: [
-          Hotspot(
-            name: "Introduction",
-            latitude: 20.0,
-            longitude: 16.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Introduction",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/collection.jpg",
-                              caseImgPath: null,
-                              caseImgZoomPath: null,
-                              title: "Introduction")));
-                }),
-          ),
-          Hotspot(
-            name: "Benjamin Display",
-            latitude: 20.0,
-            longitude: 51.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Benjamin",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath:
-                                  "assets/images/benjamin_title.jpg",
-                              caseImgPath: "assets/images/benjamin_b.jpg",
-                              caseImgZoomPath: "assets/images/benjamin_c.jpg",
-                              title: "Benjamin")));
-                }),
-          ),
-          Hotspot(
-            name: "Isaac Simon",
-            latitude: 20.0,
-            longitude: 65.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Isaac & Simon",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath:
-                                  "assets/images/isaac_simon_title.jpg",
-                              caseImgPath: "assets/images/isaac_simon_b.jpg",
-                              caseImgZoomPath:
-                                  "assets/images/isaac_simon_c.jpg",
-                              title: "Isaac & Simon")));
-                }),
-          ),
-          Hotspot(
-            name: "David Display",
-            latitude: 20.0,
-            longitude: 80.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "David",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/david_title.jpg",
-                              caseImgPath: "assets/images/david_b.jpg",
-                              caseImgZoomPath: "assets/images/david_c.jpg",
-                              title: "David")));
-                }),
-          ),
-          Hotspot(
-            name: "Leopold Display",
-            latitude: 20.0,
-            longitude: 110.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Leopold Display",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/leopold_title.jpg",
-                              caseImgPath: "assets/images/leopold_b.jpg",
-                              caseImgZoomPath: "assets/images/leopold_c.jpg",
-                              title: "Leopold")));
-                }),
-          ),
-          Hotspot(
-            name: "Henry Display",
-            latitude: 20.0,
-            longitude: 140.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Henry",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/henry_title.jpg",
-                              caseImgPath: "assets/images/henry_b.jpg",
-                              caseImgZoomPath: "assets/images/henry_c.jpg",
-                              title: "Henry")));
-                }),
-          ),
-          Hotspot(
-            name: "Sam Ben Display",
-            latitude: 30.0,
-            longitude: 172.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Sam & Ben",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath:
-                                  "assets/images/samuel_benjamin_title.jpg",
-                              caseImgPath:
-                                  "assets/images/samuel_benjamin_b.jpg",
-                              caseImgZoomPath:
-                                  "assets/images/samuel_benjamin_c.jpg",
-                              title: "Samuel & Benjamin")));
-                }),
-          ),
-          Hotspot(
-            name: "Sydney Display",
-            latitude: 20.0,
-            longitude: 219.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Sydney",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/sydney_title.jpg",
-                              caseImgPath: "assets/images/sydney_b.jpg",
-                              caseImgZoomPath: "assets/images/sydney_c.jpg",
-                              title: "Sydney")));
-                }),
-          ),
-          Hotspot(
-            name: "Bill Ben Display",
-            latitude: 20.0,
-            longitude: 248.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Will & Ben",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath:
-                                  "assets/images/william_ben_title.jpg",
-                              caseImgPath: "assets/images/william_ben_b.jpg",
-                              caseImgZoomPath:
-                                  "assets/images/william_ben_c.jpg",
-                              title: "William & Ben")));
-                }),
-          ),
-          Hotspot(
-            name: "Ray Isadore Display",
-            latitude: 20.0,
-            longitude: 276.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Ray & Isadore",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath:
-                                  "assets/images/raymond_isadore_title.jpg",
-                              caseImgPath:
-                                  "assets/images/raymond_isadore_b.jpg",
-                              caseImgZoomPath:
-                                  "assets/images/raymond_isadore_c.jpg",
-                              title: "Raymond & Isadore")));
-                }),
-          ),
-          Hotspot(
-            name: "Tibor Rubin Display",
-            latitude: 20.0,
-            longitude: 305.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Tibor Rubin",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/rubin_title.jpg",
-                              caseImgPath: "assets/images/rubin_b.jpg",
-                              caseImgZoomPath: "assets/images/rubin_c.jpg",
-                              title: "Rubin")));
-                }),
-          ),
-          Hotspot(
-            name: "Jack Display",
-            latitude: 20.0,
-            longitude: 327.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "Jack",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/jack_title.jpg",
-                              caseImgPath: "assets/images/jack_b.jpg",
-                              caseImgZoomPath: "assets/images/jack_c.jpg",
-                              title: "Jack")));
-                }),
-          ),
-          Hotspot(
-            name: "John Display",
-            latitude: 20.0,
-            longitude: 340.0,
-            width: 90,
-            height: 75,
-            widget: hotspotButton(
-                text: "John",
-                icon: Icons.zoom_in,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DisplayView(
-                              displayImgPath: "assets/images/john_title.jpg",
-                              caseImgPath: "assets/images/john_b.jpg",
-                              caseImgZoomPath: "assets/images/john_c.jpg",
-                              title: "John")));
-                }),
-          ),
-        ],
-      ),
+          onViewChanged: (longitude, latitude, tilt) {
+            setState(() {});
+          },
+          onTap: (longitude, latitude, tilt) =>
+              print('onTap: $longitude, $latitude, $tilt, $_displayId'),
+          child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+          minLatitude: -20.0,
+          maxLatitude: 35.0,
+          hotspots: displayData
+              .map((data) => Hotspot(
+                  name: data.title,
+                  latitude: data.pos.latitude,
+                  longitude: data.pos.longitude,
+                  width: 90,
+                  height: 75,
+                  widget: hotspotButton(
+                      text: data.title,
+                      icon: Icons.zoom_in,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DisplayView(
+                                      displayImgPath: data.displayPath,
+                                      caseImgPath: data.casePath,
+                                      caseImgZoomPath: data.artifactPath,
+                                      title: data.title,
+                                    )));
+                      })))
+              .toList()),
     );
   }
 }
