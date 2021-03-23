@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relative_scale/relative_scale.dart';
 import 'size_config.dart';
 
 // specilised card widget to displays an artifact image and a title
@@ -19,97 +20,103 @@ class ArtifactCollectionCard extends StatelessWidget {
     SizeConfig().init(context);
     Orientation orientation = MediaQuery.of(context).orientation;
     if (orientation == Orientation.portrait) {
-      return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 40,
-        height: SizeConfig.safeBlockVertical * 37,
-        child: Card(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
-          clipBehavior: Clip.antiAlias,
-          elevation: 5,
-          child: InkWell(
-            splashColor:
-                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
-            onTap: () {
-              action();
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: SizeConfig.safeBlockVertical * 20,
-                  width: SizeConfig.safeBlockHorizontal * 38,
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.cover,
+      return RelativeBuilder(builder: (context, height, width, sy, sx) {
+        return SizedBox(
+          width: sx(210),
+          height: sy(200),
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius:
+                    BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+            clipBehavior: Clip.antiAlias,
+            elevation: 5,
+            child: InkWell(
+              splashColor:
+                  Colors.indigo[800]!.withOpacity(0.5), // what are you doing
+              onTap: () {
+                action();
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    height: sy(100),
+                    width: sx(200),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                      SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 1,
-                      SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 1),
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Futura"),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 1),
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 1)),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      );
+        );
+      });
     } else {
-      return SizedBox(
-        width: SizeConfig.safeBlockHorizontal * 30,
-        height: SizeConfig.safeBlockVertical * 60,
-        child: Card(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS)),
-          clipBehavior: Clip.antiAlias,
-          elevation: 5,
-          child: InkWell(
-            splashColor:
-                Colors.indigo[800]!.withOpacity(0.5), // what are you doing
-            onTap: () {
-              action();
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: SizeConfig.blockSizeVertical * 27,
-                  width: SizeConfig.blockSizeHorizontal * 29,
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.cover,
+      return RelativeBuilder(builder: (context, height, width, sy, sx) {
+        return SizedBox(
+          width: sx(160),
+          height: sy(270),
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius:
+                    BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+            clipBehavior: Clip.antiAlias,
+            elevation: 5,
+            child: InkWell(
+              splashColor:
+                  Colors.indigo[800]!.withOpacity(0.5), // what are you doing
+              onTap: () {
+                action();
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    height: sy(150),
+                    width: sx(160),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                      SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 1,
-                      SizeConfig.blockSizeHorizontal * 2,
-                      SizeConfig.blockSizeVertical * 1),
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Futura"),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 1),
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 1)),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      );
+        );
+      });
     }
   }
 }

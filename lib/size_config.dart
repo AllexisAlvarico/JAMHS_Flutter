@@ -30,7 +30,7 @@ class SizeConfig {
   static const double axisSPACING =
       20.0; // if unsure what to use use this as default
 
-  static const double jamsLogoSize = 120.0; // Logo size as per home page
+  static const double cardLogoSize = 120.0; // Logo size as per home page
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context); // Gets the size of our screen
