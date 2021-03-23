@@ -125,11 +125,16 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       launchFacebook,
                       launchInsta,
                       launchTwitter,
-                      EdgeInsets.fromLTRB(
-                          SizeConfig.blockSizeHorizontal * 5,
-                          SizeConfig.blockSizeHorizontal * 3,
-                          SizeConfig.blockSizeHorizontal * 5,
-                          SizeConfig.blockSizeHorizontal * 3)),
+                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 5, 0,
+                          SizeConfig.blockSizeHorizontal * 5, 0)),
+                  createText("Visit our Website", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                  createImage(
+                      "assets/logo/jamhs.jpg",
+                      SizeConfig.edgeINSETS, // border's radius
+                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 30,
+                          0, SizeConfig.blockSizeHorizontal * 30, 0),
+                      launchJAHMS),
                 ],
               ),
             ),
@@ -302,7 +307,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
   createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
       functionThree, padding) {
     return Container(
-        height: SizeConfig.blockSizeVertical * 30,
+        height: SizeConfig.blockSizeVertical * 20,
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -377,6 +382,15 @@ class _AboutUsPageState extends State<AboutUsPage> {
 
   void launchTwitter() async {
     const url = 'https://twitter.com/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void launchJAHMS() async {
+    const url = 'https://jewishmilitary.com/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
