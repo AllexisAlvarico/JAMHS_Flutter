@@ -51,7 +51,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               SizeConfig.edgeINSETS,
             ),
             child: Container(
-              height: SizeConfig.safeBlockVertical * 241, // 195 isbottom limit
+              height: SizeConfig.safeBlockVertical * 250, // 195 isbottom limit
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
                 color: Colors.white,
@@ -125,19 +125,15 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       launchFacebook,
                       launchInsta,
                       launchTwitter,
-                      EdgeInsets.fromLTRB(
-                          SizeConfig.blockSizeHorizontal * 5,
-                          0,
-                          SizeConfig.blockSizeHorizontal * 5,
-                          SizeConfig.blockSizeHorizontal * 3)),
+                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 5, 0,
+                          SizeConfig.blockSizeHorizontal * 5, 0)),
+                  createText("Visit our Website", SizeConfig.edgeINSETS,
+                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
                   createImage(
                       "assets/logo/jamhs.jpg",
                       SizeConfig.edgeINSETS, // border's radius
-                      EdgeInsets.fromLTRB(
-                          SizeConfig.blockSizeHorizontal * 30,
-                          0,
-                          SizeConfig.blockSizeHorizontal * 30,
-                          SizeConfig.blockSizeHorizontal * 2),
+                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 30,
+                          0, SizeConfig.blockSizeHorizontal * 30, 0),
                       launchJAHMS),
                 ],
               ),
