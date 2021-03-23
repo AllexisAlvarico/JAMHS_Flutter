@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relative_scale/relative_scale.dart';
 import 'size_config.dart';
 
 class ArtifactView extends StatelessWidget {
@@ -38,116 +39,122 @@ class ArtifactView extends StatelessWidget {
   }
 
   Widget _portrait() {
-    return SingleChildScrollView(
-      child: Container(
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-                margin: EdgeInsets.symmetric(vertical: SizeConfig.edgeINSETS),
-                child: Image.asset(imagePath)),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: SizeConfig.edgeINSETS),
-              child: Text(
-                title,
-                style: TextStyle(
-                    fontSize: SizeConfig.fontHEADERSIZE,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Futura"),
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                  margin:
+                      EdgeInsets.symmetric(vertical: sy(SizeConfig.edgeINSETS)),
+                  child: Image.asset(imagePath)),
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: sy(SizeConfig.edgeINSETS)),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: SizeConfig.edgeINSETS,
-                  vertical: SizeConfig.edgeINSETS),
-              child: Text(
-                category,
-                style: TextStyle(
-                    fontSize: SizeConfig.fontHOMESIZE,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Futura"),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: sx(SizeConfig.edgeINSETS),
+                    vertical: sy(SizeConfig.edgeINSETS)),
+                child: Text(
+                  category,
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontHOMESIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: SizeConfig.edgeINSETS,
-                  vertical: SizeConfig.edgeINSETS),
-              color: Colors.grey[200],
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    desc,
-                    style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                        fontFamily: "Futura"),
-                  ),
-                ],
-              ),
-            )
-          ],
+              Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: sx(SizeConfig.edgeINSETS),
+                    vertical: sy(SizeConfig.edgeINSETS)),
+                color: Colors.grey[200],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      desc,
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontFamily: "Futura"),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   Widget _landscape() {
-    return SingleChildScrollView(
-      child: Container(
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-                margin: EdgeInsets.symmetric(vertical: SizeConfig.edgeINSETS),
-                child: Image.asset(imagePath)),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: SizeConfig.edgeINSETS),
-              child: Text(
-                title,
-                style: TextStyle(
-                    fontSize: SizeConfig.fontHEADERSIZE,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Futura"),
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                  margin:
+                      EdgeInsets.symmetric(vertical: sy(SizeConfig.edgeINSETS)),
+                  child: Image.asset(imagePath)),
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: sx(SizeConfig.edgeINSETS)),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: SizeConfig.edgeINSETS,
-                  vertical: SizeConfig.edgeINSETS),
-              child: Text(
-                category,
-                style: TextStyle(
-                    fontSize: SizeConfig.fontHOMESIZE,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Futura"),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: sx(SizeConfig.edgeINSETS),
+                    vertical: sy(SizeConfig.edgeINSETS)),
+                child: Text(
+                  category,
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontHOMESIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: SizeConfig.edgeINSETS,
-                  vertical: SizeConfig.edgeINSETS),
-              color: Colors.grey[200],
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    desc,
-                    style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                        fontFamily: "Futura"),
-                  ),
-                ],
-              ),
-            )
-          ],
+              Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: sx(SizeConfig.edgeINSETS),
+                    vertical: sy(SizeConfig.edgeINSETS)),
+                color: Colors.grey[200],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      desc,
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontFamily: "Futura"),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
