@@ -21,6 +21,8 @@ class _ControllerVideo extends StatefulWidget {
 }
 
 class _ControllerVideoState extends State<_ControllerVideo> {
+  late VideoPlayerController _controller;
+
   @override
   void initState() {
     super.initState();
@@ -28,6 +30,7 @@ class _ControllerVideoState extends State<_ControllerVideo> {
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft,
     ]);
+    _controller = widget.controller;
   }
 
   @override
@@ -54,23 +57,12 @@ class _ControllerVideoState extends State<_ControllerVideo> {
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[
-                  VideoPlayer(widget.controller),
-                  _ControlsOverlay(controller: widget.controller),
-                  VideoProgressIndicator(widget.controller,
-                      allowScrubbing: true),
+                  VideoPlayer(_controller),
+                  _ControlsOverlay(controller: _controller),
+                  VideoProgressIndicator(_controller, allowScrubbing: true),
                 ],
               ),
             )));
-  }
-}
-
-class _FullScreenState extends State<FullscreenVideo> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
-      body: _ControllerVideo(widget.key, widget.controller),
-    );
   }
 }
 
@@ -91,22 +83,6 @@ class _ControlsOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        AnimatedSwitcher(
-          duration: Duration(milliseconds: 50),
-          reverseDuration: Duration(milliseconds: 200),
-          child: controller.value.isPlaying
-              ? SizedBox.shrink()
-              : Container(
-                  color: Colors.black26,
-                  child: Center(
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 100.0,
-                    ),
-                  ),
-                ),
-        ),
         GestureDetector(
           onTap: () {
             controller.value.isPlaying ? controller.pause() : controller.play();
@@ -150,6 +126,16 @@ class _ControlsOverlay extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _FullScreenState extends State<FullscreenVideo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: SizeConfig.backroundCOLOR,
+      body: _ControllerVideo(widget.key, widget.controller),
     );
   }
 }
