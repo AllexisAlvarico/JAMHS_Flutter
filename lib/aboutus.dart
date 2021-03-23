@@ -49,13 +49,12 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   ),
                 ),
               ),
-<<<<<<< HEAD
               Padding(
                 padding: EdgeInsets.all(
                   sy(SizeConfig.edgeINSETS),
                 ),
                 child: Container(
-                  height: sy(1000), // 195 isbottom limit
+                  height: sy(1300), // 195 isbottom limit
                   decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
@@ -80,10 +79,10 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           "assets/images/exbibit.png",
                           sy(SizeConfig.edgeINSETS), // border's radius
                           EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3,
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 1),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 3)),
                           null),
                       createText("Partners", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -95,17 +94,17 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           launchVSHP,
                           launchSiteline,
                           EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3,
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3)),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 1),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 3))),
                       createText(
                           "We've partnered with the California State Military Museum, " +
                               "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
                           sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
-                      createText("Donate Now!", SizeConfig.edgeINSETS,
+                      createText("Donate Now!", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createText(
                           "to the Jewish American Military Historical Society!",
@@ -116,10 +115,10 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           "assets/images/paypal.png",
                           sy(SizeConfig.borderRADIUS),
                           EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3,
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 1),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 3)),
                           launchPaypal),
                       createText("Social Media", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -131,23 +130,25 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           launchInsta,
                           launchTwitter,
                           EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3,
-                              SizeConfig.blockSizeHorizontal * 5,
-                              SizeConfig.blockSizeHorizontal * 3)),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 1),
+                              sx(SizeConfig.blockSizeHorizontal * 5),
+                              sy(SizeConfig.blockSizeVertical * 1))),
+                      createText("Visit our Website", SizeConfig.edgeINSETS,
+                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createImage(
+                          "assets/logo/jamhs.jpg",
+                          SizeConfig.edgeINSETS, // border's radius
+                          EdgeInsets.fromLTRB(
+                              SizeConfig.blockSizeHorizontal * 30,
+                              0,
+                              SizeConfig.blockSizeHorizontal * 30,
+                              0),
+                          launchJAHMS),
                     ],
                   ),
                 ),
-                  createText("Visit our Website", SizeConfig.edgeINSETS,
-                      SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                  createImage(
-                      "assets/logo/jamhs.jpg",
-                      SizeConfig.edgeINSETS, // border's radius
-                      EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal * 30,
-                          0, SizeConfig.blockSizeHorizontal * 30, 0),
-                      launchJAHMS),
-                ],
-              ),
+              )
             ],
           ),
         );
@@ -180,7 +181,7 @@ Widget _landscape() {
                 sy(SizeConfig.edgeINSETS),
               ),
               child: Container(
-                height: sy(2300),
+                height: sy(2500),
                 decoration: BoxDecoration(
                   borderRadius:
                       BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
@@ -205,10 +206,10 @@ Widget _landscape() {
                         "assets/images/exbibit.png",
                         sy(SizeConfig.edgeINSETS), // border's radius
                         EdgeInsets.fromLTRB(
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3,
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3)),
                         null),
                     createText("Partners", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -220,10 +221,10 @@ Widget _landscape() {
                         launchVSHP,
                         launchSiteline,
                         EdgeInsets.fromLTRB(
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3,
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3)),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3))),
                     createText(
                         "We've partnered with the California State Military Museum, " +
                             "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
@@ -241,10 +242,10 @@ Widget _landscape() {
                         "assets/images/paypal.png",
                         sy(SizeConfig.borderRADIUS),
                         EdgeInsets.fromLTRB(
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3,
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3)),
                         launchPaypal),
                     createText("Social Media", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -256,10 +257,17 @@ Widget _landscape() {
                         launchInsta,
                         launchTwitter,
                         EdgeInsets.fromLTRB(
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3,
-                            SizeConfig.blockSizeHorizontal * 5,
-                            SizeConfig.blockSizeHorizontal * 3)),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3))),
+                    createText("Visit our Website", sy(SizeConfig.edgeINSETS),
+                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createImage(
+                        "assets/logo/jamhs.jpg",
+                        sy(SizeConfig.edgeINSETS), // border's radius
+                        EdgeInsets.fromLTRB(sx(140), 0, sx(140), 0),
+                        launchJAHMS),
                   ],
                 ),
               ),
@@ -286,25 +294,30 @@ createText(text, padding, fontSize, fontWeight) {
 // Creates an image with an optional circular borderRadius
 createImage(path, borderRadius, padding, function) {
   if (null != function) {
-    return Padding(
-        padding: padding,
-        // Using ClipRRect allows us to have Images with Rounded edges.
-        child: GestureDetector(
-            onTap: function,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(borderRadius),
-              child: Image.asset(path, fit: BoxFit.cover),
-            )));
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return Padding(
+          padding: padding,
+          // Using ClipRRect allows us to have Images with Rounded edges.
+          child: GestureDetector(
+              onTap: function,
+              child: ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                child: Image.asset(path, fit: BoxFit.cover),
+              )));
+    });
   }
 
   // if the function is null, return a regular image instead
-  return Padding(
-      padding: padding,
-      // Using ClipRRect allows us to have Images with Rounded edges.
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(SizeConfig.borderRADIUS),
-        child: Image.asset(path, fit: BoxFit.cover),
-      ));
+  return RelativeBuilder(builder: (context, height, width, sy, sx) {
+    return Padding(
+        padding: padding,
+        // Using ClipRRect allows us to have Images with Rounded edges.
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+          child: Image.asset(path, fit: BoxFit.cover),
+        ));
+  });
 }
 
 createExpanded(path, function) {
@@ -316,47 +329,25 @@ createExpanded(path, function) {
       child: Image.asset(path),
     ));
   }
+}
 
-  createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
-      functionThree, padding) {
+createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
+    functionThree, padding) {
+  return RelativeBuilder(builder: (context, height, width, sy, sx) {
     return Container(
-        height: SizeConfig.blockSizeVertical * 20,
+        height: sy(200),
         padding: padding,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             createExpanded(pathOne, functionOne),
-            Container(
-                width: SizeConfig.blockSizeHorizontal * 5,
-                color: Colors.transparent),
+            Container(width: sy(100), color: Colors.transparent),
             createExpanded(pathTwo, functionTwo),
-            Container(
-                width: SizeConfig.blockSizeHorizontal * 5,
-                color: Colors.transparent),
+            Container(width: sy(100), color: Colors.transparent),
             createExpanded(pathThree, functionThree),
           ],
         ));
-  }
-
-createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
-    functionThree, padding) {
-  return Container(
-      height: SizeConfig.blockSizeVertical * 30,
-      padding: padding,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          createExpanded(pathOne, functionOne),
-          Container(
-              width: SizeConfig.blockSizeHorizontal * 5,
-              color: Colors.transparent),
-          createExpanded(pathTwo, functionTwo),
-          Container(
-              width: SizeConfig.blockSizeHorizontal * 5,
-              color: Colors.transparent),
-          createExpanded(pathThree, functionThree),
-        ],
-      ));
+  });
 }
 
 void launchCalguard() async {
@@ -421,13 +412,13 @@ void launchTwitter() async {
   } else {
     throw 'Could not launch $url';
   }
+}
 
-  void launchJAHMS() async {
-    const url = 'https://jewishmilitary.com/';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+void launchJAHMS() async {
+  const url = 'https://jewishmilitary.com/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
