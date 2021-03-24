@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/displayView.dart';
 import 'package:panorama/panorama.dart';
+import 'package:jamhs_flutter/floorPlanView.dart';
 import 'size_config.dart';
 
 class VirutalToursPage extends StatefulWidget {
@@ -134,37 +135,68 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Panorama(
-          onViewChanged: (longitude, latitude, tilt) {
-            setState(() {});
-          },
-          onTap: (longitude, latitude, tilt) =>
-              print('onTap: $longitude, $latitude, $tilt, $_displayId'),
-          child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
-          minLatitude: -20.0,
-          maxLatitude: 35.0,
-          hotspots: displayData
-              .map((data) => Hotspot(
-                  name: data.title,
-                  latitude: data.pos.latitude,
-                  longitude: data.pos.longitude,
-                  width: 90,
-                  height: 75,
-                  widget: hotspotButton(
-                      text: data.title,
-                      icon: Icons.zoom_in,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DisplayView(
-                                      displayImgPath: data.displayPath,
-                                      caseImgPath: data.casePath,
-                                      caseImgZoomPath: data.artifactPath,
-                                      title: data.title,
-                                    )));
-                      })))
-              .toList()),
+      home: Stack(
+        alignment: Alignment.topLeft,
+        children: [
+          Panorama(
+              onViewChanged: (longitude, latitude, tilt) {
+                setState(() {});
+              },
+              onTap: (longitude, latitude, tilt) =>
+                  print('onTap: $longitude, $latitude, $tilt, $_displayId'),
+              child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+              minLatitude: -20.0,
+              maxLatitude: 35.0,
+              hotspots: displayData
+                  .map((data) => Hotspot(
+                      name: data.title,
+                      latitude: data.pos.latitude,
+                      longitude: data.pos.longitude,
+                      width: 90,
+                      height: 75,
+                      widget: hotspotButton(
+                          text: data.title,
+                          icon: Icons.zoom_in,
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DisplayView(
+                                          displayImgPath: data.displayPath,
+                                          caseImgPath: data.casePath,
+                                          caseImgZoomPath: data.artifactPath,
+                                          title: data.title,
+                                        )));
+                          })))
+                  .toList()),
+          SafeArea(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 5),
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FloorPlanView(
+                                displayData: displayData,
+                              )));
+                },
+                icon: Icon(Icons.map_outlined),
+                label: Text(
+                  "floor plan",
+                  style: TextStyle(
+                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: SizeConfig.backroundCOLOR.withOpacity(0.7),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
