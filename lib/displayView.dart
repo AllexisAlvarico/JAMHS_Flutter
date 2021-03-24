@@ -147,3 +147,59 @@ class CoordPos {
 
   CoordPos({required this.latitude, required this.longitude});
 }
+
+class ArtifactButton extends StatefulWidget {
+  final String desc;
+
+  ArtifactButton({Key? key, required this.desc}) : super(key: key);
+
+  @override
+  _ArtifactButtonState createState() => _ArtifactButtonState();
+}
+
+class _ArtifactButtonState extends State<ArtifactButton> {
+  bool showText = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                showText ^= true;
+                print(showText);
+              });
+            },
+            backgroundColor: SizeConfig.backroundCOLOR.withOpacity(.7),
+            child: Icon(Icons.zoom_in),
+          ),
+        ),
+        AnimatedOpacity(
+          opacity: showText ? 1.0 : 0.0,
+          duration: Duration(milliseconds: 200),
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2.5),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(.7),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+            child: Text(
+              widget.desc,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontFamily: "Futura"),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
