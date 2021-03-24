@@ -88,7 +88,7 @@ class ArtifactArticlesCard extends StatelessWidget {
                 action();
               },
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     height: sy(220),

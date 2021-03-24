@@ -280,12 +280,14 @@ class _ArticlePageState extends State<ArticlePage> {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return SingleChildScrollView(
         child: Container(
+          alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(
               SizeConfig.blockSizeHorizontal * 5,
               SizeConfig.blockSizeHorizontal * 1,
               SizeConfig.blockSizeHorizontal * 5,
               SizeConfig.blockSizeHorizontal * 1),
           child: Wrap(
+            runAlignment: WrapAlignment.center,
             children: data.map((data) {
               return ArtifactArticlesCard(
                   imagePath: data.imagePath,
@@ -314,6 +316,7 @@ Widget _cardLandscapeView() {
     builder: (context, height, width, sy, sx) {
       return SingleChildScrollView(
         child: Container(
+          alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(
               SizeConfig.blockSizeHorizontal * 5,
               SizeConfig.blockSizeHorizontal * 1,
