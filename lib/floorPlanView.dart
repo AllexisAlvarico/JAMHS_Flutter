@@ -9,113 +9,113 @@ class FloorPlanView extends StatelessWidget {
   FloorPlanView({Key? key, required this.displayData}) : super(key: key) {
     postions = [
       Positioned(
-        bottom: 17,
-        left: 8,
+        bottom: 33,
+        left: 23,
         child: EmptyButton(
           data: displayData[1],
         ),
       ),
       Positioned(
-        bottom: 52,
-        left: 12,
+        bottom: 67,
+        left: 27,
         child: EmptyButton(
           data: displayData[2],
         ),
       ),
       Positioned(
-        bottom: 85,
-        left: 22,
+        bottom: 100,
+        left: 37,
         child: EmptyButton(
           data: displayData[2],
         ),
       ),
       Positioned(
-        top: 72,
-        left: 40,
+        top: 87,
+        left: 55,
         child: EmptyButton(
           data: displayData[3],
         ),
       ),
       Positioned(
-        top: 48,
-        left: 62,
+        top: 63,
+        left: 77,
         child: EmptyButton(
           data: displayData[4],
         ),
       ),
       Positioned(
-        top: 27,
-        left: 90,
+        top: 42,
+        left: 105,
         child: EmptyButton(
           data: displayData[5],
         ),
       ),
       Positioned(
-        top: 13,
-        left: 122,
+        top: 28,
+        left: 137,
         child: EmptyButton(
           data: displayData[6],
         ),
       ),
       Positioned(
-        top: 6,
-        left: 155,
+        top: 21,
+        left: 170,
         child: EmptyButton(
           data: displayData[6],
         ),
       ),
       Positioned(
-        top: 6,
-        right: 157,
+        top: 21,
+        right: 171,
         child: EmptyButton(
           data: displayData[7],
         ),
       ),
       Positioned(
-        top: 13,
-        right: 122,
+        top: 28,
+        right: 137,
         child: EmptyButton(
           data: displayData[8],
         ),
       ),
       Positioned(
-        top: 27,
-        right: 91,
+        top: 42,
+        right: 106,
         child: EmptyButton(
           data: displayData[8],
         ),
       ),
       Positioned(
-        top: 48,
-        right: 62,
+        top: 63,
+        right: 77,
         child: EmptyButton(
           data: displayData[9],
         ),
       ),
       Positioned(
-        top: 72,
-        right: 40,
+        top: 87,
+        right: 55,
         child: EmptyButton(
           data: displayData[9],
         ),
       ),
       Positioned(
-        bottom: 85,
-        right: 22,
+        bottom: 100,
+        right: 37,
         child: EmptyButton(
           data: displayData[10],
         ),
       ),
       Positioned(
-        bottom: 52,
-        right: 12,
+        bottom: 67,
+        right: 27,
         child: EmptyButton(
           data: displayData[11],
         ),
       ),
       Positioned(
-        bottom: 17,
-        right: 8,
+        bottom: 33,
+        right: 23,
         child: EmptyButton(
           data: displayData[12],
         ),
@@ -167,21 +167,23 @@ class EmptyButton extends StatelessWidget {
       maintainAnimation: true,
       maintainSemantics: true,
       maintainState: true,
-      child: RawMaterialButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => DisplayView(
-                        displayImgPath: data.displayPath,
-                        caseImgPath: data.casePath,
-                        caseImgZoomPath: data.artifactPath,
-                        title: data.title,
-                      )));
-        },
-        fillColor: Colors.amber,
-        shape: CircleBorder(),
-        constraints: BoxConstraints.tight(Size(19, 19)),
+      child: SizedBox(
+        height: 18,
+        width: 18,
+        child: FloatingActionButton(
+          backgroundColor: SizeConfig.backroundCOLOR,
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DisplayView(
+                          displayImgPath: data.displayPath,
+                          caseImgPath: data.casePath,
+                          caseImgZoomPath: data.artifactPath,
+                          title: data.title,
+                        )));
+          },
+        ),
       ),
     );
   }
