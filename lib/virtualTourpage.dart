@@ -115,7 +115,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 child: Center(
                     child: Text(
                   text,
-                  textScaleFactor: 0.2,
+                  textScaleFactor: .7,
                   style: TextStyle(
                       color: Colors.white,
                       decoration: TextDecoration.none,
