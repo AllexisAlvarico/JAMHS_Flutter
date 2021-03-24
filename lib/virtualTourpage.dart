@@ -135,42 +135,53 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          Panorama(
-              onViewChanged: (longitude, latitude, tilt) {
-                setState(() {});
-              },
-              onTap: (longitude, latitude, tilt) =>
-                  print('onTap: $longitude, $latitude, $tilt, $_displayId'),
-              child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
-              minLatitude: -20.0,
-              maxLatitude: 35.0,
-              hotspots: displayData
-                  .map((data) => Hotspot(
-                      name: data.title,
-                      latitude: data.pos.latitude,
-                      longitude: data.pos.longitude,
-                      width: 90,
-                      height: 75,
-                      widget: hotspotButton(
-                          text: data.title,
-                          icon: Icons.zoom_in,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DisplayView(
-                                          displayImgPath: data.displayPath,
-                                          caseImgPath: data.casePath,
-                                          caseImgZoomPath: data.artifactPath,
-                                          title: data.title,
-                                        )));
-                          })))
-                  .toList()),
-          SafeArea(
-            child: Container(
+      home: Scaffold(
+        backgroundColor: SizeConfig.backroundCOLOR,
+        appBar: AppBar(
+          backgroundColor: SizeConfig.backroundCOLOR,
+          title: Text(
+            "Exhibits",
+            style: TextStyle(
+                fontSize: SizeConfig.fontHEADERSIZE,
+                fontWeight: FontWeight.bold,
+                fontFamily: "Futura"),
+          ),
+        ),
+        body: Stack(
+          alignment: Alignment.topLeft,
+          children: [
+            Panorama(
+                onViewChanged: (longitude, latitude, tilt) {
+                  setState(() {});
+                },
+                onTap: (longitude, latitude, tilt) =>
+                    print('onTap: $longitude, $latitude, $tilt, $_displayId'),
+                child: Image.asset('assets/images/DisplayPanoramicOne.jpg'),
+                minLatitude: -20.0,
+                maxLatitude: 35.0,
+                hotspots: displayData
+                    .map((data) => Hotspot(
+                        name: data.title,
+                        latitude: data.pos.latitude,
+                        longitude: data.pos.longitude,
+                        width: 90,
+                        height: 75,
+                        widget: hotspotButton(
+                            text: data.title,
+                            icon: Icons.zoom_in,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DisplayView(
+                                            displayImgPath: data.displayPath,
+                                            caseImgPath: data.casePath,
+                                            caseImgZoomPath: data.artifactPath,
+                                            title: data.title,
+                                          )));
+                            })))
+                    .toList()),
+            Container(
               margin: EdgeInsets.symmetric(horizontal: 5),
               child: ElevatedButton.icon(
                 onPressed: () {
@@ -194,8 +205,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
