@@ -138,6 +138,10 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
       home: Scaffold(
         backgroundColor: SizeConfig.backroundCOLOR,
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
           backgroundColor: SizeConfig.backroundCOLOR,
           title: Text(
             "Exhibits",
