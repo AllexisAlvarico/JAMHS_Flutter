@@ -181,7 +181,7 @@ Widget _landscape() {
                 sy(SizeConfig.edgeINSETS),
               ),
               child: Container(
-                height: sy(2500),
+                height: sx(1300),
                 decoration: BoxDecoration(
                   borderRadius:
                       BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
@@ -257,10 +257,10 @@ Widget _landscape() {
                         launchInsta,
                         launchTwitter,
                         EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3))),
+                            sx(SizeConfig.blockSizeHorizontal * 50),
+                            sy(SizeConfig.blockSizeVertical * 30),
+                            sx(SizeConfig.blockSizeHorizontal * 50),
+                            sy(SizeConfig.blockSizeVertical * 30))),
                     createText("Visit our Website", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createImage(
@@ -335,15 +335,15 @@ createTriple(pathOne, pathTwo, pathThree, functionOne, functionTwo,
     functionThree, padding) {
   return RelativeBuilder(builder: (context, height, width, sy, sx) {
     return Container(
-        height: sy(200),
+        height: sy(100),
         padding: padding,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             createExpanded(pathOne, functionOne),
-            Container(width: sy(100), color: Colors.transparent),
+            Container(width: sy(30), color: Colors.transparent),
             createExpanded(pathTwo, functionTwo),
-            Container(width: sy(100), color: Colors.transparent),
+            Container(width: sy(30), color: Colors.transparent),
             createExpanded(pathThree, functionThree),
           ],
         ));
