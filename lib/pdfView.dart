@@ -25,7 +25,7 @@ class _PDFViewState extends State<PDFView> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Color(0xff243C6C),
+      backgroundColor: SizeConfig.backroundCOLOR,
       appBar: AppBar(
         title: Text(
           "Graphic Novel",
@@ -67,7 +67,7 @@ class _PDFViewState extends State<PDFView> {
               navigationBuilder:
                   (context, page, totalPages, jumpToPage, animateToPage) {
                 return Container(
-                  color: Color(0xff243C6C),
+                  color: SizeConfig.backroundCOLOR,
                   child: ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [

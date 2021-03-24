@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/ArtifactArticlesCards.dart';
+import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactArticlesCards.dart';
 import 'viewpage.dart';
 import 'size_config.dart';
@@ -239,23 +240,25 @@ class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      child: Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
-        appBar: AppBar(
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return Container(
+        child: Scaffold(
           backgroundColor: SizeConfig.backroundCOLOR,
-          title: Text(
-            'Articles',
-            style: TextStyle(
-              fontSize: SizeConfig.fontHEADERSIZE,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+          appBar: AppBar(
+            backgroundColor: SizeConfig.backroundCOLOR,
+            title: Text(
+              'Articles',
+              style: TextStyle(
+                fontSize: SizeConfig.fontHEADERSIZE,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
+          body: _layoutDetails(),
         ),
-        body: _layoutDetails(),
-      ),
-    );
+      );
+    });
   }
 
   Widget _layoutDetails() {
@@ -274,62 +277,71 @@ class _ArticlePageState extends State<ArticlePage> {
   //this wraps the cards
 
   Widget _cardPorttraitView() {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.fromLTRB(
-            SizeConfig.blockSizeHorizontal * 5,
-            SizeConfig.blockSizeHorizontal * 1,
-            SizeConfig.blockSizeHorizontal * 5,
-            SizeConfig.blockSizeHorizontal * 1),
-        child: Wrap(
-          children: data.map((data) {
-            return ArtifactArticlesCard(
-                imagePath: data.imagePath,
-                title: data.title,
-                action: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ViewPage(
-                                img: data.imagePath,
-                                title: data.category,
-                                name: data.name,
-                                desc: data.desc,
-                              )));
-                });
-          }).toList(),
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(
+              SizeConfig.blockSizeHorizontal * 5,
+              SizeConfig.blockSizeHorizontal * 1,
+              SizeConfig.blockSizeHorizontal * 5,
+              SizeConfig.blockSizeHorizontal * 1),
+          child: Wrap(
+            runAlignment: WrapAlignment.center,
+            children: data.map((data) {
+              return ArtifactArticlesCard(
+                  imagePath: data.imagePath,
+                  title: data.title,
+                  action: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ViewPage(
+                                  img: data.imagePath,
+                                  title: data.category,
+                                  name: data.name,
+                                  desc: data.desc,
+                                )));
+                  });
+            }).toList(),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
+}
 
-  Widget _cardLandscapeView() {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.fromLTRB(
-            SizeConfig.blockSizeHorizontal * 5,
-            SizeConfig.blockSizeHorizontal * 1,
-            SizeConfig.blockSizeHorizontal * 5,
-            SizeConfig.blockSizeHorizontal * 1),
-        child: Wrap(
-          children: data.map((data) {
-            return ArtifactArticlesCard(
-                imagePath: data.imagePath,
-                title: data.title,
-                action: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ViewPage(
-                                img: data.imagePath,
-                                title: data.category,
-                                name: data.name,
-                                desc: data.desc,
-                              )));
-                });
-          }).toList(),
+Widget _cardLandscapeView() {
+  return RelativeBuilder(
+    builder: (context, height, width, sy, sx) {
+      return SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(
+              SizeConfig.blockSizeHorizontal * 5,
+              SizeConfig.blockSizeHorizontal * 1,
+              SizeConfig.blockSizeHorizontal * 5,
+              SizeConfig.blockSizeHorizontal * 1),
+          child: Wrap(
+            children: data.map((data) {
+              return ArtifactArticlesCard(
+                  imagePath: data.imagePath,
+                  title: data.title,
+                  action: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ViewPage(
+                                  img: data.imagePath,
+                                  title: data.category,
+                                  name: data.name,
+                                  desc: data.desc,
+                                )));
+                  });
+            }).toList(),
+          ),
         ),
-      ),
-    );
-  }
+      );
+    },
+  );
 }
