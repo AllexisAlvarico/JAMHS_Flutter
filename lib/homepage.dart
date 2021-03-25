@@ -4,6 +4,7 @@ import 'package:relative_scale/relative_scale.dart';
 import 'articlepage.dart';
 import 'collection.dart';
 import 'aboutus.dart';
+import 'flutter_device_type.dart';
 import 'size_config.dart';
 import 'virtualTourpage.dart';
 
@@ -16,6 +17,39 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+
+    //Get the physical device size
+    print(Device.size);
+//Quick methods to access the physical device width and height
+    print("Device Width: ${Device.width}, Device Height: ${Device.height}");
+
+//To get the actual screen size (Which is same as what MediaQuery gives)
+    print(Device.screenSize);
+//Quick methods to access the screen width and height
+    print(
+        "Device Width: ${Device.screenWidth}, Device Height: ${Device.screenHeight}");
+
+//Check if device is tablet
+    if (Device.get().isTablet) {
+      print("Tablet");
+    }
+
+//Check if device is at least an iphone x
+// NOTE: This detects up to Iphone 12 pro max
+    if (Device.get().isIphoneX) {
+      print("IphoneX");
+    }
+
+// For a generic notch test use
+    if (Device.get().hasNotch) {
+      print("hasNotch");
+    }
+
+//Other utility methods
+    print(Device.get().isPhone);
+    print(Device.get().isAndroid);
+    print(Device.get().isIos);
+
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Scaffold(
         backgroundColor: SizeConfig.backroundCOLOR,
@@ -30,14 +64,21 @@ class _HomePageState extends State<HomePage> {
       return SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _portraitSection(),
+            if (Device.get().isAndroid) _portraitAndriodSection(),
+            if (Device.get().isIos) _portraitIosSection()
+
+            // logic here
           ],
         ),
       );
     } else {
       return Row(
         children: <Widget>[
-          _landscapeLogoSection(),
+          if (Device.get().isAndroid) _landscapeLogoSection(),
+
+          //if (Device.get().isIos)
+
+          // Logic here
         ],
       );
     }
@@ -52,7 +93,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Widget _portraitSection() {
+  Widget _portraitAndriodSection() {
     return RelativeBuilder(
       builder: (context, height, width, sy, sx) {
         return Container(
@@ -142,6 +183,53 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     });
+  }
+
+  Widget _portraitIosSection() {
+    return RelativeBuilder(
+      builder: (context, height, width, sy, sx) {
+        return Container(
+          width: width,
+          height: height,
+          child: Container(
+            padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: sy(180),
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/homelogo.png"),
+                        fit: BoxFit.contain),
+                  ),
+                ),
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                    childAspectRatio: width / height / .65,
+                    crossAxisSpacing: SizeConfig.axisSPACING,
+                    mainAxisSpacing: SizeConfig.axisSPACING,
+                    children: <Widget>[
+                      gridItems(Icons.article, "assets/images/homelogo.png",
+                          "Articles", 0),
+                      gridItems(Icons.collections, "assets/images/homelogo.png",
+                          "Collections", 1),
+                      gridItems(Icons.tour, "assets/images/homelogo.png",
+                          "Virtual Tours", 2),
+                      gridItems(Icons.question_answer,
+                          "assets/images/homelogo.png", "About Us!", 3),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   Widget gridItems(IconData icon, String image, String title, int state) {
