@@ -62,7 +62,7 @@ class _CollectionPageState extends State<CollectionPage> {
         "Comming soon!"),
     ArtifactCollectionData(
         "assets/images/pamphlet.JPG",
-        "Division emblems and Jewish welfare board post card, MoH Recipent Ceremony",
+        "Division emblems and Jewish welfare board post card",
         "Medal of Honour",
         "Artifacts",
         "Comming soon!")
