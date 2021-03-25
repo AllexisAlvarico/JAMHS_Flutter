@@ -60,6 +60,9 @@ class _ControllerVideoState extends State<_ControllerVideo> {
                   VideoPlayer(_controller),
                   _ControlsOverlay(controller: _controller),
                   VideoProgressIndicator(_controller, allowScrubbing: true),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: BackButton(color: Colors.white)),
                 ],
               ),
             )));
