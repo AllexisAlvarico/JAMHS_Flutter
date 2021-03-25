@@ -1,0 +1,67 @@
+PODS:
+  - advance_pdf_viewer (1.0.5):
+    - Flutter
+  - Flutter (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - motion_sensors (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - url_launcher (0.0.1):
+    - Flutter
+  - video_player (0.0.1):
+    - Flutter
+  - webview_flutter (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - advance_pdf_viewer (from `.symlinks/plugins/advance_pdf_viewer/ios`)
+  - Flutter (from `Flutter`)
+  - motion_sensors (from `.symlinks/plugins/motion_sensors/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - video_player (from `.symlinks/plugins/video_player/ios`)
+  - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+
+EXTERNAL SOURCES:
+  advance_pdf_viewer:
+    :path: ".symlinks/plugins/advance_pdf_viewer/ios"
+  Flutter:
+    :path: Flutter
+  motion_sensors:
+    :path: ".symlinks/plugins/motion_sensors/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+  video_player:
+    :path: ".symlinks/plugins/video_player/ios"
+  webview_flutter:
+    :path: ".symlinks/plugins/webview_flutter/ios"
+
+SPEC CHECKSUMS:
+  advance_pdf_viewer: 5c832f382b4ca84fe735f893b7e91aa830c27d7b
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  motion_sensors: 03f55b7c637a7e365a0b5f9697a449f9059d5d91
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
+  video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
+  webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
