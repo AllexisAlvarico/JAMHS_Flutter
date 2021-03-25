@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jamhs_flutter">
    <application
-        android:label="jamhs_flutter"
+        android:label="JAMHS"
         android:icon="@mipmap/ic_launcher"
+       android:roundIcon="@mipmap/ic_launcher_round"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
