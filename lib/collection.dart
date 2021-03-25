@@ -47,13 +47,25 @@ class _CollectionPageState extends State<CollectionPage> {
         "1930s-1940s Jewish Soldiers prayer books",
         "Hewbrew Bible",
         "Artifacts",
-        "insert text"),
+        "Also known as the 'Tanakh' for Jews serving in the US Armed Forced in the Second World War. These examples include  President Roosevelt speech which praises studying the holy scripture. They  contain words of wisdom, advice and inspiration, and constitute a source of spiritual self-transcendence. At the end of the speech, praise is given to the army clergy, under the heading 'Do you know your Chaplain?'\n\nTanakh for Jews serving in the US Army. Includes the United States president's speech to the military, in praise of religious faith and studying the Holy Scriptures, which contain words of wisdom, advice and inspiration, and constitute a source of spiritual self-transcendence. At the end of the speech, praise is given to the army clergy, under the heading 'Do you know your Chaplain?'\n\nAccession Date:\nDescription: 512 pages. 13 cm. English.\nCondition: Fine. Stains, taped tears on the title page. Original binding."),
     ArtifactCollectionData(
         "assets/images/moh_book.jpg",
         "T. Rubin' Programme, MoH Recipent Ceremony",
         "Medal of Honour",
         "Artifacts",
-        "insert text")
+        "Comming soon!"),
+    ArtifactCollectionData(
+        "assets/images/sydneyPic.JPG",
+        "Sydney G. Gumpertz, MoH Picture",
+        "Medal of Honour",
+        "Artifacts",
+        "Comming soon!"),
+    ArtifactCollectionData(
+        "assets/images/pamphlet.JPG",
+        "Division emblems and Jewish welfare board post card, MoH Recipent Ceremony",
+        "Medal of Honour",
+        "Artifacts",
+        "Comming soon!")
   ];
 
   List<ArtifactCollectionData> rubinData = [
@@ -62,15 +74,15 @@ class _CollectionPageState extends State<CollectionPage> {
         "Post War Khaki 1st cav. Shirt",
         "Uniform",
         "Tibor Collection",
-        "insert text"),
+        "Comming soon!"),
     ArtifactCollectionData("assets/images/tibur_hat.jpg",
-        "Post War Calvary Stetson", "Hat", "Tibor Collection", "insert text"),
+        "Post War Calvary Stetson", "Hat", "Tibor Collection", "Comming soon!"),
     ArtifactCollectionData(
         "assets/images/tibur_pin.jpg",
         "Tibor Rubin's Challenge Coin",
         "Military Pin",
         "Tibor Collection",
-        "insert text")
+        "Comming soon!")
   ];
 
   @override
