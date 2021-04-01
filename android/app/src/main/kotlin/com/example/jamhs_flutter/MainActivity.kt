@@ -1,4 +1,4 @@
-package com.example.jamhs_flutter
+package com.vshp.jamhs
 
 import io.flutter.embedding.android.FlutterActivity
 

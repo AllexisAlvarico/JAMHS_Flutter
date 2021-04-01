@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jamhs_flutter">
+    package="com.vshp.jamhs">
    <application
         android:label="JAMHS"
         android:icon="@mipmap/ic_launcher"
