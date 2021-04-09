@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:jamhs_flutter/videoView.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactCollectionCards.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
 import 'size_config.dart';
 import 'pdfView.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CollectionPage extends StatefulWidget {
   @override
@@ -20,26 +20,26 @@ class _CollectionPageState extends State<CollectionPage> {
 
   List<VideoData> videoData = [
     VideoData(
-        "assets/videos/thumb1.png",
+        "assets/images/thumb1.png",
         "Alpert Jewish Community Center Veterans Day Promo",
         "Promo",
         "Video",
         "Join Us November 11th for a special veterans day program in partnership with the Alpert JCC of Long Beach, California.",
-        "assets/videos/vid1.mp4"),
+        "https://www.youtube.com/watch?v=w36U__PrPKw"),
     VideoData(
-        "assets/videos/thumb2.png",
+        "assets/images/thumb2.png",
         "Gliding into The Netherlands, September 17th, 1944",
         "Gliding into The Netherlands",
         "Video",
         "Preview segment of LTC (R) Sam Sachs of his experience during operation market garden",
-        "assets/videos/vid2.mp4"),
+        "https://www.youtube.com/watch?v=ixrbJf2mYuU"),
     VideoData(
-        "assets/videos/thumb3.png",
+        "assets/images/thumb3.png",
         "LTC (R) Sam Sachs Early Life Trailer",
         "Sam Sachs Early Life",
         "Video",
         "Throughout the month of June 2020, The Jewish American Military Historical Society in partnership with World War 2 Veteran Memories' Project, interviewed Lieutenant Colonel (Retired) Sam Sachs.",
-        "assets/videos/vid3.mp4")
+        "https://www.youtube.com/watch?v=Sfnfp8D8Zyk")
   ];
   List<ArtifactCollectionData> artifactData = [
     ArtifactCollectionData(
@@ -164,14 +164,7 @@ class _CollectionPageState extends State<CollectionPage> {
                         imagePath: data.imagePath,
                         title: data.title,
                         action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => VideoView(
-                                        src: data.videoPath,
-                                        title: data.name,
-                                        desc: data.desc,
-                                      )));
+                          launchURL(data.videoPath);
                         },
                       );
                     }).toList(),
@@ -284,5 +277,13 @@ class _CollectionPageState extends State<CollectionPage> {
         ),
       );
     });
+  }
+}
+
+void launchURL(url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
