@@ -12,9 +12,18 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
-      body: _layoutDetails(),
-    );
+        backgroundColor: SizeConfig.backroundCOLOR,
+        body: _layoutDetails(),
+        appBar: AppBar(
+            backgroundColor: SizeConfig.backroundCOLOR,
+            title: Text(
+              "About us",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: SizeConfig.fontHEADERSIZE,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Futura"),
+            )));
   }
 
   Widget _layoutDetails() {
