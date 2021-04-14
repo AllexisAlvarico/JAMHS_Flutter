@@ -15,80 +15,134 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
   List<DisplayData> displayData = [
     DisplayData(
         displayPath: "assets/images/collection.jpg",
+        casePath: "assets/images/collection_b.JPG",
+        artifactPath: "assets/images/collection_c.JPG",
         title: "Introduction",
-        pos: CoordPos(latitude: 20, longitude: 16)),
+        pos: CoordPos(latitude: 20, longitude: 16),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/benjamin_title.jpg",
         casePath: "assets/images/benjamin_b.jpg",
         artifactPath: "assets/images/benjamin_c.jpg",
         title: "Benjamin",
-        pos: CoordPos(latitude: 20, longitude: 51)),
+        pos: CoordPos(latitude: 20, longitude: 51),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/isaac_simon_title.jpg",
         casePath: "assets/images/isaac_simon_b.jpg",
         artifactPath: "assets/images/isaac_simon_c.jpg",
         title: "Isaac & Simon",
-        pos: CoordPos(latitude: 20, longitude: 65)),
+        pos: CoordPos(latitude: 20, longitude: 65),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/david_title.jpg",
         casePath: "assets/images/david_b.jpg",
         artifactPath: "assets/images/david_c.jpg",
         title: "David",
-        pos: CoordPos(latitude: 20, longitude: 80)),
+        pos: CoordPos(latitude: 20, longitude: 80),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/leopold_title.jpg",
         casePath: "assets/images/leopold_b.jpg",
         artifactPath: "assets/images/leopold_c.jpg",
         title: "Leopold",
-        pos: CoordPos(latitude: 20, longitude: 110)),
+        pos: CoordPos(latitude: 20, longitude: 110),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/henry_title.jpg",
         casePath: "assets/images/henry_b.jpg",
         artifactPath: "assets/images/henry_c.jpg",
         title: "Henry",
-        pos: CoordPos(latitude: 20, longitude: 140)),
+        pos: CoordPos(latitude: 20, longitude: 140),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/samuel_benjamin_title.jpg",
         casePath: "assets/images/samuel_benjamin_b.jpg",
         artifactPath: "assets/images/samuel_benjamin_c.jpg",
         title: "Samuel & Benjamin",
-        pos: CoordPos(latitude: 30, longitude: 172)),
+        pos: CoordPos(latitude: 30, longitude: 172),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/sydney_title.jpg",
         casePath: "assets/images/sydney_b.jpg",
         artifactPath: "assets/images/sydney_c.jpg",
         title: "Sydney",
-        pos: CoordPos(latitude: 20, longitude: 219)),
+        pos: CoordPos(latitude: 20, longitude: 219),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/william_ben_title.jpg",
         casePath: "assets/images/william_ben_b.jpg",
         artifactPath: "assets/images/william_ben_c.jpg",
         title: "William & Ben",
-        pos: CoordPos(latitude: 20, longitude: 248)),
+        pos: CoordPos(latitude: 20, longitude: 248),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/raymond_isadore_title.jpg",
         casePath: "assets/images/raymond_isadore_b.jpg",
         artifactPath: "assets/images/raymond_isadore_c.jpg",
         title: "Ray & Isadore",
-        pos: CoordPos(latitude: 20, longitude: 276)),
+        pos: CoordPos(latitude: 20, longitude: 276),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/rubin_title.jpg",
         casePath: "assets/images/rubin_b.jpg",
         artifactPath: "assets/images/rubin_c.jpg",
         title: "Tibor Rubin",
-        pos: CoordPos(latitude: 20, longitude: 305)),
+        pos: CoordPos(latitude: 20, longitude: 305),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/jack_title.jpg",
         casePath: "assets/images/jack_b.jpg",
         artifactPath: "assets/images/jack_c.jpg",
         title: "Jack",
-        pos: CoordPos(latitude: 20, longitude: 327)),
+        pos: CoordPos(latitude: 20, longitude: 327),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
     DisplayData(
         displayPath: "assets/images/john_title.jpg",
         casePath: "assets/images/john_b.jpg",
         artifactPath: "assets/images/john_c.jpg",
         title: "John",
-        pos: CoordPos(latitude: 20, longitude: 340)),
+        pos: CoordPos(latitude: 20, longitude: 340),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+        ]),
   ];
 
   Widget hotspotButton(
@@ -182,6 +236,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                                             caseImgPath: data.casePath,
                                             caseImgZoomPath: data.artifactPath,
                                             title: data.title,
+                                            artifactButtonData:
+                                                data.artifactButtonData,
                                           )));
                             })))
                     .toList()),

@@ -8,7 +8,7 @@
             "name": "jamhs",
             "request": "launch",
             "type": "dart",
-            "program": "lib/splash.dart"
+            "program": "lib/main.dart"
         }
     ]
 }

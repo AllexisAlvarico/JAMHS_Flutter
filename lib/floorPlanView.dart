@@ -361,6 +361,7 @@ class EmptyButton extends StatelessWidget {
                           caseImgPath: data.casePath,
                           caseImgZoomPath: data.artifactPath,
                           title: data.title,
+                          artifactButtonData: data.artifactButtonData,
                         )));
           },
         ),

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/size_config.dart';
+import 'package:jamhs_flutter/artifactView.dart';
 
 class DisplayView extends StatefulWidget {
   final String displayImgPath;
   final String? caseImgPath;
   final String? title;
   final String? caseImgZoomPath;
+  final List<ArtifactButtonData> artifactButtonData;
 
   DisplayView(
       {Key? key,
       required this.displayImgPath,
       this.caseImgPath,
       this.caseImgZoomPath,
-      required this.title})
+      required this.title,
+      required this.artifactButtonData})
       : super(key: key);
 
   @override
@@ -21,6 +24,7 @@ class DisplayView extends StatefulWidget {
 
 class _DisplayViewState extends State<DisplayView> {
   String? currentImgPath = "";
+  bool showArtifactButtons = false;
 
   @override
   void initState() {
@@ -49,9 +53,22 @@ class _DisplayViewState extends State<DisplayView> {
             constrained: false,
             minScale: 0.1,
             maxScale: 4.0,
-            child: Image.asset(
-              currentImgPath!,
-              scale: 3.5,
+            child: Stack(
+              children: [
+                Image.asset(
+                  currentImgPath!,
+                  scale: 3.5,
+                ),
+                if (showArtifactButtons == true)
+                  for (var data in widget.artifactButtonData)
+                    Positioned(
+                      top: data.pos.top,
+                      left: data.pos.left,
+                      child: ArtifactButton(
+                        desc: data.desc,
+                      ),
+                    ),
+              ],
             ),
           ),
           Container(
@@ -68,6 +85,7 @@ class _DisplayViewState extends State<DisplayView> {
                     if (currentImgPath != widget.displayImgPath) {
                       setState(() {
                         currentImgPath = widget.displayImgPath;
+                        showArtifactButtons = false;
                       });
                     }
                   },
@@ -87,6 +105,7 @@ class _DisplayViewState extends State<DisplayView> {
                         widget.caseImgPath != null) {
                       setState(() {
                         currentImgPath = widget.caseImgPath;
+                        showArtifactButtons = false;
                       });
                     }
                   },
@@ -106,6 +125,7 @@ class _DisplayViewState extends State<DisplayView> {
                         widget.caseImgZoomPath != null) {
                       setState(() {
                         currentImgPath = widget.caseImgZoomPath;
+                        showArtifactButtons = true;
                       });
                     }
                   },
@@ -132,13 +152,22 @@ class DisplayData {
   String? artifactPath;
   String title;
   CoordPos pos;
+  List<ArtifactButtonData> artifactButtonData;
 
   DisplayData(
       {required this.displayPath,
       this.casePath,
       this.artifactPath,
       required this.title,
-      required this.pos});
+      required this.pos,
+      required this.artifactButtonData});
+}
+
+class ArtifactButtonData {
+  Position pos;
+  String desc;
+
+  ArtifactButtonData({required this.pos, required this.desc});
 }
 
 class CoordPos {
@@ -146,6 +175,15 @@ class CoordPos {
   double longitude = 0;
 
   CoordPos({required this.latitude, required this.longitude});
+}
+
+class Position {
+  double? left;
+  double? top;
+  double? right;
+  double? botton;
+
+  Position({this.left, this.top, this.right, this.botton});
 }
 
 class ArtifactButton extends StatefulWidget {
@@ -165,37 +203,21 @@ class _ArtifactButtonState extends State<ArtifactButton> {
     return Column(
       children: [
         SizedBox(
-          height: 30,
-          width: 30,
+          height: 50,
+          width: 50,
           child: FloatingActionButton(
             onPressed: () {
-              setState(() {
-                showText ^= true;
-                print(showText);
-              });
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ArtifactView(
+                            desc: widget.desc,
+                          )));
             },
             backgroundColor: SizeConfig.backroundCOLOR.withOpacity(.7),
-            child: Icon(Icons.zoom_in),
-          ),
-        ),
-        AnimatedOpacity(
-          opacity: showText ? 1.0 : 0.0,
-          duration: Duration(milliseconds: 200),
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 5),
-            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2.5),
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(.7),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Text(
-              widget.desc,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontFamily: "Futura"),
+            child: Icon(
+              Icons.zoom_in,
+              size: 35,
             ),
           ),
         ),
