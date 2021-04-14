@@ -75,13 +75,23 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "David",
         pos: CoordPos(latitude: 20, longitude: 80),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 310, top: 410),
+              desc: "Hardee Hat national insignia"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 360), desc: "Powder Horn"),
+          ArtifactButtonData(
+              pos: Position(left: 1150, top: 200),
+              desc: "Coffee Boiler with lid"),
+          ArtifactButtonData(
+              pos: Position(left: 230, top: 600),
+              desc: "Corporal Stripes, Infantry (1855-1871)"),
+          ArtifactButtonData(
+              pos: Position(left: 750, top: 800),
+              desc: "Capper, Patterson Revolver"),
+          ArtifactButtonData(
+              pos: Position(left: 700, top: 500), desc: "Holster, Pistol"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: "Kepi"),
         ]),
     DisplayData(
         displayPath: "assets/images/leopold_title.jpg",
