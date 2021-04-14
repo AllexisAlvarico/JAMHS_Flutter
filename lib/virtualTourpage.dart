@@ -20,8 +20,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Introduction",
         pos: CoordPos(latitude: 20, longitude: 16),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/benjamin_title.jpg",
@@ -30,8 +29,17 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Benjamin",
         pos: CoordPos(latitude: 20, longitude: 51),
         artifactButtonData: [
+          ArtifactButtonData(pos: Position(left: 250, top: 250), desc: "Kepi"),
           ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+              pos: Position(left: 1000, top: 250),
+              desc: "Infantry NCO Trousers, Wool White strip"),
+          ArtifactButtonData(
+              pos: Position(left: 1000, top: 650),
+              desc: "California Issue Sword Belt"),
+          ArtifactButtonData(
+              pos: Position(left: 450, top: 800), desc: "Musket Bayonet"),
+          ArtifactButtonData(
+              pos: Position(left: 350, top: 600), desc: "Drumstick"),
         ]),
     DisplayData(
         displayPath: "assets/images/isaac_simon_title.jpg",
@@ -41,7 +49,24 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         pos: CoordPos(latitude: 20, longitude: 65),
         artifactButtonData: [
           ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+              pos: Position(left: 250, top: 250),
+              desc: "Infanrty Horn Insignia"),
+          ArtifactButtonData(pos: Position(left: 250, top: 480), desc: "Kepi"),
+          ArtifactButtonData(
+              pos: Position(left: 1300, top: 450), desc: "Post Cavalry"),
+          ArtifactButtonData(
+              pos: Position(left: 10, top: 10), desc: "8th Cavalry Insignia"),
+          ArtifactButtonData(
+              pos: Position(left: 580, top: 530),
+              desc: "Indian Campaign Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 850, top: 200), desc: "Dress Blue Trousers"),
+          ArtifactButtonData(
+              pos: Position(left: 1250, top: 780),
+              desc: "Infantry Seargents Stripes (1855-1871)"),
+          ArtifactButtonData(
+              pos: Position(left: 170, top: 730),
+              desc: "Infantry Corporal Stripes (1855-1871)"),
         ]),
     DisplayData(
         displayPath: "assets/images/david_title.jpg",
@@ -50,8 +75,13 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "David",
         pos: CoordPos(latitude: 20, longitude: 80),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/leopold_title.jpg",
@@ -60,8 +90,16 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Leopold",
         pos: CoordPos(latitude: 20, longitude: 110),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/henry_title.jpg",
@@ -70,8 +108,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Henry",
         pos: CoordPos(latitude: 20, longitude: 140),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/samuel_benjamin_title.jpg",
@@ -80,8 +117,10 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Samuel & Benjamin",
         pos: CoordPos(latitude: 30, longitude: 172),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/sydney_title.jpg",
@@ -90,8 +129,13 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Sydney",
         pos: CoordPos(latitude: 20, longitude: 219),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/william_ben_title.jpg",
@@ -100,8 +144,14 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "William & Ben",
         pos: CoordPos(latitude: 20, longitude: 248),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/raymond_isadore_title.jpg",
@@ -110,8 +160,17 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Ray & Isadore",
         pos: CoordPos(latitude: 20, longitude: 276),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/rubin_title.jpg",
@@ -120,8 +179,10 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Tibor Rubin",
         pos: CoordPos(latitude: 20, longitude: 305),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/jack_title.jpg",
@@ -130,8 +191,12 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Jack",
         pos: CoordPos(latitude: 20, longitude: 327),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
     DisplayData(
         displayPath: "assets/images/john_title.jpg",
@@ -140,8 +205,13 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "John",
         pos: CoordPos(latitude: 20, longitude: 340),
         artifactButtonData: [
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "testing artifacts"),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
         ]),
   ];
 
