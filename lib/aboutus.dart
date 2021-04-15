@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 
 class AboutUsPage extends StatefulWidget {
   @override
@@ -67,7 +68,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   sy(SizeConfig.edgeINSETS),
                 ),
                 child: Container(
-                  height: sy(1200), // 195 isbottom limit
+                  height:
+                      sy(ScreenScaler().getHeight(60)), // 195 isbottom limit
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                       sy(SizeConfig.borderRADIUS),
@@ -204,7 +206,7 @@ Widget _landscape() {
                 sy(SizeConfig.edgeINSETS),
               ),
               child: Container(
-                height: sx(1100),
+                height: sx(ScreenScaler().getHeight(60)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                     sy(SizeConfig.borderRADIUS),
