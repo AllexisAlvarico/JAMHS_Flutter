@@ -28,7 +28,7 @@ class SizeConfig {
       Color(0xff243C6C); // blue in background colour
 
   static const double axisSPACING =
-      20.0; // if unsure what to use use this as default
+      10.0; // if unsure what to use use this as default
 
   static const double cardLogoSize = 120.0; // Logo size as per home page
   static const double logoSize = 40.0; // Logo size for video

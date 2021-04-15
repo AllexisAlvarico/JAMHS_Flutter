@@ -188,14 +188,15 @@ class _HomePageState extends State<HomePage> {
                 break;
             }
           },
-          child: Card(
-            child: Container(
+          child: Container(
+            width: sx(400),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
-                  sy(SizeConfig.borderRADIUS),
+                  sy(0),
                 ), // 15 works and collections looks tidier
                 color: Colors.white,
               ),
+            child: Card(
               child: Stack(
                 children: [
                   Align(
