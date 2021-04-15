@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(
                     sy(SizeConfig.edgeINSETS),
                   ),
-                  childAspectRatio: width / height * 1.2,
+                  childAspectRatio: width / height * 1.3,
                   crossAxisSpacing: SizeConfig.axisSPACING,
                   mainAxisSpacing: SizeConfig.axisSPACING,
                   children: <Widget>[
