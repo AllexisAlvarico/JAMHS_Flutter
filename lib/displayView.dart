@@ -68,6 +68,8 @@ class _DisplayViewState extends State<DisplayView> {
                       right: data.pos.right,
                       child: ArtifactButton(
                         desc: data.desc,
+                        tag: data.tag,
+                        title: data.title,
                       ),
                     ),
               ],
@@ -168,8 +170,11 @@ class DisplayData {
 class ArtifactButtonData {
   Position pos;
   String desc;
+  String? title;
+  int tag;
 
-  ArtifactButtonData({required this.pos, required this.desc});
+  ArtifactButtonData(
+      {required this.pos, required this.desc, this.title, required this.tag});
 }
 
 class CoordPos {
@@ -190,16 +195,17 @@ class Position {
 
 class ArtifactButton extends StatefulWidget {
   final String desc;
+  final int tag;
+  final String? title;
 
-  ArtifactButton({Key? key, required this.desc}) : super(key: key);
+  ArtifactButton({Key? key, required this.desc, required this.tag, this.title})
+      : super(key: key);
 
   @override
   _ArtifactButtonState createState() => _ArtifactButtonState();
 }
 
 class _ArtifactButtonState extends State<ArtifactButton> {
-  bool showText = false;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -208,12 +214,14 @@ class _ArtifactButtonState extends State<ArtifactButton> {
           height: 50,
           width: 50,
           child: FloatingActionButton(
+            heroTag: widget.tag.toString(),
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => ArtifactView(
                             desc: widget.desc,
+                            title: widget.title,
                           )));
             },
             backgroundColor: SizeConfig.backroundCOLOR.withOpacity(.7),
