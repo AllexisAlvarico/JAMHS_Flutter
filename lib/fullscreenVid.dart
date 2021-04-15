@@ -26,21 +26,25 @@ class _ControllerVideoState extends State<_ControllerVideo> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-    ]);
+    SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.landscapeRight,
+        DeviceOrientation.landscapeLeft,
+      ],
+    );
     _controller = widget.controller;
   }
 
   @override
   void dispose() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.landscapeRight,
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ],
+    );
     super.dispose();
   }
 
@@ -104,11 +108,13 @@ class _ControlsOverlay extends StatelessWidget {
                 for (final speed in _examplePlaybackRates)
                   PopupMenuItem(
                     value: speed,
-                    child: Text('${speed}x',
-                        style: TextStyle(
-                            fontSize: SizeConfig.fontDISCRIPTIONSIZE,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold)),
+                    child: Text(
+                      '${speed}x',
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
                   )
               ];
             },

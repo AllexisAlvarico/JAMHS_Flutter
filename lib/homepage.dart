@@ -16,12 +16,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return RelativeBuilder(builder: (context, height, width, sy, sx) {
-      return Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
-        body: _layoutDetails(),
-      );
-    });
+    return RelativeBuilder(
+      builder: (context, height, width, sy, sx) {
+        return Scaffold(
+          backgroundColor: SizeConfig.backroundCOLOR,
+          body: _layoutDetails(),
+        );
+      },
+    );
   }
 
   Widget _layoutDetails() {

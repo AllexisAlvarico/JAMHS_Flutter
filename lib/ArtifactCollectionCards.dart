@@ -26,8 +26,10 @@ class ArtifactCollectionCard extends StatelessWidget {
           height: sy(200),
           child: Card(
             shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+              borderRadius: BorderRadius.circular(
+                sy(SizeConfig.borderRADIUS),
+              ),
+            ),
             clipBehavior: Clip.antiAlias,
             elevation: 5,
             child: InkWell(
@@ -49,10 +51,11 @@ class ArtifactCollectionCard extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1)),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                    ),
                     child: Text(
                       title,
                       textAlign: TextAlign.center,
@@ -75,8 +78,10 @@ class ArtifactCollectionCard extends StatelessWidget {
           height: sy(270),
           child: Card(
             shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+              borderRadius: BorderRadius.circular(
+                sy(SizeConfig.borderRADIUS),
+              ),
+            ),
             clipBehavior: Clip.antiAlias,
             elevation: 5,
             child: InkWell(
@@ -98,10 +103,11 @@ class ArtifactCollectionCard extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1)),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                    ),
                     child: Text(
                       title,
                       textAlign: TextAlign.center,
