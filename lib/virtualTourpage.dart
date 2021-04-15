@@ -256,12 +256,23 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Jack",
         pos: CoordPos(latitude: 20, longitude: 327),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 700, top: 200),
+              desc: "M1954 Belt with Magazine Pouches"),
+          ArtifactButtonData(
+              pos: Position(left: 700, botton: 110),
+              desc: "Combat Infantry Badge"),
+          ArtifactButtonData(
+              pos: Position(left: 100, botton: 500), desc: "Hot Weather Cap"),
+          ArtifactButtonData(
+              pos: Position(left: 400, botton: 200),
+              desc: "Vietnam Service Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 980, botton: 200),
+              desc: "Republic Cross Gallantry Medal"),
+          ArtifactButtonData(
+              pos: Position(right: 100, top: 400),
+              desc: "Grounds Troops Helmet M1"),
         ]),
     DisplayData(
         displayPath: "assets/images/john_title.jpg",
@@ -270,13 +281,23 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "John",
         pos: CoordPos(latitude: 20, longitude: 340),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 300, top: 300), desc: "USAF Field Hat"),
+          ArtifactButtonData(
+              pos: Position(left: 350, botton: 190),
+              desc: "Vietnam Service Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 100, botton: 200),
+              desc: "National Defense Service Medal"),
+          ArtifactButtonData(
+              pos: Position(right: 100, botton: 300),
+              desc: "Canteen with Cover"),
+          ArtifactButtonData(
+              pos: Position(right: 250, top: 200),
+              desc: "USAF Enlisted Service Hat"),
+          ArtifactButtonData(
+              pos: Position(left: 700, botton: 300),
+              desc: "Vietnam Mess Kit, dated (1966)"),
         ]),
   ];
 
