@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       gridItems(Icons.collections, "assets/images/homelogo.png",
                           "Collections", 1),
                       gridItems(Icons.tour, "assets/images/homelogo.png",
-                          "Virtual Tours", 2),
+                          "Virtual Tour", 2),
                       gridItems(Icons.question_answer,
                           "assets/images/homelogo.png", "About Us!", 3),
                     ],
@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(
                   sy(0),
                 ), // 15 works and collections looks tidier
-                color: Colors.white,
+                color: Colors.transparent,
               ),
             child: Card(
               child: Stack(
