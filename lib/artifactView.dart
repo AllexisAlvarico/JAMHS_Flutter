@@ -48,12 +48,15 @@ class ArtifactView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                  margin:
-                      EdgeInsets.symmetric(vertical: sy(SizeConfig.edgeINSETS)),
-                  child: Image.asset(imagePath)),
+                margin: EdgeInsets.symmetric(
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
+                child: Image.asset(imagePath),
+              ),
               Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.symmetric(
+                  horizontal: sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   title,
                   style: TextStyle(
@@ -64,8 +67,9 @@ class ArtifactView extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   category,
                   style: TextStyle(
@@ -76,8 +80,9 @@ class ArtifactView extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -108,12 +113,15 @@ class ArtifactView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                  margin:
-                      EdgeInsets.symmetric(vertical: sy(SizeConfig.edgeINSETS)),
-                  child: Image.asset(imagePath)),
+                margin: EdgeInsets.symmetric(
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
+                child: Image.asset(imagePath),
+              ),
               Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: sx(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.symmetric(
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   title,
                   style: TextStyle(
@@ -124,8 +132,9 @@ class ArtifactView extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   category,
                   style: TextStyle(
@@ -136,8 +145,9 @@ class ArtifactView extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
