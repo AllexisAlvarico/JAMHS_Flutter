@@ -67,7 +67,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   sy(SizeConfig.edgeINSETS),
                 ),
                 child: Container(
-                  height: sy(1300), // 195 isbottom limit
+                  height: sy(1200), // 195 isbottom limit
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                       sy(SizeConfig.borderRADIUS),
@@ -154,17 +154,18 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           sy(SizeConfig.blockSizeVertical * 1),
                         ),
                       ),
-                      createText("Visit our Website", SizeConfig.edgeINSETS,
+                      createText("Visit our Website At", SizeConfig.edgeINSETS,
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                      createImage(
-                          "assets/logo/jamhs.jpg",
-                          SizeConfig.edgeINSETS, // border's radius
-                          EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 30,
-                              0,
-                              SizeConfig.blockSizeHorizontal * 30,
-                              0),
-                          launchJAHMS),
+                      InkWell(
+                          child: new Text(
+                            'https://jewishmilitary.com/',
+                            style: TextStyle(
+                                color: SizeConfig.backroundCOLOR,
+                                fontSize: SizeConfig.fontHEADERSIZE,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          onTap: () => launchJAHMS()),
                     ],
                   ),
                 ),
@@ -203,7 +204,7 @@ Widget _landscape() {
                 sy(SizeConfig.edgeINSETS),
               ),
               child: Container(
-                height: sx(1300),
+                height: sx(1100),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                     sy(SizeConfig.borderRADIUS),
@@ -283,19 +284,27 @@ Widget _landscape() {
                       launchInsta,
                       launchTwitter,
                       EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 50),
-                        sy(SizeConfig.blockSizeVertical * 30),
-                        sx(SizeConfig.blockSizeHorizontal * 50),
-                        sy(SizeConfig.blockSizeVertical * 30),
+                        sx(SizeConfig.blockSizeHorizontal * 3),
+                        sy(SizeConfig.blockSizeVertical),
+                        sx(SizeConfig.blockSizeHorizontal * 3),
+                        sy(SizeConfig.blockSizeVertical),
                       ),
                     ),
-                    createText("Visit our Website", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
-                    createImage(
-                        "assets/logo/jamhs.jpg",
-                        sy(SizeConfig.edgeINSETS), // border's radius
-                        EdgeInsets.fromLTRB(sx(140), 0, sx(140), 0),
-                        launchJAHMS),
+                    createText(
+                        "Visit our Website At",
+                        sy(SizeConfig.edgeINSETS),
+                        SizeConfig.fontHEADERSIZE,
+                        FontWeight.bold),
+                    InkWell(
+                        child: new Text(
+                          'https://jewishmilitary.com/',
+                          style: TextStyle(
+                              color: SizeConfig.backroundCOLOR,
+                              fontSize: SizeConfig.fontHEADERSIZE,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                        onTap: () => launchJAHMS()),
                   ],
                 ),
               ),
