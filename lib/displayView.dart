@@ -64,6 +64,8 @@ class _DisplayViewState extends State<DisplayView> {
                     Positioned(
                       top: data.pos.top,
                       left: data.pos.left,
+                      bottom: data.pos.botton,
+                      right: data.pos.right,
                       child: ArtifactButton(
                         desc: data.desc,
                       ),

@@ -49,13 +49,11 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         pos: CoordPos(latitude: 20, longitude: 65),
         artifactButtonData: [
           ArtifactButtonData(
-              pos: Position(left: 250, top: 250),
-              desc: "Infanrty Horn Insignia"),
-          ArtifactButtonData(pos: Position(left: 250, top: 480), desc: "Kepi"),
+              pos: Position(left: 250, top: 200),
+              desc: "Infantry Horn Insignia"),
+          ArtifactButtonData(pos: Position(left: 250, top: 380), desc: "Kepi"),
           ArtifactButtonData(
               pos: Position(left: 1300, top: 450), desc: "Post Cavalry"),
-          ArtifactButtonData(
-              pos: Position(left: 10, top: 10), desc: "8th Cavalry Insignia"),
           ArtifactButtonData(
               pos: Position(left: 580, top: 530),
               desc: "Indian Campaign Medal"),
@@ -91,7 +89,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
               desc: "Capper, Patterson Revolver"),
           ArtifactButtonData(
               pos: Position(left: 700, top: 500), desc: "Holster, Pistol"),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: "Kepi"),
+          ArtifactButtonData(pos: Position(right: 100, top: 500), desc: "Kepi"),
         ]),
     DisplayData(
         displayPath: "assets/images/leopold_title.jpg",
@@ -100,16 +98,27 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Leopold",
         pos: CoordPos(latitude: 20, longitude: 110),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(pos: Position(left: 200, top: 200), desc: "Kepi"),
+          ArtifactButtonData(
+              pos: Position(left: 550, top: 80), desc: "Calling Card"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 160), desc: "Belt Buckle"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 310),
+              desc: "Infantry Seargeants Stripes (1855-1871)"),
+          ArtifactButtonData(
+              pos: Position(right: 150, top: 180), desc: "Cartridge Box"),
+          ArtifactButtonData(
+              pos: Position(right: 170, top: 550),
+              desc: "Hardee Hat national insignia"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 500), desc: "GAR Medals"),
+          ArtifactButtonData(
+              pos: Position(right: 110, botton: 200),
+              desc: "Infantry Horn Insignia"),
+          ArtifactButtonData(
+              pos: Position(left: 500, top: 200),
+              desc: "40th Annual Campment GAR Badge"),
         ]),
     DisplayData(
         displayPath: "assets/images/henry_title.jpg",
@@ -127,10 +136,16 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Samuel & Benjamin",
         pos: CoordPos(latitude: 30, longitude: 172),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 300, top: 300),
+              desc: "USMC Campaign Hat with EGA"),
+          ArtifactButtonData(
+              pos: Position(left: 10, botton: 200),
+              desc: "Haitian Campaign Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 600, botton: 200), desc: "Mills Belt"),
+          ArtifactButtonData(
+              pos: Position(left: 650, top: 300), desc: "Puttees"),
         ]),
     DisplayData(
         displayPath: "assets/images/sydney_title.jpg",
@@ -139,13 +154,20 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Sydney",
         pos: CoordPos(latitude: 20, longitude: 219),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 600, top: 300), desc: "Helmet, M1917"),
+          ArtifactButtonData(
+              pos: Position(left: 850, top: 350), desc: "Ammunition Pouch"),
+          ArtifactButtonData(
+              pos: Position(left: 350, botton: 170), desc: "Whistle"),
+          ArtifactButtonData(pos: Position(left: 100, top: 400), desc: "Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 50, botton: 250),
+              desc: "M1902 First Sergeant Stripes paper"),
+          ArtifactButtonData(
+              pos: Position(right: 300, botton: 300), desc: "Protective Mask"),
+          ArtifactButtonData(
+              pos: Position(right: 300, top: 150), desc: "M1917 Bolo Knife"),
         ]),
     DisplayData(
         displayPath: "assets/images/william_ben_title.jpg",
@@ -154,14 +176,25 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "William & Ben",
         pos: CoordPos(latitude: 20, longitude: 248),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 730, top: 420),
+              desc: "M1902 Sergeant Stripes"),
+          ArtifactButtonData(
+              pos: Position(right: 300, top: 200), desc: "Japanese Gas Mask"),
+          ArtifactButtonData(
+              pos: Position(left: 700, top: 200), desc: "WWI Victory Medal"),
+          ArtifactButtonData(
+              pos: Position(right: 100, botton: 200),
+              desc: "Photograph, Japanese Soldiers"),
+          ArtifactButtonData(
+              pos: Position(left: 200, botton: 200), desc: "WWI overseas cap"),
+          ArtifactButtonData(
+              pos: Position(left: 820, top: 200),
+              desc: "Asiatic Pacific Campaign Medal"),
+          ArtifactButtonData(
+              pos: Position(left: 850, botton: 200), desc: "WWI Thrench Knife"),
+          ArtifactButtonData(
+              pos: Position(left: 200, top: 300), desc: "Canteen with Cover"),
         ]),
     DisplayData(
         displayPath: "assets/images/raymond_isadore_title.jpg",
@@ -170,17 +203,32 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Ray & Isadore",
         pos: CoordPos(latitude: 20, longitude: 276),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(left: 500, top: 120), desc: "M1936 Pistol Belt"),
+          ArtifactButtonData(
+              pos: Position(left: 750, top: 200),
+              desc: "M1918 First Aid Pouch"),
+          ArtifactButtonData(
+              pos: Position(right: 350, top: 150),
+              desc: "Wool Cold Weather Cap (Jeep Cap)"),
+          ArtifactButtonData(
+              pos: Position(left: 150, top: 300),
+              desc: "M1912 Leather Dismounted Holster, Brown"),
+          ArtifactButtonData(
+              pos: Position(left: 500, top: 400), desc: "Officers Service Hat"),
+          ArtifactButtonData(
+              pos: Position(left: 1100, top: 400), desc: "Parachute Badge"),
+          ArtifactButtonData(
+              pos: Position(left: 1100, top: 480),
+              desc: "Combat Infantry Badge"),
+          ArtifactButtonData(
+              pos: Position(left: 1150, top: 650),
+              desc:
+                  "Europe-Africa-Middle East Campaign Medal with 2 service stars"),
+          ArtifactButtonData(
+              pos: Position(right: 100, top: 200), desc: "2.35-inch rocket"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 500), desc: "Sergeant Stripes"),
         ]),
     DisplayData(
         displayPath: "assets/images/rubin_title.jpg",
@@ -189,10 +237,17 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         title: "Tibor Rubin",
         pos: CoordPos(latitude: 20, longitude: 305),
         artifactButtonData: [
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
-          ArtifactButtonData(pos: Position(left: 10, top: 10), desc: ""),
+          ArtifactButtonData(
+              pos: Position(right: 300, top: 300), desc: "Map of Korea"),
+          ArtifactButtonData(
+              pos: Position(left: 500, top: 200),
+              desc: "Shoulder Sleeve Insignia, 1st Cavalry Division"),
+          ArtifactButtonData(
+              pos: Position(left: 890, top: 320),
+              desc: "Collar Insignia “U.S.”"),
+          ArtifactButtonData(
+              pos: Position(left: 800, top: 320),
+              desc: "Collar Insignia “Infantry”"),
         ]),
     DisplayData(
         displayPath: "assets/images/jack_title.jpg",
