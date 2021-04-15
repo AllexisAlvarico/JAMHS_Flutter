@@ -12,18 +12,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: SizeConfig.backroundCOLOR,
+      body: _layoutDetails(),
+      appBar: AppBar(
         backgroundColor: SizeConfig.backroundCOLOR,
-        body: _layoutDetails(),
-        appBar: AppBar(
-            backgroundColor: SizeConfig.backroundCOLOR,
-            title: Text(
-              "About us",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: SizeConfig.fontHEADERSIZE,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Futura"),
-            )));
+        title: Text(
+          "About us",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: SizeConfig.fontHEADERSIZE,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Futura"),
+        ),
+      ),
+    );
   }
 
   Widget _layoutDetails() {
@@ -47,7 +49,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
           child: ListView(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Container(
                   height: sy(180),
                   width: sx(40),
@@ -65,8 +69,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
                 child: Container(
                   height: sy(1300), // 195 isbottom limit
                   decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                    borderRadius: BorderRadius.circular(
+                      sy(SizeConfig.borderRADIUS),
+                    ),
                     color: Colors.white,
                   ),
                   child: ListView(
@@ -88,25 +93,28 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           "assets/images/exbibit.png",
                           sy(SizeConfig.edgeINSETS), // border's radius
                           EdgeInsets.fromLTRB(
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 1),
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 3)),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 1),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                          ),
                           null),
                       createText("Partners", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
-                          'assets/images/calguard.png',
-                          'assets/images/vshp.png',
-                          'assets/images/siteline.png',
-                          launchCalguard,
-                          launchVSHP,
-                          launchSiteline,
-                          EdgeInsets.fromLTRB(
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 1),
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 3))),
+                        'assets/images/calguard.png',
+                        'assets/images/vshp.png',
+                        'assets/images/siteline.png',
+                        launchCalguard,
+                        launchVSHP,
+                        launchSiteline,
+                        EdgeInsets.fromLTRB(
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 1),
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 3),
+                        ),
+                      ),
                       createText(
                           "We've partnered with the California State Military Museum, " +
                               "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
@@ -124,25 +132,28 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           "assets/images/paypal.png",
                           sy(SizeConfig.borderRADIUS),
                           EdgeInsets.fromLTRB(
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 1),
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 3)),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 1),
+                            sx(SizeConfig.blockSizeHorizontal * 5),
+                            sy(SizeConfig.blockSizeVertical * 3),
+                          ),
                           launchPaypal),
                       createText("Social Media", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
-                          "assets/images/facebook.png",
-                          "assets/images/instagram.png",
-                          "assets/images/twitter.png",
-                          launchFacebook,
-                          launchInsta,
-                          launchTwitter,
-                          EdgeInsets.fromLTRB(
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 1),
-                              sx(SizeConfig.blockSizeHorizontal * 5),
-                              sy(SizeConfig.blockSizeVertical * 1))),
+                        "assets/images/facebook.png",
+                        "assets/images/instagram.png",
+                        "assets/images/twitter.png",
+                        launchFacebook,
+                        launchInsta,
+                        launchTwitter,
+                        EdgeInsets.fromLTRB(
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 1),
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 1),
+                        ),
+                      ),
                       createText("Visit our Website", SizeConfig.edgeINSETS,
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createImage(
@@ -174,7 +185,9 @@ Widget _landscape() {
         child: ListView(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+              padding: EdgeInsets.all(
+                sy(SizeConfig.edgeINSETS),
+              ),
               child: Container(
                 height: sy(250),
                 width: sx(50),
@@ -192,8 +205,9 @@ Widget _landscape() {
               child: Container(
                 height: sx(1300),
                 decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                  borderRadius: BorderRadius.circular(
+                    sy(SizeConfig.borderRADIUS),
+                  ),
                   color: Colors.white,
                 ),
                 child: ListView(
@@ -215,25 +229,28 @@ Widget _landscape() {
                         "assets/images/exbibit.png",
                         sy(SizeConfig.edgeINSETS), // border's radius
                         EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3)),
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 3),
+                          sx(SizeConfig.blockSizeHorizontal * 5),
+                          sy(SizeConfig.blockSizeVertical * 3),
+                        ),
                         null),
                     createText("Partners", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
-                        'assets/images/calguard.png',
-                        'assets/images/vshp.png',
-                        'assets/images/siteline.png',
-                        launchCalguard,
-                        launchVSHP,
-                        launchSiteline,
-                        EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3))),
+                      'assets/images/calguard.png',
+                      'assets/images/vshp.png',
+                      'assets/images/siteline.png',
+                      launchCalguard,
+                      launchVSHP,
+                      launchSiteline,
+                      EdgeInsets.fromLTRB(
+                        sx(SizeConfig.blockSizeHorizontal * 5),
+                        sy(SizeConfig.blockSizeVertical * 3),
+                        sx(SizeConfig.blockSizeHorizontal * 5),
+                        sy(SizeConfig.blockSizeVertical * 3),
+                      ),
+                    ),
                     createText(
                         "We've partnered with the California State Military Museum, " +
                             "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
@@ -259,17 +276,19 @@ Widget _landscape() {
                     createText("Social Media", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
-                        "assets/images/facebook.png",
-                        "assets/images/instagram.png",
-                        "assets/images/twitter.png",
-                        launchFacebook,
-                        launchInsta,
-                        launchTwitter,
-                        EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 50),
-                            sy(SizeConfig.blockSizeVertical * 30),
-                            sx(SizeConfig.blockSizeHorizontal * 50),
-                            sy(SizeConfig.blockSizeVertical * 30))),
+                      "assets/images/facebook.png",
+                      "assets/images/instagram.png",
+                      "assets/images/twitter.png",
+                      launchFacebook,
+                      launchInsta,
+                      launchTwitter,
+                      EdgeInsets.fromLTRB(
+                        sx(SizeConfig.blockSizeHorizontal * 50),
+                        sy(SizeConfig.blockSizeVertical * 30),
+                        sx(SizeConfig.blockSizeHorizontal * 50),
+                        sy(SizeConfig.blockSizeVertical * 30),
+                      ),
+                    ),
                     createText("Visit our Website", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createImage(
@@ -310,23 +329,29 @@ createImage(path, borderRadius, padding, function) {
           child: GestureDetector(
               onTap: function,
               child: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                borderRadius: BorderRadius.circular(
+                  sy(SizeConfig.borderRADIUS),
+                ),
                 child: Image.asset(path, fit: BoxFit.cover),
               )));
     });
   }
 
   // if the function is null, return a regular image instead
-  return RelativeBuilder(builder: (context, height, width, sy, sx) {
-    return Padding(
+  return RelativeBuilder(
+    builder: (context, height, width, sy, sx) {
+      return Padding(
         padding: padding,
         // Using ClipRRect allows us to have Images with Rounded edges.
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+          borderRadius: BorderRadius.circular(
+            sy(SizeConfig.borderRADIUS),
+          ),
           child: Image.asset(path, fit: BoxFit.cover),
-        ));
-  });
+        ),
+      );
+    },
+  );
 }
 
 createExpanded(path, function) {

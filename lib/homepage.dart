@@ -16,12 +16,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return RelativeBuilder(builder: (context, height, width, sy, sx) {
-      return Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
-        body: _layoutDetails(),
-      );
-    });
+    return RelativeBuilder(
+      builder: (context, height, width, sy, sx) {
+        return Scaffold(
+          backgroundColor: SizeConfig.backroundCOLOR,
+          body: _layoutDetails(),
+        );
+      },
+    );
   }
 
   Widget _layoutDetails() {
@@ -59,14 +61,17 @@ class _HomePageState extends State<HomePage> {
           width: width,
           height: height,
           child: Container(
-            padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+            padding: EdgeInsets.all(
+              sy(SizeConfig.edgeINSETS),
+            ),
             child: Column(
               children: <Widget>[
                 Container(
                   height: sy(180),
                   decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                    borderRadius: BorderRadius.circular(
+                      sy(SizeConfig.borderRADIUS),
+                    ),
                     image: DecorationImage(
                         image: AssetImage("assets/images/homelogo.png"),
                         fit: BoxFit.contain),
@@ -75,7 +80,9 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
-                    padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                    padding: EdgeInsets.all(
+                      sy(SizeConfig.edgeINSETS),
+                    ),
                     childAspectRatio: width / height / .65,
                     crossAxisSpacing: SizeConfig.axisSPACING,
                     mainAxisSpacing: SizeConfig.axisSPACING,
@@ -105,14 +112,17 @@ class _HomePageState extends State<HomePage> {
         width: width,
         height: height,
         child: Container(
-          padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+          padding: EdgeInsets.all(
+            sy(SizeConfig.edgeINSETS),
+          ),
           child: Column(
             children: <Widget>[
               Container(
                 height: sx(130),
                 decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
+                  borderRadius: BorderRadius.circular(
+                    sy(SizeConfig.borderRADIUS),
+                  ),
                   image: DecorationImage(
                       image: AssetImage("assets/images/homelogo.png"),
                       fit: BoxFit.contain),
@@ -121,7 +131,9 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                  padding: EdgeInsets.all(
+                    sy(SizeConfig.edgeINSETS),
+                  ),
                   childAspectRatio: width / height * 1.2,
                   crossAxisSpacing: SizeConfig.axisSPACING,
                   mainAxisSpacing: SizeConfig.axisSPACING,
@@ -176,51 +188,57 @@ class _HomePageState extends State<HomePage> {
                 break;
             }
           },
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(sy(SizeConfig
-                  .borderRADIUS)), // 15 works and collections looks tidier
-              color: Colors.white,
-            ),
-            child: Stack(
-              children: [
-                Align(
+          child: Card(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  sy(SizeConfig.borderRADIUS),
+                ), // 15 works and collections looks tidier
+                color: Colors.white,
+              ),
+              child: Stack(
+                children: [
+                  Align(
                     alignment: Alignment.center,
                     child: Icon(
                       icon,
                       color: SizeConfig.backroundCOLOR,
                       size: SizeConfig.cardLogoSize,
-                    )),
-                Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    decoration: new BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(sy(SizeConfig.borderRADIUS)),
                     ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                              child: Text(
-                            title,
-                            style: TextStyle(
-                                color: SizeConfig.backroundCOLOR,
-                                fontSize: SizeConfig.fontHOMESIZE,
-                                fontWeight: FontWeight.bold),
-                          )),
-                        ],
+                  Opacity(
+                    opacity: 1.0,
+                    child: Container(
+                      decoration: new BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          sy(SizeConfig.borderRADIUS),
+                        ),
                       ),
                     ),
-                  ],
-                )
-              ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                title,
+                                style: TextStyle(
+                                    color: SizeConfig.backroundCOLOR,
+                                    fontSize: SizeConfig.fontHOMESIZE,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         );

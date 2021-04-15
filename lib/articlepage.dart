@@ -240,25 +240,27 @@ class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return RelativeBuilder(builder: (context, height, width, sy, sx) {
-      return Container(
-        child: Scaffold(
-          backgroundColor: SizeConfig.backroundCOLOR,
-          appBar: AppBar(
+    return RelativeBuilder(
+      builder: (context, height, width, sy, sx) {
+        return Container(
+          child: Scaffold(
             backgroundColor: SizeConfig.backroundCOLOR,
-            title: Text(
-              'Articles',
-              style: TextStyle(
-                fontSize: SizeConfig.fontHEADERSIZE,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            appBar: AppBar(
+              backgroundColor: SizeConfig.backroundCOLOR,
+              title: Text(
+                'Articles',
+                style: TextStyle(
+                  fontSize: SizeConfig.fontHEADERSIZE,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
+            body: _layoutDetails(),
           ),
-          body: _layoutDetails(),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
   Widget _layoutDetails() {
@@ -288,8 +290,9 @@ class _ArticlePageState extends State<ArticlePage> {
               SizeConfig.blockSizeHorizontal * 1),
           child: Wrap(
             runAlignment: WrapAlignment.center,
-            children: data.map((data) {
-              return ArtifactArticlesCard(
+            children: data.map(
+              (data) {
+                return ArtifactArticlesCard(
                   imagePath: data.imagePath,
                   title: data.title,
                   action: () {
@@ -302,8 +305,10 @@ class _ArticlePageState extends State<ArticlePage> {
                                   name: data.name,
                                   desc: data.desc,
                                 )));
-                  });
-            }).toList(),
+                  },
+                );
+              },
+            ).toList(),
           ),
         ),
       );
@@ -323,22 +328,27 @@ Widget _cardLandscapeView() {
               SizeConfig.blockSizeHorizontal * 5,
               SizeConfig.blockSizeHorizontal * 1),
           child: Wrap(
-            children: data.map((data) {
-              return ArtifactArticlesCard(
+            children: data.map(
+              (data) {
+                return ArtifactArticlesCard(
                   imagePath: data.imagePath,
                   title: data.title,
                   action: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ViewPage(
-                                  img: data.imagePath,
-                                  title: data.category,
-                                  name: data.name,
-                                  desc: data.desc,
-                                )));
-                  });
-            }).toList(),
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ViewPage(
+                          img: data.imagePath,
+                          title: data.category,
+                          name: data.name,
+                          desc: data.desc,
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+            ).toList(),
           ),
         ),
       );

@@ -108,7 +108,9 @@ class _CollectionPageState extends State<CollectionPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   "3D Artifacts",
                   style: TextStyle(
@@ -119,7 +121,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -143,7 +147,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   "Oral Histories",
                   style: TextStyle(
@@ -154,7 +160,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -172,7 +180,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   "Artifacts",
                   style: TextStyle(
@@ -183,7 +193,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -194,14 +206,16 @@ class _CollectionPageState extends State<CollectionPage> {
                         title: data.title,
                         action: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ArtifactView(
-                                        imagePath: data.imagePath,
-                                        title: data.name,
-                                        category: data.category,
-                                        desc: data.desc,
-                                      )));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ArtifactView(
+                                imagePath: data.imagePath,
+                                title: data.name,
+                                category: data.category,
+                                desc: data.desc,
+                              ),
+                            ),
+                          );
                         },
                       );
                     }).toList(),
@@ -209,7 +223,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   "Tibor Rubin Grouping",
                   style: TextStyle(
@@ -220,7 +236,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -246,7 +264,9 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: Text(
                   "Graphic Novel",
                   style: TextStyle(
@@ -257,18 +277,21 @@ class _CollectionPageState extends State<CollectionPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(sy(SizeConfig.edgeINSETS)),
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
                 child: ArtifactCollectionCard(
                   imagePath: "assets/images/tibor_novel.PNG",
                   title: "Tibor Rubin Graphic Novel",
                   action: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PDFView(
-                                  path:
-                                      "assets/pdfs/tibor_rubin_graphic_novel.pdf",
-                                )));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PDFView(
+                          path: "assets/pdfs/tibor_rubin_graphic_novel.pdf",
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
