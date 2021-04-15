@@ -27,8 +27,10 @@ class ArtifactArticlesCard extends StatelessWidget {
             height: sy(250),
             child: Card(
               shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+                borderRadius: BorderRadius.circular(
+                  sy(SizeConfig.borderRADIUS),
+                ),
+              ),
               clipBehavior: Clip.antiAlias,
               elevation: 5,
               child: InkWell(
@@ -50,10 +52,11 @@ class ArtifactArticlesCard extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(
-                          sx(SizeConfig.blockSizeHorizontal * 2),
-                          sy(SizeConfig.blockSizeVertical * 3),
-                          sx(SizeConfig.blockSizeHorizontal * 2),
-                          sy(SizeConfig.blockSizeVertical * 3)),
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 3),
+                        sx(SizeConfig.blockSizeHorizontal * 2),
+                        sy(SizeConfig.blockSizeVertical * 3),
+                      ),
                       child: Text(
                         title,
                         textAlign: TextAlign.center,
@@ -77,8 +80,10 @@ class ArtifactArticlesCard extends StatelessWidget {
           height: sy(420),
           child: Card(
             shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.circular(sy(SizeConfig.borderRADIUS))),
+              borderRadius: BorderRadius.circular(
+                sy(SizeConfig.borderRADIUS),
+              ),
+            ),
             clipBehavior: Clip.antiAlias,
             elevation: 5,
             child: InkWell(
@@ -100,10 +105,11 @@ class ArtifactArticlesCard extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 1)),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                    ),
                     child: Text(
                       title,
                       textAlign: TextAlign.center,

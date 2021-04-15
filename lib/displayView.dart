@@ -84,7 +84,8 @@ class _DisplayViewState extends State<DisplayView> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff2c4874).withOpacity(.8)),
+                    primary: Color(0xff2c4874).withOpacity(.8),
+                  ),
                   onPressed: () {
                     if (currentImgPath != widget.displayImgPath) {
                       setState(() {
@@ -103,7 +104,8 @@ class _DisplayViewState extends State<DisplayView> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff2c4874).withOpacity(.8)),
+                    primary: Color(0xff2c4874).withOpacity(.8),
+                  ),
                   onPressed: () {
                     if (currentImgPath != widget.caseImgPath &&
                         widget.caseImgPath != null) {
@@ -123,7 +125,8 @@ class _DisplayViewState extends State<DisplayView> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff2c4874).withOpacity(.8)),
+                    primary: Color(0xff2c4874).withOpacity(.8),
+                  ),
                   onPressed: () {
                     if (currentImgPath != widget.caseImgZoomPath &&
                         widget.caseImgZoomPath != null) {

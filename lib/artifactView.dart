@@ -94,8 +94,9 @@ class ArtifactView extends StatelessWidget {
                     ),
               Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -164,8 +165,9 @@ class ArtifactView extends StatelessWidget {
                     ),
               Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sx(SizeConfig.edgeINSETS),
-                    vertical: sy(SizeConfig.edgeINSETS)),
+                  horizontal: sx(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConfig.edgeINSETS),
+                ),
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
