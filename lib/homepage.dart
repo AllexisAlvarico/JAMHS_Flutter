@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       gridItems(Icons.collections, "assets/images/homelogo.png",
                           "Collections", 1),
                       gridItems(Icons.tour, "assets/images/homelogo.png",
-                          "Virtual Tours", 2),
+                          "Virtual Tour", 2),
                       gridItems(Icons.question_answer,
                           "assets/images/homelogo.png", "About Us!", 3),
                     ],
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(
                     sy(SizeConfig.edgeINSETS),
                   ),
-                  childAspectRatio: width / height * 1.2,
+                  childAspectRatio: width / height * 1.3,
                   crossAxisSpacing: SizeConfig.axisSPACING,
                   mainAxisSpacing: SizeConfig.axisSPACING,
                   children: <Widget>[
@@ -188,14 +188,15 @@ class _HomePageState extends State<HomePage> {
                 break;
             }
           },
-          child: Card(
-            child: Container(
+          child: Container(
+            width: sx(400),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
-                  sy(SizeConfig.borderRADIUS),
+                  sy(0),
                 ), // 15 works and collections looks tidier
-                color: Colors.white,
+                color: Colors.transparent,
               ),
+            child: Card(
               child: Stack(
                 children: [
                   Align(
