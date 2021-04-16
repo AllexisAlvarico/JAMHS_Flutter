@@ -3,23 +3,31 @@ import 'package:relative_scale/relative_scale.dart';
 import 'size_config.dart';
 
 class ArtifactView extends StatelessWidget {
-  final String imagePath;
-  final String title;
-  final String category;
+  final String? imagePath;
+  final String? title;
+  final String? category;
   final String desc;
 
   ArtifactView(
-      {Key? key,
-      required this.imagePath,
-      required this.title,
-      required this.category,
-      required this.desc})
+      {Key? key, this.imagePath, this.title, this.category, required this.desc})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: SizeConfig.backroundCOLOR,
+        title: Text(
+          (category != null) ? category! : "Artifacts",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: SizeConfig.fontHEADERSIZE,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Futura"),
+        ),
+        centerTitle: true,
+      ),
       backgroundColor: SizeConfig.backroundCOLOR,
       body: _layoutDetails(context),
     );
@@ -47,37 +55,43 @@ class ArtifactView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(
-                  vertical: sy(SizeConfig.edgeINSETS),
-                ),
-                child: Image.asset(imagePath),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sy(SizeConfig.edgeINSETS),
-                ),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
-                ),
-                child: Text(
-                  category,
-                  style: TextStyle(
-                      fontSize: SizeConfig.fontHOMESIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
+              (imagePath != null)
+                  ? Container(
+                      margin: EdgeInsets.symmetric(
+                          vertical: sy(SizeConfig.edgeINSETS)),
+                      child: Image.asset(imagePath!))
+                  : Container(height: 0),
+              (title != null)
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sy(SizeConfig.edgeINSETS)),
+                      child: Text(
+                        title!,
+                        style: TextStyle(
+                            fontSize: SizeConfig.fontHEADERSIZE,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Futura"),
+                      ),
+                    )
+                  : Container(
+                      height: 0,
+                    ),
+              (category != null)
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sx(SizeConfig.edgeINSETS),
+                          vertical: sy(SizeConfig.edgeINSETS)),
+                      child: Text(
+                        category!,
+                        style: TextStyle(
+                            fontSize: SizeConfig.fontHOMESIZE,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Futura"),
+                      ),
+                    )
+                  : Container(
+                      height: 0,
+                    ),
               Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: sx(SizeConfig.edgeINSETS),
@@ -112,37 +126,43 @@ class ArtifactView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(
-                  vertical: sy(SizeConfig.edgeINSETS),
-                ),
-                child: Image.asset(imagePath),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                ),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
-                ),
-                child: Text(
-                  category,
-                  style: TextStyle(
-                      fontSize: SizeConfig.fontHOMESIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
+              (imagePath != null)
+                  ? Container(
+                      margin: EdgeInsets.symmetric(
+                          vertical: sy(SizeConfig.edgeINSETS)),
+                      child: Image.asset(imagePath!))
+                  : Container(height: 0),
+              (title != null)
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sy(SizeConfig.edgeINSETS)),
+                      child: Text(
+                        title!,
+                        style: TextStyle(
+                            fontSize: SizeConfig.fontHEADERSIZE,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Futura"),
+                      ),
+                    )
+                  : Container(
+                      height: 0,
+                    ),
+              (category != null)
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sx(SizeConfig.edgeINSETS),
+                          vertical: sy(SizeConfig.edgeINSETS)),
+                      child: Text(
+                        category!,
+                        style: TextStyle(
+                            fontSize: SizeConfig.fontHOMESIZE,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Futura"),
+                      ),
+                    )
+                  : Container(
+                      height: 0,
+                    ),
               Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: sx(SizeConfig.edgeINSETS),

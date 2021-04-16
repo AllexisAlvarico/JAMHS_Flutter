@@ -354,16 +354,15 @@ class EmptyButton extends StatelessWidget {
           backgroundColor: SizeConfig.backroundCOLOR,
           onPressed: () {
             Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DisplayView(
-                  displayImgPath: data.displayPath,
-                  caseImgPath: data.casePath,
-                  caseImgZoomPath: data.artifactPath,
-                  title: data.title,
-                ),
-              ),
-            );
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DisplayView(
+                          displayImgPath: data.displayPath,
+                          caseImgPath: data.casePath,
+                          caseImgZoomPath: data.artifactPath,
+                          title: data.title,
+                          artifactButtonData: data.artifactButtonData,
+                        )));
           },
         ),
       ),
