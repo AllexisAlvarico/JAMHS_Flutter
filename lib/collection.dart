@@ -76,7 +76,7 @@ class _CollectionPageState extends State<CollectionPage> {
         "Tibor Collection",
         "Coming soon!"),
     ArtifactCollectionData("assets/images/tibur_hat.jpg",
-        "Post War Calvary Stetson", "Hat", "Tibor Collection", "Comming soon!"),
+        "Post War Calvary Stetson", "Hat", "Tibor Collection", "Coming soon!"),
     ArtifactCollectionData(
         "assets/images/tibur_pin.jpg",
         "Tibor Rubin's Challenge Coin",
