@@ -41,6 +41,7 @@ dependencies:
   advance_pdf_viewer: ^1.2.2
   path_provider: ^2.0.1
   video_player: ^2.0.2
+  flutter_screen_scaler: ^0.0.1
 
 dev_dependencies:
   flutter_test:
