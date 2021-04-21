@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
-import 'package:jamhs_flutter/size_config.dart';
+import 'package:jamhs_flutter/device.dart';
+import 'sizeConstraints.dart';
 
 class PDFView extends StatefulWidget {
   final String path;
@@ -23,19 +24,18 @@ class _PDFViewState extends State<PDFView> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       appBar: AppBar(
         title: Text(
           "Graphic Novel",
           style: TextStyle(
               color: Colors.white,
-              fontSize: SizeConfig.fontHEADERSIZE,
+              fontSize: SizeConstraint.fontHEADERSIZE,
               fontWeight: FontWeight.bold,
               fontFamily: "Futura"),
         ),
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
       ),
       body: _layoutDetails(),
     );
@@ -59,15 +59,15 @@ class _PDFViewState extends State<PDFView> {
       child: isLoading
           ? Center(
               child: CircularProgressIndicator(
-              backgroundColor: SizeConfig.backroundCOLOR,
+              backgroundColor: Device.backroundCOLOR,
             ))
           : PDFViewer(
               document: document,
-              pickerButtonColor: SizeConfig.backroundCOLOR,
+              pickerButtonColor: Device.backroundCOLOR,
               navigationBuilder:
                   (context, page, totalPages, jumpToPage, animateToPage) {
                 return Container(
-                  color: SizeConfig.backroundCOLOR,
+                  color: Device.backroundCOLOR,
                   child: ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -111,15 +111,15 @@ class _PDFViewState extends State<PDFView> {
       child: isLoading
           ? Center(
               child: CircularProgressIndicator(
-              backgroundColor: SizeConfig.backroundCOLOR,
+              backgroundColor: Device.backroundCOLOR,
             ))
           : PDFViewer(
               document: document,
-              pickerButtonColor: SizeConfig.backroundCOLOR,
+              pickerButtonColor: Device.backroundCOLOR,
               navigationBuilder:
                   (context, page, totalPages, jumpToPage, animateToPage) {
                 return Container(
-                  color: SizeConfig.backroundCOLOR,
+                  color: Device.backroundCOLOR,
                   child: ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [

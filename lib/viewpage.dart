@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class ViewPage extends StatelessWidget {
   final String img, title, name, desc;
@@ -17,11 +18,11 @@ class ViewPage extends StatelessWidget {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Scaffold(
           appBar: AppBar(
-            backgroundColor: SizeConfig.backroundCOLOR,
+            backgroundColor: Device.backroundCOLOR,
             title: Text(
               this.name,
               style: TextStyle(
-                fontSize: SizeConfig.fontHEADERSIZE,
+                fontSize: SizeConstraint.fontHEADERSIZE,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -36,15 +37,15 @@ class ViewPage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Container(
                     padding: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 0),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 3)),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 0),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 3)),
                     child: Text(
                       name,
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: SizeConfig.fontHEADERSIZE,
+                          fontSize: SizeConstraint.fontHEADERSIZE,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -53,15 +54,15 @@ class ViewPage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Container(
                     padding: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 0),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 3)),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 0),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 3)),
                     child: Text(
                       title,
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: SizeConfig.fontHOMESIZE,
+                          fontSize: SizeConstraint.fontHOMESIZE,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -70,15 +71,15 @@ class ViewPage extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Container(
                       padding: EdgeInsets.fromLTRB(
-                          sx(SizeConfig.blockSizeHorizontal * 2),
-                          sy(SizeConfig.blockSizeVertical * 0),
-                          sx(SizeConfig.blockSizeHorizontal * 2),
-                          sy(SizeConfig.blockSizeVertical * 2)),
+                          sx(Device.safeBlockHorizontal * 2),
+                          sy(Device.safeBlockVertical * 0),
+                          sx(Device.safeBlockHorizontal * 2),
+                          sy(Device.safeBlockVertical * 2)),
                       child: Text(
                         desc,
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                            fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                             fontWeight: FontWeight.bold),
                       ),
                     ))

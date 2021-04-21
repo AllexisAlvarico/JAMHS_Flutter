@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class ArtifactView extends StatelessWidget {
   final String imagePath;
@@ -18,9 +19,8 @@ class ArtifactView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       body: _layoutDetails(context),
     );
   }
@@ -49,39 +49,39 @@ class ArtifactView extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.symmetric(
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 child: Image.asset(imagePath),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sy(SizeConfig.edgeINSETS),
+                  horizontal: sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   title,
                   style: TextStyle(
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  horizontal: sx(SizeConstraint.edgeInsets),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   category,
                   style: TextStyle(
-                      fontSize: SizeConfig.fontHOMESIZE,
+                      fontSize: SizeConstraint.fontHOMESIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  horizontal: sx(SizeConstraint.edgeInsets),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 color: Colors.grey[200],
                 child: Column(
@@ -90,7 +90,7 @@ class ArtifactView extends StatelessWidget {
                     Text(
                       desc,
                       style: TextStyle(
-                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                           fontFamily: "Futura"),
                     ),
                   ],
@@ -114,39 +114,39 @@ class ArtifactView extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.symmetric(
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 child: Image.asset(imagePath),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
+                  horizontal: sx(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   title,
                   style: TextStyle(
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  horizontal: sx(SizeConstraint.edgeInsets),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   category,
                   style: TextStyle(
-                      fontSize: SizeConfig.fontHOMESIZE,
+                      fontSize: SizeConstraint.fontHOMESIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: sx(SizeConfig.edgeINSETS),
-                  vertical: sy(SizeConfig.edgeINSETS),
+                  horizontal: sx(SizeConstraint.edgeInsets),
+                  vertical: sy(SizeConstraint.edgeInsets),
                 ),
                 color: Colors.grey[200],
                 child: Column(
@@ -155,7 +155,7 @@ class ArtifactView extends StatelessWidget {
                     Text(
                       desc,
                       style: TextStyle(
-                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                           fontFamily: "Futura"),
                     ),
                   ],

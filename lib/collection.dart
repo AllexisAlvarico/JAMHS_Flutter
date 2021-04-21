@@ -3,7 +3,8 @@ import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactCollectionCards.dart';
 import 'modelView.dart';
 import 'artifactView.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 import 'pdfView.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -89,14 +90,14 @@ class _CollectionPageState extends State<CollectionPage> {
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         appBar: AppBar(
-          backgroundColor: SizeConfig.backroundCOLOR,
+          backgroundColor: Device.backroundCOLOR,
           title: Text(
             "Collections",
             style: TextStyle(
                 color: Colors.white,
-                fontSize: SizeConfig.fontHEADERSIZE,
+                fontSize: SizeConstraint.fontHEADERSIZE,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura"),
           ),
@@ -109,20 +110,20 @@ class _CollectionPageState extends State<CollectionPage> {
             children: [
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   "3D Artifacts",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -148,20 +149,20 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   "Oral Histories",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -181,20 +182,20 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   "Artifacts",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -224,20 +225,20 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   "Tibor Rubin Grouping",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -265,20 +266,20 @@ class _CollectionPageState extends State<CollectionPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Text(
                   "Graphic Novel",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontSize: SizeConstraint.fontHEADERSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: ArtifactCollectionCard(
                   imagePath: "assets/images/tibor_novel.PNG",

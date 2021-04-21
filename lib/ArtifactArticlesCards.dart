@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 // specilised card widget to displays an artifact image and a title
 class ArtifactArticlesCard extends StatelessWidget {
@@ -17,7 +18,6 @@ class ArtifactArticlesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     Orientation orientation = MediaQuery.of(context).orientation;
     if (orientation == Orientation.portrait) {
       return RelativeBuilder(
@@ -28,7 +28,7 @@ class ArtifactArticlesCard extends StatelessWidget {
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
-                  sy(SizeConfig.borderRADIUS),
+                  sy(SizeConstraint.borderRadius),
                 ),
               ),
               clipBehavior: Clip.antiAlias,
@@ -52,16 +52,16 @@ class ArtifactArticlesCard extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 3),
-                        sx(SizeConfig.blockSizeHorizontal * 2),
-                        sy(SizeConfig.blockSizeVertical * 3),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 3),
+                        sx(Device.safeBlockHorizontal * 2),
+                        sy(Device.safeBlockVertical * 3),
                       ),
                       child: Text(
                         title,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                            fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                             fontWeight: FontWeight.bold,
                             fontFamily: "Futura"),
                       ),
@@ -81,7 +81,7 @@ class ArtifactArticlesCard extends StatelessWidget {
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
-                sy(SizeConfig.borderRADIUS),
+                sy(SizeConstraint.borderRadius),
               ),
             ),
             clipBehavior: Clip.antiAlias,
@@ -105,17 +105,17 @@ class ArtifactArticlesCard extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(
-                      sx(SizeConfig.blockSizeHorizontal * 2),
-                      sy(SizeConfig.blockSizeVertical * 1),
-                      sx(SizeConfig.blockSizeHorizontal * 2),
-                      sy(SizeConfig.blockSizeVertical * 1),
+                      sx(Device.safeBlockHorizontal * 2),
+                      sy(Device.safeBlockVertical * 1),
+                      sx(Device.safeBlockHorizontal * 2),
+                      sy(Device.safeBlockVertical * 1),
                     ),
                     child: Text(
                       title,
                       textAlign: TextAlign.center,
                       softWrap: true,
                       style: TextStyle(
-                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Futura"),
                     ),

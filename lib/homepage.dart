@@ -4,7 +4,8 @@ import 'package:relative_scale/relative_scale.dart';
 import 'articlepage.dart';
 import 'collection.dart';
 import 'aboutus.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 import 'virtualTourpage.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,11 +16,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return RelativeBuilder(
       builder: (context, height, width, sy, sx) {
         return Scaffold(
-          backgroundColor: SizeConfig.backroundCOLOR,
+          backgroundColor: Device.backroundCOLOR,
           body: _layoutDetails(),
         );
       },
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           height: height,
           child: Container(
             padding: EdgeInsets.all(
-              sy(SizeConfig.edgeINSETS),
+              sy(SizeConstraint.edgeInsets),
             ),
             child: Column(
               children: <Widget>[
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   height: sy(180),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      sy(SizeConfig.borderRADIUS),
+                      sy(SizeConstraint.borderRadius),
                     ),
                     image: DecorationImage(
                         image: AssetImage("assets/images/homelogo.png"),
@@ -81,11 +81,11 @@ class _HomePageState extends State<HomePage> {
                   child: GridView.count(
                     crossAxisCount: 2,
                     padding: EdgeInsets.all(
-                      sy(SizeConfig.edgeINSETS),
+                      sy(SizeConstraint.edgeInsets),
                     ),
                     childAspectRatio: width / height / .65,
-                    crossAxisSpacing: SizeConfig.axisSPACING,
-                    mainAxisSpacing: SizeConfig.axisSPACING,
+                    crossAxisSpacing: SizeConstraint.axisSpacing,
+                    mainAxisSpacing: SizeConstraint.axisSpacing,
                     children: <Widget>[
                       gridItems(Icons.article, "assets/images/homelogo.png",
                           "Articles", 0),
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
         height: height,
         child: Container(
           padding: EdgeInsets.all(
-            sy(SizeConfig.edgeINSETS),
+            sy(SizeConstraint.edgeInsets),
           ),
           child: Column(
             children: <Widget>[
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                 height: sx(130),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    sy(SizeConfig.borderRADIUS),
+                    sy(SizeConstraint.borderRadius),
                   ),
                   image: DecorationImage(
                       image: AssetImage("assets/images/homelogo.png"),
@@ -132,11 +132,11 @@ class _HomePageState extends State<HomePage> {
                 child: GridView.count(
                   crossAxisCount: 2,
                   padding: EdgeInsets.all(
-                    sy(SizeConfig.edgeINSETS),
+                    sy(SizeConstraint.edgeInsets),
                   ),
                   childAspectRatio: width / height * 1.2,
-                  crossAxisSpacing: SizeConfig.axisSPACING,
-                  mainAxisSpacing: SizeConfig.axisSPACING,
+                  crossAxisSpacing: SizeConstraint.axisSpacing,
+                  mainAxisSpacing: SizeConstraint.axisSpacing,
                   children: <Widget>[
                     gridItems(Icons.article, "assets/images/homelogo.png",
                         "Articles", 0),
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
-                  sy(SizeConfig.borderRADIUS),
+                  sy(SizeConstraint.borderRadius),
                 ), // 15 works and collections looks tidier
                 color: Colors.white,
               ),
@@ -202,8 +202,8 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.center,
                     child: Icon(
                       icon,
-                      color: SizeConfig.backroundCOLOR,
-                      size: SizeConfig.cardLogoSize,
+                      color: Device.backroundCOLOR,
+                      size: SizeConstraint.cardLogoSize,
                     ),
                   ),
                   Opacity(
@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       decoration: new BoxDecoration(
                         borderRadius: BorderRadius.circular(
-                          sy(SizeConfig.borderRADIUS),
+                          sy(SizeConstraint.borderRadius),
                         ),
                       ),
                     ),
@@ -227,8 +227,8 @@ class _HomePageState extends State<HomePage> {
                               child: Text(
                                 title,
                                 style: TextStyle(
-                                    color: SizeConfig.backroundCOLOR,
-                                    fontSize: SizeConfig.fontHOMESIZE,
+                                    color: Device.backroundCOLOR,
+                                    fontSize: SizeConstraint.fontHOMESIZE,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),

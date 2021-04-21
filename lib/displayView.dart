@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jamhs_flutter/size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class DisplayView extends StatefulWidget {
   final String displayImgPath;
@@ -31,13 +32,13 @@ class _DisplayViewState extends State<DisplayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       appBar: AppBar(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         title: Text(
           widget.title!,
           style: TextStyle(
-              fontSize: SizeConfig.fontHEADERSIZE,
+              fontSize: SizeConstraint.fontHEADERSIZE,
               fontWeight: FontWeight.bold,
               fontFamily: "Futura"),
         ),
@@ -75,7 +76,7 @@ class _DisplayViewState extends State<DisplayView> {
                   child: Text(
                     "Background\nInformation",
                     style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                        fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Futura"),
                   ),
@@ -95,7 +96,7 @@ class _DisplayViewState extends State<DisplayView> {
                   child: Text(
                     "Display Case",
                     style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                        fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Futura"),
                   ),
@@ -117,7 +118,7 @@ class _DisplayViewState extends State<DisplayView> {
                   child: Text(
                     "Artifacts",
                     style: TextStyle(
-                        fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                        fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Futura"),
                   ),
@@ -179,7 +180,7 @@ class _ArtifactButtonState extends State<ArtifactButton> {
                 print(showText);
               });
             },
-            backgroundColor: SizeConfig.backroundCOLOR.withOpacity(.7),
+            backgroundColor: Device.backroundCOLOR.withOpacity(.7),
             child: Icon(Icons.zoom_in),
           ),
         ),
@@ -199,7 +200,7 @@ class _ArtifactButtonState extends State<ArtifactButton> {
               widget.desc,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                  fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontFamily: "Futura"),

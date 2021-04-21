@@ -3,7 +3,8 @@ import 'package:jamhs_flutter/ArtifactArticlesCards.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactArticlesCards.dart';
 import 'viewpage.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 List<ArtifactArticlesData> data = [
   ArtifactArticlesData(
@@ -239,18 +240,17 @@ class ArticlePage extends StatefulWidget {
 class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return RelativeBuilder(
       builder: (context, height, width, sy, sx) {
         return Container(
           child: Scaffold(
-            backgroundColor: SizeConfig.backroundCOLOR,
+            backgroundColor: Device.backroundCOLOR,
             appBar: AppBar(
-              backgroundColor: SizeConfig.backroundCOLOR,
+              backgroundColor: Device.backroundCOLOR,
               title: Text(
                 'Articles',
                 style: TextStyle(
-                  fontSize: SizeConfig.fontHEADERSIZE,
+                  fontSize: SizeConstraint.fontHEADERSIZE,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -284,10 +284,10 @@ class _ArticlePageState extends State<ArticlePage> {
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(
-              SizeConfig.blockSizeHorizontal * 5,
-              SizeConfig.blockSizeHorizontal * 1,
-              SizeConfig.blockSizeHorizontal * 5,
-              SizeConfig.blockSizeHorizontal * 1),
+              Device.safeBlockHorizontal * 5,
+              Device.safeBlockHorizontal * 1,
+              Device.safeBlockHorizontal * 5,
+              Device.safeBlockHorizontal * 1),
           child: Wrap(
             runAlignment: WrapAlignment.center,
             children: data.map(
@@ -323,10 +323,10 @@ Widget _cardLandscapeView() {
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(
-              SizeConfig.blockSizeHorizontal * 5,
-              SizeConfig.blockSizeHorizontal * 1,
-              SizeConfig.blockSizeHorizontal * 5,
-              SizeConfig.blockSizeHorizontal * 1),
+              Device.safeBlockHorizontal * 5,
+              Device.safeBlockHorizontal * 1,
+              Device.safeBlockHorizontal * 5,
+              Device.safeBlockHorizontal * 1),
           child: Wrap(
             children: data.map(
               (data) {

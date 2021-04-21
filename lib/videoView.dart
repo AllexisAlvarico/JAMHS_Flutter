@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/fullscreenVid.dart';
 import 'package:video_player/video_player.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class VideoView extends StatefulWidget {
   final String src;
@@ -80,7 +81,7 @@ class _ControlsOverlay extends StatelessWidget {
                     value: speed,
                     child: Text('${speed}x',
                         style: TextStyle(
-                            fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                            fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                             color: Colors.black,
                             fontWeight: FontWeight.bold)),
                   )
@@ -96,7 +97,7 @@ class _ControlsOverlay extends StatelessWidget {
               ),
               child: Text('${controller.value.playbackSpeed}x',
                   style: TextStyle(
-                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                       color: Colors.white,
                       fontWeight: FontWeight.bold)),
             ),
@@ -160,7 +161,7 @@ class _RemoteVideoState extends State<_RemoteVideo> {
                         child: Icon(
                           Icons.fullscreen,
                           color: Colors.white,
-                          size: SizeConfig.logoSize,
+                          size: SizeConstraint.logoSize,
                         )),
                   )
                 ],
@@ -171,16 +172,16 @@ class _RemoteVideoState extends State<_RemoteVideo> {
               alignment: Alignment.centerLeft,
               child: Container(
                 padding: EdgeInsets.fromLTRB(
-                    SizeConfig.blockSizeHorizontal * 20,
-                    SizeConfig.blockSizeVertical * 2,
-                    SizeConfig.blockSizeHorizontal * 20,
-                    SizeConfig.blockSizeVertical * 2),
+                    Device.safeBlockHorizontal * 20,
+                    Device.safeBlockVertical * 2,
+                    Device.safeBlockHorizontal * 20,
+                    Device.safeBlockVertical * 2),
                 color: Color.fromARGB(255, 255, 255, 255),
                 child: Text(
                   widget.desc,
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                       fontWeight: FontWeight.bold),
                 ),
               ))
@@ -194,13 +195,13 @@ class _VideoViewState extends State<VideoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       appBar: AppBar(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         title: Text(widget.title,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: SizeConfig.fontHEADERSIZE / 1.2,
+                fontSize: SizeConstraint.fontHEADERSIZE / 1.2,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura")),
         centerTitle: true,

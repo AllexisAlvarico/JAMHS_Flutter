@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/displayView.dart';
 import 'package:panorama/panorama.dart';
 import 'package:jamhs_flutter/floorPlanView.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class VirutalToursPage extends StatefulWidget {
   @override
@@ -100,7 +101,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
           style: ButtonStyle(
             shape: MaterialStateProperty.all(CircleBorder()),
             backgroundColor: MaterialStateProperty.all(
-                SizeConfig.backroundCOLOR.withOpacity(.70)),
+                Device.backroundCOLOR.withOpacity(.70)),
             foregroundColor: MaterialStateProperty.all(Colors.white),
           ),
           child: Icon(icon),
@@ -110,7 +111,7 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
             ? Container(
                 padding: EdgeInsets.all(4.0),
                 decoration: BoxDecoration(
-                    color: SizeConfig.backroundCOLOR.withOpacity(.70),
+                    color: Device.backroundCOLOR.withOpacity(.70),
                     borderRadius: BorderRadius.all(Radius.circular(3))),
                 child: Center(
                     child: Text(
@@ -136,17 +137,17 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () => Navigator.pop(context),
           ),
-          backgroundColor: SizeConfig.backroundCOLOR,
+          backgroundColor: Device.backroundCOLOR,
           title: Text(
             "Exhibits",
             style: TextStyle(
-                fontSize: SizeConfig.fontHEADERSIZE,
+                fontSize: SizeConstraint.fontHEADERSIZE,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura"),
           ),
@@ -200,12 +201,12 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 label: Text(
                   "floor plan",
                   style: TextStyle(
-                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Futura"),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: SizeConfig.backroundCOLOR.withOpacity(0.7),
+                  primary: Device.backroundCOLOR.withOpacity(0.7),
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jamhs_flutter/size_config.dart';
+import 'package:jamhs_flutter/device.dart';
+import 'sizeConstraints.dart';
 import 'package:jamhs_flutter/displayView.dart';
 
 class FloorPlanView extends StatefulWidget {
@@ -302,13 +303,13 @@ class _FloorPlanViewState extends State<FloorPlanView> {
     layoutDetails();
 
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       appBar: AppBar(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         title: Text(
           "Virtual Tours",
           style: TextStyle(
-              fontSize: SizeConfig.fontHEADERSIZE,
+              fontSize: SizeConstraint.fontHEADERSIZE,
               fontWeight: FontWeight.bold,
               fontFamily: "Futura"),
         ),
@@ -351,7 +352,7 @@ class EmptyButton extends StatelessWidget {
         width: size,
         child: FloatingActionButton(
           heroTag: tag.toString(),
-          backgroundColor: SizeConfig.backroundCOLOR,
+          backgroundColor: Device.backroundCOLOR,
           onPressed: () {
             Navigator.pushReplacement(
               context,

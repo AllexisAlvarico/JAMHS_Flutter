@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter/services.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 
 class FullscreenVideo extends StatefulWidget {
   late final VideoPlayerController controller;
@@ -111,7 +112,7 @@ class _ControlsOverlay extends StatelessWidget {
                     child: Text(
                       '${speed}x',
                       style: TextStyle(
-                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
@@ -128,7 +129,7 @@ class _ControlsOverlay extends StatelessWidget {
               ),
               child: Text('${controller.value.playbackSpeed}x',
                   style: TextStyle(
-                      fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                      fontSize: SizeConstraint.fontDISCRIPTIONSIZE,
                       color: Colors.white,
                       fontWeight: FontWeight.bold)),
             ),
@@ -143,7 +144,7 @@ class _FullScreenState extends State<FullscreenVideo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       body: _ControllerVideo(widget.key, widget.controller),
     );
   }

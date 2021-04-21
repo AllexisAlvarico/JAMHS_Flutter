@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'size_config.dart';
+import 'device.dart';
+import 'sizeConstraints.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:relative_scale/relative_scale.dart';
 
@@ -12,15 +13,15 @@ class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SizeConfig.backroundCOLOR,
+      backgroundColor: Device.backroundCOLOR,
       body: _layoutDetails(),
       appBar: AppBar(
-        backgroundColor: SizeConfig.backroundCOLOR,
+        backgroundColor: Device.backroundCOLOR,
         title: Text(
           "About us",
           style: TextStyle(
               color: Colors.white,
-              fontSize: SizeConfig.fontHEADERSIZE,
+              fontSize: SizeConstraint.fontHEADERSIZE,
               fontWeight: FontWeight.bold,
               fontFamily: "Futura"),
         ),
@@ -50,7 +51,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Container(
                   height: sy(180),
@@ -64,21 +65,21 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
+                  sy(SizeConstraint.edgeInsets),
                 ),
                 child: Container(
                   height: sy(1300), // 195 isbottom limit
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      sy(SizeConfig.borderRADIUS),
+                      sy(SizeConstraint.borderRadius),
                     ),
                     color: Colors.white,
                   ),
                   child: ListView(
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-                      createText("About Us", sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createText("About Us", sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                       createText(
                           "The purpose of the Jewish American Military " +
                               "Historical Society is to preserve Jewish " +
@@ -86,21 +87,21 @@ class _AboutUsPageState extends State<AboutUsPage> {
                               "impact of Jews to military and civil " +
                               "service, and educating the public to these " +
                               "contributions.",
-                          sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontDISCRIPTIONSIZE,
+                          sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
                       createImage(
                           "assets/images/exbibit.png",
-                          sy(SizeConfig.edgeINSETS), // border's radius
+                          sy(SizeConstraint.edgeInsets), // border's radius
                           EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 1),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 1),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 3),
                           ),
                           null),
-                      createText("Partners", sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createText("Partners", sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
                         'assets/images/calguard.png',
                         'assets/images/vshp.png',
@@ -109,37 +110,37 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         launchVSHP,
                         launchSiteline,
                         EdgeInsets.fromLTRB(
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 1),
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 3),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 1),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 3),
                         ),
                       ),
                       createText(
                           "We've partnered with the California State Military Museum, " +
                               "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
-                          sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontDISCRIPTIONSIZE,
+                          sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
-                      createText("Donate Now!", sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createText("Donate Now!", sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                       createText(
                           "to the Jewish American Military Historical Society!",
-                          sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontDISCRIPTIONSIZE,
+                          sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
                       createImage(
                           "assets/images/paypal.png",
-                          sy(SizeConfig.borderRADIUS),
+                          sy(SizeConstraint.borderRadius),
                           EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 1),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 1),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 3),
                           ),
                           launchPaypal),
-                      createText("Social Media", sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createText("Social Media", sy(SizeConstraint.edgeInsets),
+                          SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
                         "assets/images/facebook.png",
                         "assets/images/instagram.png",
@@ -148,22 +149,19 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         launchInsta,
                         launchTwitter,
                         EdgeInsets.fromLTRB(
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 1),
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 1),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 1),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 1),
                         ),
                       ),
-                      createText("Visit our Website", SizeConfig.edgeINSETS,
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                      createText("Visit our Website", SizeConstraint.edgeInsets,
+                          SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                       createImage(
                           "assets/logo/jamhs.jpg",
-                          SizeConfig.edgeINSETS, // border's radius
-                          EdgeInsets.fromLTRB(
-                              SizeConfig.blockSizeHorizontal * 30,
-                              0,
-                              SizeConfig.blockSizeHorizontal * 30,
-                              0),
+                          SizeConstraint.edgeInsets, // border's radius
+                          EdgeInsets.fromLTRB(Device.safeBlockHorizontal * 30,
+                              0, Device.safeBlockHorizontal * 30, 0),
                           launchJAHMS),
                     ],
                   ),
@@ -186,7 +184,7 @@ Widget _landscape() {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.all(
-                sy(SizeConfig.edgeINSETS),
+                sy(SizeConstraint.edgeInsets),
               ),
               child: Container(
                 height: sy(250),
@@ -200,21 +198,21 @@ Widget _landscape() {
             ),
             Padding(
               padding: EdgeInsets.all(
-                sy(SizeConfig.edgeINSETS),
+                sy(SizeConstraint.edgeInsets),
               ),
               child: Container(
                 height: sx(1300),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    sy(SizeConfig.borderRADIUS),
+                    sy(SizeConstraint.borderRadius),
                   ),
                   color: Colors.white,
                 ),
                 child: ListView(
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    createText("About Us", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createText("About Us", sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                     createText(
                         "The purpose of the Jewish American Military " +
                             "Historical Society is to preserve Jewish " +
@@ -222,21 +220,21 @@ Widget _landscape() {
                             "impact of Jews to military and civil " +
                             "service, and educating the public to these " +
                             "contributions.",
-                        sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontDISCRIPTIONSIZE,
+                        sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontDISCRIPTIONSIZE,
                         FontWeight.bold),
                     createImage(
                         "assets/images/exbibit.png",
-                        sy(SizeConfig.edgeINSETS), // border's radius
+                        sy(SizeConstraint.edgeInsets), // border's radius
                         EdgeInsets.fromLTRB(
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 3),
-                          sx(SizeConfig.blockSizeHorizontal * 5),
-                          sy(SizeConfig.blockSizeVertical * 3),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 3),
+                          sx(Device.safeBlockHorizontal * 5),
+                          sy(Device.safeBlockVertical * 3),
                         ),
                         null),
-                    createText("Partners", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createText("Partners", sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
                       'assets/images/calguard.png',
                       'assets/images/vshp.png',
@@ -245,36 +243,36 @@ Widget _landscape() {
                       launchVSHP,
                       launchSiteline,
                       EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 5),
-                        sy(SizeConfig.blockSizeVertical * 3),
-                        sx(SizeConfig.blockSizeHorizontal * 5),
-                        sy(SizeConfig.blockSizeVertical * 3),
+                        sx(Device.safeBlockHorizontal * 5),
+                        sy(Device.safeBlockVertical * 3),
+                        sx(Device.safeBlockHorizontal * 5),
+                        sy(Device.safeBlockVertical * 3),
                       ),
                     ),
                     createText(
                         "We've partnered with the California State Military Museum, " +
                             "Virtual Socity Historical Preservation(VSHP) and Siteline Productions",
-                        sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontDISCRIPTIONSIZE,
+                        sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontDISCRIPTIONSIZE,
                         FontWeight.bold),
-                    createText("Donate Now!", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createText("Donate Now!", sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                     createText(
                         "to the Jewish American Military Historical Society!",
-                        sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontDISCRIPTIONSIZE,
+                        sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontDISCRIPTIONSIZE,
                         FontWeight.bold),
                     createImage(
                         "assets/images/paypal.png",
-                        sy(SizeConfig.borderRADIUS),
+                        sy(SizeConstraint.borderRadius),
                         EdgeInsets.fromLTRB(
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3),
-                            sx(SizeConfig.blockSizeHorizontal * 5),
-                            sy(SizeConfig.blockSizeVertical * 3)),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 3),
+                            sx(Device.safeBlockHorizontal * 5),
+                            sy(Device.safeBlockVertical * 3)),
                         launchPaypal),
-                    createText("Social Media", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createText("Social Media", sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
                       "assets/images/facebook.png",
                       "assets/images/instagram.png",
@@ -283,17 +281,20 @@ Widget _landscape() {
                       launchInsta,
                       launchTwitter,
                       EdgeInsets.fromLTRB(
-                        sx(SizeConfig.blockSizeHorizontal * 50),
-                        sy(SizeConfig.blockSizeVertical * 30),
-                        sx(SizeConfig.blockSizeHorizontal * 50),
-                        sy(SizeConfig.blockSizeVertical * 30),
+                        sx(Device.safeBlockHorizontal * 50),
+                        sy(Device.safeBlockVertical * 30),
+                        sx(Device.safeBlockHorizontal * 50),
+                        sy(Device.safeBlockVertical * 30),
                       ),
                     ),
-                    createText("Visit our Website", sy(SizeConfig.edgeINSETS),
-                        SizeConfig.fontHEADERSIZE, FontWeight.bold),
+                    createText(
+                        "Visit our Website",
+                        sy(SizeConstraint.edgeInsets),
+                        SizeConstraint.fontHEADERSIZE,
+                        FontWeight.bold),
                     createImage(
                         "assets/logo/jamhs.jpg",
-                        sy(SizeConfig.edgeINSETS), // border's radius
+                        sy(SizeConstraint.edgeInsets), // border's radius
                         EdgeInsets.fromLTRB(sx(140), 0, sx(140), 0),
                         launchJAHMS),
                   ],
@@ -330,7 +331,7 @@ createImage(path, borderRadius, padding, function) {
               onTap: function,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(
-                  sy(SizeConfig.borderRADIUS),
+                  sy(SizeConstraint.borderRadius),
                 ),
                 child: Image.asset(path, fit: BoxFit.cover),
               )));
@@ -345,7 +346,7 @@ createImage(path, borderRadius, padding, function) {
         // Using ClipRRect allows us to have Images with Rounded edges.
         child: ClipRRect(
           borderRadius: BorderRadius.circular(
-            sy(SizeConfig.borderRADIUS),
+            sy(SizeConstraint.borderRadius),
           ),
           child: Image.asset(path, fit: BoxFit.cover),
         ),
