@@ -53,19 +53,19 @@ class _CollectionPageState extends State<CollectionPage> {
         "T. Rubin' Programme, MoH Recipent Ceremony",
         "Medal of Honour",
         "Artifacts",
-        "Comming soon!"),
+        "Coming soon!"),
     ArtifactCollectionData(
         "assets/images/sydneyPic.JPG",
         "Sydney G. Gumpertz, MoH Picture",
         "Medal of Honour",
         "Artifacts",
-        "Comming soon!"),
+        "Coming soon!"),
     ArtifactCollectionData(
         "assets/images/pamphlet.JPG",
         "Division emblems and Jewish welfare board post card",
         "Medal of Honour",
         "Artifacts",
-        "Comming soon!")
+        "Coming soon!")
   ];
 
   List<ArtifactCollectionData> rubinData = [
@@ -74,7 +74,7 @@ class _CollectionPageState extends State<CollectionPage> {
         "Post War Khaki 1st cav. Shirt",
         "Uniform",
         "Tibor Collection",
-        "Comming soon!"),
+        "Coming soon!"),
     ArtifactCollectionData("assets/images/tibur_hat.jpg",
         "Post War Calvary Stetson", "Hat", "Tibor Collection", "Comming soon!"),
     ArtifactCollectionData(
@@ -82,7 +82,7 @@ class _CollectionPageState extends State<CollectionPage> {
         "Tibor Rubin's Challenge Coin",
         "Military Pin",
         "Tibor Collection",
-        "Comming soon!")
+        "Coming soon!")
   ];
 
   @override
