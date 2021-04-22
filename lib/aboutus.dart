@@ -68,16 +68,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   sy(SizeConfig.edgeINSETS),
                 ),
                 child: Container(
-                  height:
-                      sy(ScreenScaler().getHeight(60)), // 195 isbottom limit
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                       sy(SizeConfig.borderRADIUS),
                     ),
                     color: Colors.white,
                   ),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
+                  child: Column(
                     children: [
                       createText("About Us", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -168,6 +165,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
                             textAlign: TextAlign.center,
                           ),
                           onTap: () => launchJAHMS()),
+                      SizedBox(
+                        height: 15,
+                      )
                     ],
                   ),
                 ),
@@ -206,15 +206,13 @@ Widget _landscape() {
                 sy(SizeConfig.edgeINSETS),
               ),
               child: Container(
-                height: sx(ScreenScaler().getHeight(60)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                     sy(SizeConfig.borderRADIUS),
                   ),
                   color: Colors.white,
                 ),
-                child: ListView(
-                  physics: NeverScrollableScrollPhysics(),
+                child: Column(
                   children: [
                     createText("About Us", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
@@ -307,6 +305,9 @@ Widget _landscape() {
                           textAlign: TextAlign.center,
                         ),
                         onTap: () => launchJAHMS()),
+                    SizedBox(
+                      height: 15,
+                    )
                   ],
                 ),
               ),
