@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactCollectionCards.dart';
-import 'modelView.dart';
 import 'artifactView.dart';
 import 'size_config.dart';
 import 'pdfView.dart';
