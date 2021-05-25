@@ -83,7 +83,7 @@ class _PDFViewState extends State<PDFView> {
                       IconButton(
                         icon: Icon(Icons.arrow_back, color: Colors.white),
                         onPressed: () {
-                          animateToPage(page: page - 2);
+                          animateToPage(page: page! - 2);
                         },
                       ),
                       IconButton(
@@ -95,7 +95,7 @@ class _PDFViewState extends State<PDFView> {
                       IconButton(
                         icon: Icon(Icons.last_page, color: Colors.white),
                         onPressed: () {
-                          animateToPage(page: totalPages - 1);
+                          animateToPage(page: totalPages! - 1);
                         },
                       )
                     ],
@@ -135,7 +135,7 @@ class _PDFViewState extends State<PDFView> {
                       IconButton(
                         icon: Icon(Icons.arrow_back, color: Colors.white),
                         onPressed: () {
-                          animateToPage(page: page - 2);
+                          animateToPage(page: page! - 2);
                         },
                       ),
                       IconButton(
@@ -147,7 +147,7 @@ class _PDFViewState extends State<PDFView> {
                       IconButton(
                         icon: Icon(Icons.last_page, color: Colors.white),
                         onPressed: () {
-                          animateToPage(page: totalPages - 1);
+                          animateToPage(page: totalPages! - 1);
                         },
                       )
                     ],

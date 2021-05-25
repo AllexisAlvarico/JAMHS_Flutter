@@ -21,7 +21,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  font_awesome_flutter: '>= 5.15.1'
+  font_awesome_flutter: ^9.0.0
   relative_scale: ^2.0.0
 
   flutter:
@@ -34,14 +34,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  webview_flutter: ^2.0.2
-  carousel_slider: ^3.0.0
+  cupertino_icons: ^1.0.3-nullsafety.0
+  webview_flutter: ^2.0.2-nullsafety.4
+  carousel_slider: ^4.0.0-nullsafety.0
   model_viewer: ^0.8.1
-  advance_pdf_viewer: ^1.2.2
-  path_provider: ^2.0.1
-  video_player: ^2.0.2
-  flutter_screen_scaler: ^0.0.1
+  advance_pdf_viewer: ^2.0.0-nullsafety.0
+  path_provider: ^2.0.1-nullsafety.1
+  video_player: ^2.0.2-nullsafety.4
+  flutter_screen_scaler: ^0.0.1-nullsafety.0
 
 dev_dependencies:
   flutter_test:
