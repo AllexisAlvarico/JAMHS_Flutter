@@ -120,10 +120,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
-                      createText("Donate Now!", sy(SizeConfig.edgeINSETS),
-                          SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createText(
-                          "to the Jewish American Military Historical Society!",
+                          "Help us preserve history!",
+                          sy(SizeConfig.edgeINSETS),
+                          SizeConfig.fontHEADERSIZE,
+                          FontWeight.bold),
+                      createText(
+                          "Please, donate to the Jewish American Military Historical Society!",
                           sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
@@ -153,7 +156,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           sy(SizeConfig.blockSizeVertical * 1),
                         ),
                       ),
-                      createText("Visit our Website At", SizeConfig.edgeINSETS,
+                      createText("Visit our Website at", SizeConfig.edgeINSETS,
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       InkWell(
                           child: new Text(
