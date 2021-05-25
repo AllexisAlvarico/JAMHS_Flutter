@@ -13,11 +13,6 @@ class CollectionPage extends StatefulWidget {
 }
 
 class _CollectionPageState extends State<CollectionPage> {
-  List<ModelData> modelData = [
-    ModelData("assets/images/m1911.png", "M1911 Pistol digital model", "M1911",
-        "3D Model", "", "assets/models/m1911.glb")
-  ];
-
   List<VideoData> videoData = [
     VideoData(
         "assets/images/thumb1.png",
@@ -112,7 +107,7 @@ class _CollectionPageState extends State<CollectionPage> {
                   sy(SizeConfig.edgeINSETS),
                 ),
                 child: Text(
-                  "3D Artifacts",
+                  "Graphic Novel",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: SizeConfig.fontHEADERSIZE,
@@ -124,26 +119,19 @@ class _CollectionPageState extends State<CollectionPage> {
                 padding: EdgeInsets.all(
                   sy(SizeConfig.edgeINSETS),
                 ),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: modelData.map((data) {
-                      return ArtifactCollectionCard(
-                        imagePath: data.imagePath,
-                        title: data.title,
-                        action: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ModelView(
-                                        src: data.modelPath,
-                                        title: data.name,
-                                      )));
-                        },
-                      );
-                    }).toList(),
-                  ),
+                child: ArtifactCollectionCard(
+                  imagePath: "assets/images/tibor_novel.PNG",
+                  title: "Tibor Rubin Graphic Novel",
+                  action: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PDFView(
+                          path: "assets/pdfs/tibor_rubin_graphic_novel.pdf",
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
               Padding(
@@ -261,38 +249,6 @@ class _CollectionPageState extends State<CollectionPage> {
                       );
                     }).toList(),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
-                ),
-                child: Text(
-                  "Graphic Novel",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: SizeConfig.fontHEADERSIZE,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Futura"),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(
-                  sy(SizeConfig.edgeINSETS),
-                ),
-                child: ArtifactCollectionCard(
-                  imagePath: "assets/images/tibor_novel.PNG",
-                  title: "Tibor Rubin Graphic Novel",
-                  action: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PDFView(
-                          path: "assets/pdfs/tibor_rubin_graphic_novel.pdf",
-                        ),
-                      ),
-                    );
-                  },
                 ),
               ),
             ],
