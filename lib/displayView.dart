@@ -10,6 +10,7 @@ class DisplayView extends StatefulWidget {
   final String? title;
   final String? caseImgZoomPath;
   final ArtifactArticlesData? articleData;
+  final ArtifactArticlesData? secondaryArticleData;
   final List<ArtifactButtonData> artifactButtonData;
 
   DisplayView(
@@ -18,6 +19,7 @@ class DisplayView extends StatefulWidget {
       this.caseImgPath,
       this.caseImgZoomPath,
       this.articleData,
+      this.secondaryArticleData,
       required this.title,
       required this.artifactButtonData})
       : super(key: key);
@@ -188,6 +190,35 @@ class _DisplayViewState extends State<DisplayView> {
                   ),
                 )
               : Container(),
+          showReadMoreButton && widget.secondaryArticleData != null
+              ? Align(
+                  alignment: Alignment.topRight,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff2c4874).withOpacity(.8),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ViewPage(
+                                    img: widget.secondaryArticleData!.imagePath,
+                                    title:
+                                        widget.secondaryArticleData!.category,
+                                    name: widget.secondaryArticleData!.name,
+                                    desc: widget.secondaryArticleData!.desc,
+                                  )));
+                    },
+                    child: Text(
+                      "Read More",
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
@@ -199,6 +230,7 @@ class DisplayData {
   String? casePath;
   String? artifactPath;
   ArtifactArticlesData? articleData;
+  ArtifactArticlesData? secondaryArticleData;
   String title;
   CoordPos pos;
   List<ArtifactButtonData> artifactButtonData;
@@ -208,6 +240,7 @@ class DisplayData {
       this.casePath,
       this.artifactPath,
       this.articleData,
+      this.secondaryArticleData,
       required this.title,
       required this.pos,
       required this.artifactButtonData});

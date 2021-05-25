@@ -516,7 +516,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 desc: "Canteen with Cover",
                 tag: 8),
           ],
-          articleData: data[29]),
+          articleData: data[28],
+          secondaryArticleData: data[26]),
       DisplayData(
           displayPath: "assets/images/raymond_isadore_title.jpg",
           casePath: "assets/images/raymond_isadore_b.jpg",
@@ -566,7 +567,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 desc: "Sergeant Stripes",
                 tag: 10),
           ],
-          articleData: data[25]),
+          articleData: data[25],
+          secondaryArticleData: data[27]),
       DisplayData(
           displayPath: "assets/images/rubin_title.jpg",
           casePath: "assets/images/rubin_b.jpg",
@@ -756,6 +758,8 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                                             artifactButtonData:
                                                 data.artifactButtonData,
                                             articleData: data.articleData,
+                                            secondaryArticleData:
+                                                data.secondaryArticleData,
                                           )));
                             })))
                     .toList()),
