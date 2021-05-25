@@ -68,6 +68,16 @@ flutter:
     - assets/
     - assets/logo/
     - assets/images/
+    - assets/images/Articles/
+    - assets/images/AboutUs/
+    - assets/images/Articles/
+    - assets/images/Collections/
+    - assets/images/Collections/Artifacts/
+    - assets/images/Collections/Model/
+    - assets/images/Collections/Rubin/
+    - assets/images/Collections/Video/
+    - assets/images/Collections/Novels/
+    - assets/images/Logos/
     - assets/models/
     - assets/pdfs/
     

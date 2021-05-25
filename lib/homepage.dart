@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       sy(SizeConfig.borderRADIUS),
                     ),
                     image: DecorationImage(
-                        image: AssetImage("assets/images/homelogo.png"),
+                        image: AssetImage("assets/images/Logos/homelogo.png"),
                         fit: BoxFit.contain),
                   ),
                 ),
@@ -87,14 +87,14 @@ class _HomePageState extends State<HomePage> {
                     crossAxisSpacing: SizeConfig.axisSPACING,
                     mainAxisSpacing: SizeConfig.axisSPACING,
                     children: <Widget>[
-                      gridItems(Icons.article, "assets/images/homelogo.png",
-                          "Articles", 0),
-                      gridItems(Icons.collections, "assets/images/homelogo.png",
-                          "Collections", 1),
-                      gridItems(Icons.tour, "assets/images/homelogo.png",
+                      gridItems(Icons.article,
+                          "assets/images/Logos/homelogo.png", "Articles", 0),
+                      gridItems(Icons.collections,
+                          "assets/images/Logos/homelogo.png", "Collections", 1),
+                      gridItems(Icons.tour, "assets/images/Logos/homelogo.png",
                           "Virtual Tour", 2),
                       gridItems(Icons.question_answer,
-                          "assets/images/homelogo.png", "About Us!", 3),
+                          "assets/images/Logos/homelogo.png", "About Us!", 3),
                     ],
                   ),
                 ),
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                     sy(SizeConfig.borderRADIUS),
                   ),
                   image: DecorationImage(
-                      image: AssetImage("assets/images/homelogo.png"),
+                      image: AssetImage("assets/images/Logos/homelogo.png"),
                       fit: BoxFit.contain),
                 ),
               ),
@@ -138,14 +138,14 @@ class _HomePageState extends State<HomePage> {
                   crossAxisSpacing: SizeConfig.axisSPACING,
                   mainAxisSpacing: SizeConfig.axisSPACING,
                   children: <Widget>[
-                    gridItems(Icons.article, "assets/images/homelogo.png",
+                    gridItems(Icons.article, "assets/images/Logos/homelogo.png",
                         "Articles", 0),
-                    gridItems(Icons.collections, "assets/images/homelogo.png",
-                        "Collections", 1),
-                    gridItems(Icons.tour, "assets/images/homelogo.png",
+                    gridItems(Icons.collections,
+                        "assets/images/Logos/homelogo.png", "Collections", 1),
+                    gridItems(Icons.tour, "assets/images/Logos/homelogo.png",
                         "Virtual Tours", 2),
                     gridItems(Icons.question_answer,
-                        "assets/images/homelogo.png", "About Us!", 3),
+                        "assets/images/Logos/homelogo.png", "About Us!", 3),
                   ],
                 ),
               ),
@@ -190,12 +190,12 @@ class _HomePageState extends State<HomePage> {
           },
           child: Container(
             width: sx(400),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  sy(0),
-                ), // 15 works and collections looks tidier
-                color: Colors.transparent,
-              ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                sy(0),
+              ), // 15 works and collections looks tidier
+              color: Colors.transparent,
+            ),
             child: Card(
               child: Stack(
                 children: [

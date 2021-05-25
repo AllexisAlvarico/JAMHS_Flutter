@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 
 class AboutUsPage extends StatefulWidget {
   @override
@@ -58,7 +57,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   width: sx(40),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/images/homelogo.png"),
+                        image: AssetImage("assets/logo/homelogo.png"),
                         fit: BoxFit.contain),
                   ),
                 ),
@@ -89,7 +88,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           SizeConfig.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
                       createImage(
-                          "assets/images/exbibit.png",
+                          "assets/images/AboutUs/exbibit.png",
                           sy(SizeConfig.edgeINSETS), // border's radius
                           EdgeInsets.fromLTRB(
                             sx(SizeConfig.blockSizeHorizontal * 5),
@@ -101,9 +100,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       createText("Partners", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
-                        'assets/images/calguard.png',
-                        'assets/images/vshp.png',
-                        'assets/images/siteline.png',
+                        'assets/images/AboutUs/calguard.png',
+                        'assets/images/AboutUs/vshp.png',
+                        'assets/images/AboutUs/siteline.png',
                         launchCalguard,
                         launchVSHP,
                         launchSiteline,
@@ -131,7 +130,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           SizeConfig.fontDISCRIPTIONSIZE,
                           FontWeight.bold),
                       createImage(
-                          "assets/images/paypal.png",
+                          "assets/images/AboutUs/paypal.png",
                           sy(SizeConfig.borderRADIUS),
                           EdgeInsets.fromLTRB(
                             sx(SizeConfig.blockSizeHorizontal * 5),
@@ -143,9 +142,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       createText("Social Media", sy(SizeConfig.edgeINSETS),
                           SizeConfig.fontHEADERSIZE, FontWeight.bold),
                       createTriple(
-                        "assets/images/facebook.png",
-                        "assets/images/instagram.png",
-                        "assets/images/twitter.png",
+                        "assets/images/AboutUs/facebook.png",
+                        "assets/images/AboutUs/instagram.png",
+                        "assets/images/AboutUs/twitter.png",
                         launchFacebook,
                         launchInsta,
                         launchTwitter,
@@ -199,7 +198,7 @@ Widget _landscape() {
                 width: sx(50),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/homelogo.png"),
+                      image: AssetImage("assets/logo/homelogo.png"),
                       fit: BoxFit.contain),
                 ),
               ),
@@ -230,7 +229,7 @@ Widget _landscape() {
                         SizeConfig.fontDISCRIPTIONSIZE,
                         FontWeight.bold),
                     createImage(
-                        "assets/images/exbibit.png",
+                        "assets/images/AboutUs/exbibit.png",
                         sy(SizeConfig.edgeINSETS), // border's radius
                         EdgeInsets.fromLTRB(
                           sx(SizeConfig.blockSizeHorizontal * 5),
@@ -242,9 +241,9 @@ Widget _landscape() {
                     createText("Partners", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
-                      'assets/images/calguard.png',
-                      'assets/images/vshp.png',
-                      'assets/images/siteline.png',
+                      'assets/images/AboutUs/calguard.png',
+                      'assets/images/AboutUs/vshp.png',
+                      'assets/images/AboutUs/siteline.png',
                       launchCalguard,
                       launchVSHP,
                       launchSiteline,
@@ -269,7 +268,7 @@ Widget _landscape() {
                         SizeConfig.fontDISCRIPTIONSIZE,
                         FontWeight.bold),
                     createImage(
-                        "assets/images/paypal.png",
+                        "assets/images/AboutUs/paypal.png",
                         sy(SizeConfig.borderRADIUS),
                         EdgeInsets.fromLTRB(
                             sx(SizeConfig.blockSizeHorizontal * 5),
@@ -280,9 +279,9 @@ Widget _landscape() {
                     createText("Social Media", sy(SizeConfig.edgeINSETS),
                         SizeConfig.fontHEADERSIZE, FontWeight.bold),
                     createTriple(
-                      "assets/images/facebook.png",
-                      "assets/images/instagram.png",
-                      "assets/images/twitter.png",
+                      "assets/images/AboutUs/facebook.png",
+                      "assets/images/AboutUs/instagram.png",
+                      "assets/images/AboutUs/twitter.png",
                       launchFacebook,
                       launchInsta,
                       launchTwitter,

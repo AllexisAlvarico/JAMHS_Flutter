@@ -26,9 +26,9 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
   void setupList() {
     displayData = [
       DisplayData(
-          displayPath: "assets/images/collection.jpg",
-          casePath: "assets/images/collection_b.JPG",
-          artifactPath: "assets/images/collection_c.JPG",
+          displayPath: "assets/images/VirtualTours/collection.jpg",
+          casePath: "assets/images/VirtualTours/collection_b.JPG",
+          artifactPath: "assets/images/VirtualTours/collection_c.JPG",
           title: "Introduction",
           pos: CoordPos(latitude: 20, longitude: 16),
           artifactButtonData: [
@@ -49,29 +49,30 @@ class _VirutalToursPageState extends State<VirutalToursPage> {
                 tag: 3),
           ]),
       DisplayData(
-          displayPath: "assets/images/benjamin_title.jpg",
-          casePath: "assets/images/benjamin_b.jpg",
-          artifactPath: "assets/images/benjamin_c.jpg",
-          title: "Benjamin",
-          pos: CoordPos(latitude: 20, longitude: 51),
-          artifactButtonData: [
-            ArtifactButtonData(
-                pos: Position(left: 250, top: 250), desc: "Kepi", tag: 1),
-            ArtifactButtonData(
-                pos: Position(left: 1000, top: 250),
-                desc: "Infantry NCO Trousers, Wool White strip",
-                tag: 2),
-            ArtifactButtonData(
-                pos: Position(left: 1000, top: 650),
-                desc: "California Issue Sword Belt",
-                tag: 3),
-            ArtifactButtonData(
-                pos: Position(left: 450, top: 800),
-                desc: "Musket Bayonet",
-                tag: 4),
-            ArtifactButtonData(
-                pos: Position(left: 350, top: 600), desc: "Drumstick", tag: 5),
-          ]),
+        displayPath: "assets/images/VirtualTours/benjamin_title.jpg",
+        casePath: "assets/images/VirtualTours/benjamin_b.jpg",
+        artifactPath: "assets/images/VirtualTours/benjamin_c.jpg",
+        title: "Benjamin",
+        pos: CoordPos(latitude: 20, longitude: 51),
+        artifactButtonData: [
+          ArtifactButtonData(
+              pos: Position(left: 250, top: 250), desc: "Kepi", tag: 1),
+          ArtifactButtonData(
+              pos: Position(left: 1000, top: 250),
+              desc: "Infantry NCO Trousers, Wool White strip",
+              tag: 2),
+          ArtifactButtonData(
+              pos: Position(left: 1000, top: 650),
+              desc: "California Issue Sword Belt",
+              tag: 3),
+          ArtifactButtonData(
+              pos: Position(left: 450, top: 800),
+              desc: "Musket Bayonet",
+              tag: 4),
+          ArtifactButtonData(
+              pos: Position(left: 350, top: 600), desc: "Drumstick", tag: 5),
+        ],
+      ),
       DisplayData(
           displayPath: "assets/images/isaac_simon_title.jpg",
           casePath: "assets/images/isaac_simon_b.jpg",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:model_viewer/model_viewer.dart';
 import 'size_config.dart';
 
 class ModelView extends StatefulWidget {
@@ -27,12 +26,6 @@ class _ModelViewState extends State<ModelView> {
                 fontWeight: FontWeight.bold,
                 fontFamily: "Futura")),
         centerTitle: true,
-      ),
-      body: ModelViewer(
-        src: widget.src,
-        alt: widget.title,
-        cameraControls: true,
-        backgroundColor: SizeConfig.backroundCOLOR,
       ),
     );
   }

@@ -169,7 +169,7 @@ class _FloorPlanViewState extends State<FloorPlanView> {
           child: Stack(
             children: [
               Image.asset(
-                "assets/images/floor_plan.PNG",
+                "assets/images/FloorPlan/floor_plan.PNG",
               ),
               for (var item in postions!) item,
             ],
