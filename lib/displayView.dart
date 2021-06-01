@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:jamhs_flutter/size_config.dart';
 import 'package:jamhs_flutter/artifactView.dart';
+import 'package:jamhs_flutter/viewpage.dart';
+import 'ArtifactArticlesCards.dart';
 
 class DisplayView extends StatefulWidget {
   final String displayImgPath;
   final String? caseImgPath;
   final String? title;
   final String? caseImgZoomPath;
+  final ArtifactArticlesData? articleData;
+  final ArtifactArticlesData? secondaryArticleData;
   final List<ArtifactButtonData> artifactButtonData;
 
   DisplayView(
@@ -14,6 +18,8 @@ class DisplayView extends StatefulWidget {
       required this.displayImgPath,
       this.caseImgPath,
       this.caseImgZoomPath,
+      this.articleData,
+      this.secondaryArticleData,
       required this.title,
       required this.artifactButtonData})
       : super(key: key);
@@ -25,11 +31,15 @@ class DisplayView extends StatefulWidget {
 class _DisplayViewState extends State<DisplayView> {
   String? currentImgPath = "";
   bool showArtifactButtons = false;
+  bool showReadMoreButton = false;
 
   @override
   void initState() {
     super.initState();
     this.currentImgPath = widget.displayImgPath;
+    if (widget.articleData != null) {
+      showReadMoreButton = true;
+    }
   }
 
   @override
@@ -91,6 +101,9 @@ class _DisplayViewState extends State<DisplayView> {
                       setState(() {
                         currentImgPath = widget.displayImgPath;
                         showArtifactButtons = false;
+                        if (widget.articleData != null) {
+                          showReadMoreButton = true;
+                        }
                       });
                     }
                   },
@@ -112,6 +125,7 @@ class _DisplayViewState extends State<DisplayView> {
                       setState(() {
                         currentImgPath = widget.caseImgPath;
                         showArtifactButtons = false;
+                        showReadMoreButton = false;
                       });
                     }
                   },
@@ -133,6 +147,7 @@ class _DisplayViewState extends State<DisplayView> {
                       setState(() {
                         currentImgPath = widget.caseImgZoomPath;
                         showArtifactButtons = true;
+                        showReadMoreButton = false;
                       });
                     }
                   },
@@ -147,6 +162,63 @@ class _DisplayViewState extends State<DisplayView> {
               ],
             ),
           ),
+          showReadMoreButton
+              ? Align(
+                  alignment: Alignment.topLeft,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff2c4874).withOpacity(.8),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ViewPage(
+                                    img: widget.articleData!.imagePath,
+                                    title: widget.articleData!.category,
+                                    name: widget.articleData!.name,
+                                    desc: widget.articleData!.desc,
+                                  )));
+                    },
+                    child: Text(
+                      "Read More",
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
+                  ),
+                )
+              : Container(),
+          showReadMoreButton && widget.secondaryArticleData != null
+              ? Align(
+                  alignment: Alignment.topRight,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff2c4874).withOpacity(.8),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ViewPage(
+                                    img: widget.secondaryArticleData!.imagePath,
+                                    title:
+                                        widget.secondaryArticleData!.category,
+                                    name: widget.secondaryArticleData!.name,
+                                    desc: widget.secondaryArticleData!.desc,
+                                  )));
+                    },
+                    child: Text(
+                      "Read More",
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
@@ -157,6 +229,8 @@ class DisplayData {
   String displayPath;
   String? casePath;
   String? artifactPath;
+  ArtifactArticlesData? articleData;
+  ArtifactArticlesData? secondaryArticleData;
   String title;
   CoordPos pos;
   List<ArtifactButtonData> artifactButtonData;
@@ -165,6 +239,8 @@ class DisplayData {
       {required this.displayPath,
       this.casePath,
       this.artifactPath,
+      this.articleData,
+      this.secondaryArticleData,
       required this.title,
       required this.pos,
       required this.artifactButtonData});
