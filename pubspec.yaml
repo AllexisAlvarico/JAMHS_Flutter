@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.3-nullsafety.0
   webview_flutter: ^2.0.2-nullsafety.4
   carousel_slider: ^4.0.0-nullsafety.0
-  model_viewer: ^0.8.1
+  #model_viewer: ^0.8.1
   advance_pdf_viewer: ^2.0.0-nullsafety.0
   path_provider: ^2.0.1-nullsafety.1
   video_player: ^2.0.2-nullsafety.4
@@ -68,7 +68,9 @@ flutter:
     - assets/
     - assets/logo/
     - assets/images/
+    - assets/images/quiz/
     - assets/pdfs/
+    - assets/quiz/
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
