@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 
 class AboutUsPage extends StatefulWidget {
   @override

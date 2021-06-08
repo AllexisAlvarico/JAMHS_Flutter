@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamhs_flutter/quizPage.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'ArtifactCollectionCards.dart';
 import 'artifactView.dart';
@@ -35,6 +36,73 @@ class _CollectionPageState extends State<CollectionPage> {
         "Throughout the month of June 2020, The Jewish American Military Historical Society in partnership with World War 2 Veteran Memories' Project, interviewed Lieutenant Colonel (Retired) Sam Sachs.",
         "https://www.youtube.com/watch?v=Sfnfp8D8Zyk")
   ];
+
+  Widget customcard(
+      String battname, String image, String des, BuildContext context) {
+    SizeConfig().init(context);
+    return RelativeBuilder(
+      builder: (context, height, width, sy, sx) {
+        return SizedBox(
+          width: sx(210),
+          height: sy(200),
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                sy(SizeConfig.borderRADIUS),
+              ),
+            ),
+            clipBehavior: Clip.antiAlias,
+            elevation: 5,
+            child: InkWell(
+              splashColor: Colors.indigo[800]!.withOpacity(0.5),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  // in changelog 1 we will pass the battname name to ther other widget class
+                  // this name will be used to open a particular JSON file
+                  // for a particular battery
+                  builder: (context) => GetJson(battname),
+                ));
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    height: sy(100),
+                    width: sx(200),
+                    child: Image.asset(
+                      image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                      sx(SizeConfig.blockSizeHorizontal * 2),
+                      sy(SizeConfig.blockSizeVertical * 1),
+                    ),
+                    child: Text(
+                      battname,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: SizeConfig.fontDISCRIPTIONSIZE,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Futura"),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  final List<EducateData> educationData = [
+    EducateData(title: "Battery Osgood - Farley"),
+  ];
+
   List<ArtifactCollectionData> artifactData = [
     ArtifactCollectionData(
         "assets/images/hewbrew_artifact.jpg",
@@ -77,6 +145,14 @@ class _CollectionPageState extends State<CollectionPage> {
         "Military Pin",
         "Tibor Collection",
         "Coming soon!")
+  ];
+
+  List<String> des = [
+    "Do you feel you know about Tibor Rubin? Take the Quiz!!",
+  ];
+
+  List<String> images = [
+    "assets/images/tibor_rubin.jpg",
   ];
 
   @override
@@ -250,6 +326,29 @@ class _CollectionPageState extends State<CollectionPage> {
                   ),
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
+                child: Text(
+                  "Quizes",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: SizeConfig.fontHEADERSIZE,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Futura"),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(
+                  sy(SizeConfig.edgeINSETS),
+                ),
+                child: Column(
+                  children: [
+                    customcard("Tibor Ruben", images[0], des[0], context),
+                  ],
+                ),
+              )
             ],
           ),
         ),

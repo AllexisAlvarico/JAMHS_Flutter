@@ -155,3 +155,9 @@ class VideoData extends ArtifactCollectionData {
       String desc, this.videoPath)
       : super(imagePath, title, name, category, desc);
 }
+
+class EducateData {
+  String title;
+
+  EducateData({required this.title});
+}
