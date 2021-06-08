@@ -1,0 +1,88 @@
+[
+    {
+        "0": "What year was Tibor Ruben born on?",
+        "1": "Where did Tibor escape from Hungary to in 1944?",
+        "2": "When he was arrested at the border, which concentration camp in Austria was Tibor sent to?",
+        "3": "Who did Tibor reunite with in the camp?",
+        "4": "What year was Tibor liberated from the camp?",
+        "5": "What year did Tibor arrive in New York?",
+        "6": "When did the battle pf Unsan take place?",
+        "7": "How Long was Tibor kept prisoner in camp 5?",
+        "8": "What year did Tibor receive his medal of honor?",
+        "9": "How many awards did Tibor recieve in total for his time as a soldier?"
+    },
+    {
+        "0": {
+            "a": "1919",
+            "b": "1929",
+            "c": "1923",
+            "d": "1910"
+        },
+        "1": {
+            "a": "Finland",
+            "b": "France",
+            "c": "Switzerland",
+            "d": "England"
+        },
+        "2": {
+            "a": "Mauthausen",
+            "b": "Gusen",
+            "c": "Lackenbach",
+            "d": "Siegendorf"
+        },
+        "3": {
+            "a": "His Brother Emery",
+            "b": "His Father Ferenc",
+            "c": "His Mother Rosa",
+            "d": "His Sister Edith"
+        },
+        "4": {
+            "a": "1944",
+            "b": "1943",
+            "c": "1946",
+            "d": "1945"
+        },
+        "5": {
+            "a": "1945",
+            "b": "1948",
+            "c": "1947",
+            "d": "1949"
+        },
+        "6": {
+            "a": "September 15th",
+            "b": "October 30th",
+            "c": "November 1st",
+            "d": "September 28th"
+        },
+        "7": {
+            "a": "10 months",
+            "b": "20 months",
+            "c": "30 months",
+            "d": "25 months"
+        },
+        "8": {
+            "a": "2002",
+            "b": "2005",
+            "c": "2004",
+            "d": "2006"
+        },
+        "9": {
+            "a": "10",
+            "b": "12",
+            "c": "8",
+            "d": "11"
+        }
+    },
+    {
+        "0": "1929",
+        "1": "Switzerland",
+        "2": "Mauthausen",
+        "3": "His Brother Emery",
+        "4": "1945",
+        "5": "1948",
+        "6": "October 30th",
+        "7": "30 months",
+        "8": "2005",
+        "9": "10"
+    }
+]
